@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		365F5F801DA849660091D804 /* GADStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 365F5F7F1DA849660091D804 /* GADStudent.m */; };
+		365F5F831DA84A390091D804 /* GADSGA.m in Sources */ = {isa = PBXBuildFile; fileRef = 365F5F821DA84A390091D804 /* GADSGA.m */; };
+		365F5F891DA84AED0091D804 /* GADFacStaff.m in Sources */ = {isa = PBXBuildFile; fileRef = 365F5F881DA84AED0091D804 /* GADFacStaff.m */; };
 		369F78751DA0BB510064ACAF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 369F78741DA0BB510064ACAF /* main.m */; };
 		369F78781DA0BB510064ACAF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 369F78771DA0BB510064ACAF /* AppDelegate.m */; };
 		369F787B1DA0BB510064ACAF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 369F787A1DA0BB510064ACAF /* ViewController.m */; };
@@ -37,6 +40,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		365F5F7E1DA849660091D804 /* GADStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADStudent.h; sourceTree = "<group>"; };
+		365F5F7F1DA849660091D804 /* GADStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GADStudent.m; sourceTree = "<group>"; };
+		365F5F811DA84A390091D804 /* GADSGA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADSGA.h; sourceTree = "<group>"; };
+		365F5F821DA84A390091D804 /* GADSGA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GADSGA.m; sourceTree = "<group>"; };
+		365F5F871DA84AED0091D804 /* GADFacStaff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADFacStaff.h; sourceTree = "<group>"; };
+		365F5F881DA84AED0091D804 /* GADFacStaff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GADFacStaff.m; sourceTree = "<group>"; };
 		369F78701DA0BB510064ACAF /* DB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		369F78741DA0BB510064ACAF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		369F78761DA0BB510064ACAF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -113,6 +122,12 @@
 				369F787A1DA0BB510064ACAF /* ViewController.m */,
 				369F78A91DA18C880064ACAF /* GADPerson.h */,
 				369F78AA1DA18C880064ACAF /* GADPerson.m */,
+				365F5F871DA84AED0091D804 /* GADFacStaff.h */,
+				365F5F881DA84AED0091D804 /* GADFacStaff.m */,
+				365F5F7E1DA849660091D804 /* GADStudent.h */,
+				365F5F7F1DA849660091D804 /* GADStudent.m */,
+				365F5F811DA84A390091D804 /* GADSGA.h */,
+				365F5F821DA84A390091D804 /* GADSGA.m */,
 				369F78A61DA0C5950064ACAF /* GADDetailViewController.h */,
 				369F78A71DA0C5950064ACAF /* GADDetailViewController.m */,
 				369F787C1DA0BB510064ACAF /* Main.storyboard */,
@@ -283,8 +298,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				365F5F801DA849660091D804 /* GADStudent.m in Sources */,
 				369F787B1DA0BB510064ACAF /* ViewController.m in Sources */,
+				365F5F891DA84AED0091D804 /* GADFacStaff.m in Sources */,
 				369F78AB1DA18C880064ACAF /* GADPerson.m in Sources */,
+				365F5F831DA84A390091D804 /* GADSGA.m in Sources */,
 				369F78781DA0BB510064ACAF /* AppDelegate.m in Sources */,
 				369F78A81DA0C5950064ACAF /* GADDetailViewController.m in Sources */,
 				369F78751DA0BB510064ACAF /* main.m in Sources */,
@@ -517,6 +535,7 @@
 				369F789F1DA0BB510064ACAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		369F78A01DA0BB510064ACAF /* Build configuration list for PBXNativeTarget "DBTests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +544,7 @@
 				369F78A21DA0BB510064ACAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		369F78A31DA0BB510064ACAF /* Build configuration list for PBXNativeTarget "DBUITests" */ = {
 			isa = XCConfigurationList;
@@ -533,6 +553,7 @@
 				369F78A51DA0BB510064ACAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
