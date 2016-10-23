@@ -9,14 +9,8 @@
 #import "GADPerson.h"
 
 @interface GADFacStaff : GADPerson
-@property (nonatomic, strong) NSString *title;
-@property (nonatomic, strong) NSString *title1;
-@property (nonatomic, strong) NSString *title2;
-@property (nonatomic, strong) NSString *title3;
-@property (nonatomic, strong) NSString *title4;
-@property (nonatomic, strong) NSString *title5;
-@property (nonatomic, strong) NSString *title6;
-@property (nonatomic, strong) NSString *title7;
-@property (nonatomic, strong) NSString *title8;
+@property (nonatomic, strong) NSArray *title; //title, title2, ... title8. title5 correspond to Department(s).
+
+-(GADFacStaff *)initWithDictionary: (NSDictionary *) dict;
 
 @end

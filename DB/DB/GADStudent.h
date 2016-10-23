@@ -16,5 +16,6 @@
 @property (nonatomic, strong) NSString *minor;
 @property (nonatomic, strong) NSString *hiatus;
 
+-(GADStudent *)initWithDictionary: (NSDictionary *) dict;
 
 @end
