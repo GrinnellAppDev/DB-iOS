@@ -20,6 +20,7 @@
 		369F78991DA0BB510064ACAF /* DBUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 369F78981DA0BB510064ACAF /* DBUITests.m */; };
 		369F78A81DA0C5950064ACAF /* GADDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 369F78A71DA0C5950064ACAF /* GADDetailViewController.m */; };
 		369F78AB1DA18C880064ACAF /* GADPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 369F78AA1DA18C880064ACAF /* GADPerson.m */; };
+		36F7B1081DBCFFE800B14C50 /* GADListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36F7B1071DBCFFE800B14C50 /* GADListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,8 @@
 		369F78A71DA0C5950064ACAF /* GADDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GADDetailViewController.m; sourceTree = "<group>"; };
 		369F78A91DA18C880064ACAF /* GADPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADPerson.h; sourceTree = "<group>"; };
 		369F78AA1DA18C880064ACAF /* GADPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GADPerson.m; sourceTree = "<group>"; };
+		36F7B1061DBCFFE800B14C50 /* GADListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADListViewController.h; sourceTree = "<group>"; };
+		36F7B1071DBCFFE800B14C50 /* GADListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GADListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +123,10 @@
 				369F78771DA0BB510064ACAF /* AppDelegate.m */,
 				369F78791DA0BB510064ACAF /* ViewController.h */,
 				369F787A1DA0BB510064ACAF /* ViewController.m */,
+				36F7B1061DBCFFE800B14C50 /* GADListViewController.h */,
+				36F7B1071DBCFFE800B14C50 /* GADListViewController.m */,
+				369F78A61DA0C5950064ACAF /* GADDetailViewController.h */,
+				369F78A71DA0C5950064ACAF /* GADDetailViewController.m */,
 				369F78A91DA18C880064ACAF /* GADPerson.h */,
 				369F78AA1DA18C880064ACAF /* GADPerson.m */,
 				365F5F871DA84AED0091D804 /* GADFacStaff.h */,
@@ -128,8 +135,6 @@
 				365F5F7F1DA849660091D804 /* GADStudent.m */,
 				365F5F811DA84A390091D804 /* GADSGA.h */,
 				365F5F821DA84A390091D804 /* GADSGA.m */,
-				369F78A61DA0C5950064ACAF /* GADDetailViewController.h */,
-				369F78A71DA0C5950064ACAF /* GADDetailViewController.m */,
 				369F787C1DA0BB510064ACAF /* Main.storyboard */,
 				369F787F1DA0BB510064ACAF /* Assets.xcassets */,
 				369F78811DA0BB510064ACAF /* LaunchScreen.storyboard */,
@@ -304,6 +309,7 @@
 				369F78AB1DA18C880064ACAF /* GADPerson.m in Sources */,
 				365F5F831DA84A390091D804 /* GADSGA.m in Sources */,
 				369F78781DA0BB510064ACAF /* AppDelegate.m in Sources */,
+				36F7B1081DBCFFE800B14C50 /* GADListViewController.m in Sources */,
 				369F78A81DA0C5950064ACAF /* GADDetailViewController.m in Sources */,
 				369F78751DA0BB510064ACAF /* main.m in Sources */,
 			);

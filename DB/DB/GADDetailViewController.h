@@ -6,7 +6,7 @@
 //  Copyright © 2016 AppDev. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <UIKit/UIKit.h> 
 
 @interface GADDetailViewController : UIViewController
 
