@@ -20,6 +20,7 @@
 		369F78991DA0BB510064ACAF /* DBUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 369F78981DA0BB510064ACAF /* DBUITests.m */; };
 		369F78A81DA0C5950064ACAF /* GADDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 369F78A71DA0C5950064ACAF /* GADDetailViewController.m */; };
 		369F78AB1DA18C880064ACAF /* GADPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 369F78AA1DA18C880064ACAF /* GADPerson.m */; };
+		36C20DC01DCF871400B6B5A5 /* GADDirectory.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C20DBF1DCF871400B6B5A5 /* GADDirectory.m */; };
 		36F7B1081DBCFFE800B14C50 /* GADListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36F7B1071DBCFFE800B14C50 /* GADListViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,8 @@
 		369F78A71DA0C5950064ACAF /* GADDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GADDetailViewController.m; sourceTree = "<group>"; };
 		369F78A91DA18C880064ACAF /* GADPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADPerson.h; sourceTree = "<group>"; };
 		369F78AA1DA18C880064ACAF /* GADPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GADPerson.m; sourceTree = "<group>"; };
+		36C20DBE1DCF871400B6B5A5 /* GADDirectory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADDirectory.h; sourceTree = "<group>"; };
+		36C20DBF1DCF871400B6B5A5 /* GADDirectory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GADDirectory.m; sourceTree = "<group>"; };
 		36F7B1061DBCFFE800B14C50 /* GADListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADListViewController.h; sourceTree = "<group>"; };
 		36F7B1071DBCFFE800B14C50 /* GADListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GADListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -127,6 +130,8 @@
 				36F7B1071DBCFFE800B14C50 /* GADListViewController.m */,
 				369F78A61DA0C5950064ACAF /* GADDetailViewController.h */,
 				369F78A71DA0C5950064ACAF /* GADDetailViewController.m */,
+				36C20DBE1DCF871400B6B5A5 /* GADDirectory.h */,
+				36C20DBF1DCF871400B6B5A5 /* GADDirectory.m */,
 				369F78A91DA18C880064ACAF /* GADPerson.h */,
 				369F78AA1DA18C880064ACAF /* GADPerson.m */,
 				365F5F871DA84AED0091D804 /* GADFacStaff.h */,
@@ -303,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36C20DC01DCF871400B6B5A5 /* GADDirectory.m in Sources */,
 				365F5F801DA849660091D804 /* GADStudent.m in Sources */,
 				369F787B1DA0BB510064ACAF /* ViewController.m in Sources */,
 				365F5F891DA84AED0091D804 /* GADFacStaff.m in Sources */,
