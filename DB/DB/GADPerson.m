@@ -42,7 +42,7 @@
     person.room = [dict valueForKey:@"room"];
     person.spouse = [dict valueForKey:@"spouse"];
     person.alienstatus = [dict valueForKey:@"alienstatus"];
-    person.imgPath = [dict valueForKey:@"imgPath"];
+    person.imgPath = [NSURL URLWithString:[dict valueForKey:@"imgPath"]];
     person.address = [dict valueForKey:@"address"];
     person.personType = [dict valueForKey:@"personType"];
     person.address = [dict valueForKey:@"address"];

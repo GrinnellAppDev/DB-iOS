@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "GADListViewController.h"
+#import "GADDirectory.h"
 
 @interface ViewController ()
 
@@ -27,7 +29,13 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    //TO-DO
+    NSString *segueName = @"showList";
+    NSData *data;
+    GADDirectory *directory;
+    if ([segue.identifier isEqualToString:segueName]) {
+        GADListViewController *dest = (GADListViewController *)segue.destinationViewController;
+        dest.directory = [directory initWithData: data];
+    }
 }
 
 - (void)viewDidLoad {

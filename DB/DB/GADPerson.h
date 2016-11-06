@@ -29,7 +29,7 @@
 @property (nonatomic, strong) NSString *room;
 @property (nonatomic, strong) NSString *spouse;
 @property (nonatomic, strong) NSString *alienstatus;
-@property (nonatomic, strong) NSString *imgPath; //change to NSURL?
+@property (nonatomic, strong) NSURL *imgPath;
 @property (nonatomic, strong) NSString *personType;
 @property (nonatomic, strong) NSString *deptMajorClass;
 
