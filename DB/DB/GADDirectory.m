@@ -29,7 +29,7 @@
     //NSLog(@"%@", [detailField valueForKey:@"firstName"]);
     */
     
-    data = [{
+    /*data = [{
         
         "firstName": "Cheyenne",
         
@@ -231,7 +231,7 @@
         
         "title8": null
         
-    }];
+    }];*/
 
     NSArray *arrayOfDictionary;
     arrayOfDictionary = [[NSArray alloc] initWithArray:[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil]];
