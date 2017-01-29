@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		361EC0931DEAAC1600F011F6 /* textTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 361EC0911DEAAC1600F011F6 /* textTableViewCell.m */; };
+		361EC0941DEAAC1600F011F6 /* textTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 361EC0921DEAAC1600F011F6 /* textTableViewCell.xib */; };
 		365F5F801DA849660091D804 /* GADStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 365F5F7F1DA849660091D804 /* GADStudent.m */; };
 		365F5F831DA84A390091D804 /* GADSGA.m in Sources */ = {isa = PBXBuildFile; fileRef = 365F5F821DA84A390091D804 /* GADSGA.m */; };
 		365F5F891DA84AED0091D804 /* GADFacStaff.m in Sources */ = {isa = PBXBuildFile; fileRef = 365F5F881DA84AED0091D804 /* GADFacStaff.m */; };
@@ -42,6 +44,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		361EC0901DEAAC1600F011F6 /* textTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = textTableViewCell.h; sourceTree = "<group>"; };
+		361EC0911DEAAC1600F011F6 /* textTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = textTableViewCell.m; sourceTree = "<group>"; };
+		361EC0921DEAAC1600F011F6 /* textTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = textTableViewCell.xib; sourceTree = "<group>"; };
 		365F5F7E1DA849660091D804 /* GADStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADStudent.h; sourceTree = "<group>"; };
 		365F5F7F1DA849660091D804 /* GADStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GADStudent.m; sourceTree = "<group>"; };
 		365F5F811DA84A390091D804 /* GADSGA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADSGA.h; sourceTree = "<group>"; };
@@ -145,6 +150,9 @@
 				369F78811DA0BB510064ACAF /* LaunchScreen.storyboard */,
 				369F78841DA0BB510064ACAF /* Info.plist */,
 				369F78731DA0BB510064ACAF /* Supporting Files */,
+				361EC0901DEAAC1600F011F6 /* textTableViewCell.h */,
+				361EC0911DEAAC1600F011F6 /* textTableViewCell.m */,
+				361EC0921DEAAC1600F011F6 /* textTableViewCell.xib */,
 			);
 			path = DB;
 			sourceTree = "<group>";
@@ -283,6 +291,7 @@
 			files = (
 				369F78831DA0BB510064ACAF /* LaunchScreen.storyboard in Resources */,
 				369F78801DA0BB510064ACAF /* Assets.xcassets in Resources */,
+				361EC0941DEAAC1600F011F6 /* textTableViewCell.xib in Resources */,
 				369F787E1DA0BB510064ACAF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,6 +327,7 @@
 				36F7B1081DBCFFE800B14C50 /* GADListViewController.m in Sources */,
 				369F78A81DA0C5950064ACAF /* GADDetailViewController.m in Sources */,
 				369F78751DA0BB510064ACAF /* main.m in Sources */,
+				361EC0931DEAAC1600F011F6 /* textTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
