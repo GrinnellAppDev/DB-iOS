@@ -1,11 +1,3 @@
-//
-//  ViewController.m
-//  DB
-//
-//  Created by AppDev on 10/1/16.
-//  Copyright © 2016 AppDev. All rights reserved.
-//
-
 #import "ViewController.h"
 #import "GADListViewController.h"
 #import "GADDirectory.h"
@@ -56,13 +48,8 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSString *segueName = @"showList";
-    NSData *data;
-    GADDirectory *directory;
-    if ([segue.identifier isEqualToString:segueName]) {
-        GADListViewController *dest = (GADListViewController *)segue.destinationViewController;
-        dest.directory = [directory initWithData: data];
-    }
+    //NSString *segueName = @"showList";
+    //NSData *data;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

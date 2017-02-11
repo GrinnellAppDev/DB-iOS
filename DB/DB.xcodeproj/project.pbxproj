@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		361EC0931DEAAC1600F011F6 /* textTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 361EC0911DEAAC1600F011F6 /* textTableViewCell.m */; };
 		361EC0941DEAAC1600F011F6 /* textTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 361EC0921DEAAC1600F011F6 /* textTableViewCell.xib */; };
-		365F5F801DA849660091D804 /* GADStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 365F5F7F1DA849660091D804 /* GADStudent.m */; };
-		365F5F831DA84A390091D804 /* GADSGA.m in Sources */ = {isa = PBXBuildFile; fileRef = 365F5F821DA84A390091D804 /* GADSGA.m */; };
-		365F5F891DA84AED0091D804 /* GADFacStaff.m in Sources */ = {isa = PBXBuildFile; fileRef = 365F5F881DA84AED0091D804 /* GADFacStaff.m */; };
 		369F78751DA0BB510064ACAF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 369F78741DA0BB510064ACAF /* main.m */; };
 		369F78781DA0BB510064ACAF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 369F78771DA0BB510064ACAF /* AppDelegate.m */; };
 		369F787B1DA0BB510064ACAF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 369F787A1DA0BB510064ACAF /* ViewController.m */; };
@@ -21,9 +18,20 @@
 		369F788E1DA0BB510064ACAF /* DBTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 369F788D1DA0BB510064ACAF /* DBTests.m */; };
 		369F78991DA0BB510064ACAF /* DBUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 369F78981DA0BB510064ACAF /* DBUITests.m */; };
 		369F78A81DA0C5950064ACAF /* GADDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 369F78A71DA0C5950064ACAF /* GADDetailViewController.m */; };
-		369F78AB1DA18C880064ACAF /* GADPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 369F78AA1DA18C880064ACAF /* GADPerson.m */; };
-		36C20DC01DCF871400B6B5A5 /* GADDirectory.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C20DBF1DCF871400B6B5A5 /* GADDirectory.m */; };
 		36F7B1081DBCFFE800B14C50 /* GADListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36F7B1071DBCFFE800B14C50 /* GADListViewController.m */; };
+		FAFB93F81E4FAF1400A68015 /* GADDirectory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFB93EF1E4FAF1400A68015 /* GADDirectory.framework */; };
+		FAFB93FF1E4FAF1400A68015 /* GADDirectoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FAFB93FE1E4FAF1400A68015 /* GADDirectoryTests.m */; };
+		FAFB94011E4FAF1400A68015 /* GADDirectory.h in Headers */ = {isa = PBXBuildFile; fileRef = FAFB93F11E4FAF1400A68015 /* GADDirectory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FAFB94041E4FAF1400A68015 /* GADDirectory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFB93EF1E4FAF1400A68015 /* GADDirectory.framework */; };
+		FAFB94051E4FAF1400A68015 /* GADDirectory.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FAFB93EF1E4FAF1400A68015 /* GADDirectory.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FAFB940F1E4FAF2E00A68015 /* GADPerson.h in Headers */ = {isa = PBXBuildFile; fileRef = 369F78A91DA18C880064ACAF /* GADPerson.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FAFB94101E4FAF2E00A68015 /* GADPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 369F78AA1DA18C880064ACAF /* GADPerson.m */; };
+		FAFB94111E4FAF2E00A68015 /* GADFacStaff.h in Headers */ = {isa = PBXBuildFile; fileRef = 365F5F871DA84AED0091D804 /* GADFacStaff.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FAFB94121E4FAF2E00A68015 /* GADFacStaff.m in Sources */ = {isa = PBXBuildFile; fileRef = 365F5F881DA84AED0091D804 /* GADFacStaff.m */; };
+		FAFB94131E4FAF2E00A68015 /* GADStudent.h in Headers */ = {isa = PBXBuildFile; fileRef = 365F5F7E1DA849660091D804 /* GADStudent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FAFB94141E4FAF2E00A68015 /* GADStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 365F5F7F1DA849660091D804 /* GADStudent.m */; };
+		FAFB94151E4FAF2E00A68015 /* GADSGA.h in Headers */ = {isa = PBXBuildFile; fileRef = 365F5F811DA84A390091D804 /* GADSGA.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FAFB94161E4FAF2E00A68015 /* GADSGA.m in Sources */ = {isa = PBXBuildFile; fileRef = 365F5F821DA84A390091D804 /* GADSGA.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,18 +49,53 @@
 			remoteGlobalIDString = 369F786F1DA0BB510064ACAF;
 			remoteInfo = DB;
 		};
+		FAFB93F91E4FAF1400A68015 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 369F78681DA0BB510064ACAF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FAFB93EE1E4FAF1400A68015;
+			remoteInfo = GADDirectory;
+		};
+		FAFB93FB1E4FAF1400A68015 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 369F78681DA0BB510064ACAF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 369F786F1DA0BB510064ACAF;
+			remoteInfo = DB;
+		};
+		FAFB94021E4FAF1400A68015 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 369F78681DA0BB510064ACAF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FAFB93EE1E4FAF1400A68015;
+			remoteInfo = GADDirectory;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FAFB94091E4FAF1400A68015 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FAFB94051E4FAF1400A68015 /* GADDirectory.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		361EC0901DEAAC1600F011F6 /* textTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = textTableViewCell.h; sourceTree = "<group>"; };
 		361EC0911DEAAC1600F011F6 /* textTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = textTableViewCell.m; sourceTree = "<group>"; };
 		361EC0921DEAAC1600F011F6 /* textTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = textTableViewCell.xib; sourceTree = "<group>"; };
-		365F5F7E1DA849660091D804 /* GADStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADStudent.h; sourceTree = "<group>"; };
-		365F5F7F1DA849660091D804 /* GADStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GADStudent.m; sourceTree = "<group>"; };
-		365F5F811DA84A390091D804 /* GADSGA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADSGA.h; sourceTree = "<group>"; };
-		365F5F821DA84A390091D804 /* GADSGA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GADSGA.m; sourceTree = "<group>"; };
-		365F5F871DA84AED0091D804 /* GADFacStaff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADFacStaff.h; sourceTree = "<group>"; };
-		365F5F881DA84AED0091D804 /* GADFacStaff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GADFacStaff.m; sourceTree = "<group>"; };
+		365F5F7E1DA849660091D804 /* GADStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GADStudent.h; path = ../DB/GADStudent.h; sourceTree = "<group>"; };
+		365F5F7F1DA849660091D804 /* GADStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GADStudent.m; path = ../DB/GADStudent.m; sourceTree = "<group>"; };
+		365F5F811DA84A390091D804 /* GADSGA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GADSGA.h; path = ../DB/GADSGA.h; sourceTree = "<group>"; };
+		365F5F821DA84A390091D804 /* GADSGA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GADSGA.m; path = ../DB/GADSGA.m; sourceTree = "<group>"; };
+		365F5F871DA84AED0091D804 /* GADFacStaff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GADFacStaff.h; path = ../DB/GADFacStaff.h; sourceTree = "<group>"; };
+		365F5F881DA84AED0091D804 /* GADFacStaff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GADFacStaff.m; path = ../DB/GADFacStaff.m; sourceTree = "<group>"; };
 		369F78701DA0BB510064ACAF /* DB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		369F78741DA0BB510064ACAF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		369F78761DA0BB510064ACAF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -71,12 +114,16 @@
 		369F789A1DA0BB510064ACAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		369F78A61DA0C5950064ACAF /* GADDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADDetailViewController.h; sourceTree = "<group>"; };
 		369F78A71DA0C5950064ACAF /* GADDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GADDetailViewController.m; sourceTree = "<group>"; };
-		369F78A91DA18C880064ACAF /* GADPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADPerson.h; sourceTree = "<group>"; };
-		369F78AA1DA18C880064ACAF /* GADPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GADPerson.m; sourceTree = "<group>"; };
-		36C20DBE1DCF871400B6B5A5 /* GADDirectory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADDirectory.h; sourceTree = "<group>"; };
-		36C20DBF1DCF871400B6B5A5 /* GADDirectory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GADDirectory.m; sourceTree = "<group>"; };
+		369F78A91DA18C880064ACAF /* GADPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GADPerson.h; path = ../DB/GADPerson.h; sourceTree = "<group>"; };
+		369F78AA1DA18C880064ACAF /* GADPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GADPerson.m; path = ../DB/GADPerson.m; sourceTree = "<group>"; };
 		36F7B1061DBCFFE800B14C50 /* GADListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADListViewController.h; sourceTree = "<group>"; };
 		36F7B1071DBCFFE800B14C50 /* GADListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GADListViewController.m; sourceTree = "<group>"; };
+		FAFB93EF1E4FAF1400A68015 /* GADDirectory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GADDirectory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAFB93F11E4FAF1400A68015 /* GADDirectory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GADDirectory.h; sourceTree = "<group>"; };
+		FAFB93F21E4FAF1400A68015 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAFB93F71E4FAF1400A68015 /* GADDirectoryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GADDirectoryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAFB93FE1E4FAF1400A68015 /* GADDirectoryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GADDirectoryTests.m; sourceTree = "<group>"; };
+		FAFB94001E4FAF1400A68015 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAFB94041E4FAF1400A68015 /* GADDirectory.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +149,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FAFB93EB1E4FAF1400A68015 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAFB93F41E4FAF1400A68015 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAFB93F81E4FAF1400A68015 /* GADDirectory.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -108,8 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				369F78721DA0BB510064ACAF /* DB */,
-				369F788C1DA0BB510064ACAF /* DBTests */,
-				369F78971DA0BB510064ACAF /* DBUITests */,
+				FAFB93F01E4FAF1400A68015 /* GADDirectory */,
 				369F78711DA0BB510064ACAF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -120,6 +182,8 @@
 				369F78701DA0BB510064ACAF /* DB.app */,
 				369F78891DA0BB510064ACAF /* DBTests.xctest */,
 				369F78941DA0BB510064ACAF /* DBUITests.xctest */,
+				FAFB93EF1E4FAF1400A68015 /* GADDirectory.framework */,
+				FAFB93F71E4FAF1400A68015 /* GADDirectoryTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -127,16 +191,42 @@
 		369F78721DA0BB510064ACAF /* DB */ = {
 			isa = PBXGroup;
 			children = (
-				369F78761DA0BB510064ACAF /* AppDelegate.h */,
-				369F78771DA0BB510064ACAF /* AppDelegate.m */,
-				369F78791DA0BB510064ACAF /* ViewController.h */,
-				369F787A1DA0BB510064ACAF /* ViewController.m */,
-				36F7B1061DBCFFE800B14C50 /* GADListViewController.h */,
-				36F7B1071DBCFFE800B14C50 /* GADListViewController.m */,
-				369F78A61DA0C5950064ACAF /* GADDetailViewController.h */,
-				369F78A71DA0C5950064ACAF /* GADDetailViewController.m */,
-				36C20DBE1DCF871400B6B5A5 /* GADDirectory.h */,
-				36C20DBF1DCF871400B6B5A5 /* GADDirectory.m */,
+				FAFB941A1E4FAF7200A68015 /* Internals */,
+				369F787F1DA0BB510064ACAF /* Assets.xcassets */,
+				FAFB94191E4FAF6900A68015 /* Cells */,
+				FAFB94181E4FAF5B00A68015 /* Storyboards */,
+				FAFB94171E4FAF4E00A68015 /* View Controllers */,
+				369F788C1DA0BB510064ACAF /* Tests */,
+			);
+			path = DB;
+			sourceTree = "<group>";
+		};
+		369F788C1DA0BB510064ACAF /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				369F78971DA0BB510064ACAF /* UI */,
+				369F788D1DA0BB510064ACAF /* DBTests.m */,
+				369F788F1DA0BB510064ACAF /* Info.plist */,
+			);
+			name = Tests;
+			path = DBTests;
+			sourceTree = SOURCE_ROOT;
+		};
+		369F78971DA0BB510064ACAF /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				369F78981DA0BB510064ACAF /* DBUITests.m */,
+				369F789A1DA0BB510064ACAF /* Info.plist */,
+			);
+			name = UI;
+			path = ../DBUITests;
+			sourceTree = "<group>";
+		};
+		FAFB93F01E4FAF1400A68015 /* GADDirectory */ = {
+			isa = PBXGroup;
+			children = (
+				FAFB93FD1E4FAF1400A68015 /* Tests */,
+				FAFB93F11E4FAF1400A68015 /* GADDirectory.h */,
 				369F78A91DA18C880064ACAF /* GADPerson.h */,
 				369F78AA1DA18C880064ACAF /* GADPerson.m */,
 				365F5F871DA84AED0091D804 /* GADFacStaff.h */,
@@ -145,45 +235,80 @@
 				365F5F7F1DA849660091D804 /* GADStudent.m */,
 				365F5F811DA84A390091D804 /* GADSGA.h */,
 				365F5F821DA84A390091D804 /* GADSGA.m */,
+				FAFB93F21E4FAF1400A68015 /* Info.plist */,
+			);
+			path = GADDirectory;
+			sourceTree = "<group>";
+		};
+		FAFB93FD1E4FAF1400A68015 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				FAFB93FE1E4FAF1400A68015 /* GADDirectoryTests.m */,
+				FAFB94001E4FAF1400A68015 /* Info.plist */,
+			);
+			name = Tests;
+			path = GADDirectoryTests;
+			sourceTree = SOURCE_ROOT;
+		};
+		FAFB94171E4FAF4E00A68015 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				369F78791DA0BB510064ACAF /* ViewController.h */,
+				369F787A1DA0BB510064ACAF /* ViewController.m */,
+				36F7B1061DBCFFE800B14C50 /* GADListViewController.h */,
+				36F7B1071DBCFFE800B14C50 /* GADListViewController.m */,
+				369F78A61DA0C5950064ACAF /* GADDetailViewController.h */,
+				369F78A71DA0C5950064ACAF /* GADDetailViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		FAFB94181E4FAF5B00A68015 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
 				369F787C1DA0BB510064ACAF /* Main.storyboard */,
-				369F787F1DA0BB510064ACAF /* Assets.xcassets */,
 				369F78811DA0BB510064ACAF /* LaunchScreen.storyboard */,
-				369F78841DA0BB510064ACAF /* Info.plist */,
-				369F78731DA0BB510064ACAF /* Supporting Files */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		FAFB94191E4FAF6900A68015 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
 				361EC0901DEAAC1600F011F6 /* textTableViewCell.h */,
 				361EC0911DEAAC1600F011F6 /* textTableViewCell.m */,
 				361EC0921DEAAC1600F011F6 /* textTableViewCell.xib */,
 			);
-			path = DB;
+			name = Cells;
 			sourceTree = "<group>";
 		};
-		369F78731DA0BB510064ACAF /* Supporting Files */ = {
+		FAFB941A1E4FAF7200A68015 /* Internals */ = {
 			isa = PBXGroup;
 			children = (
+				369F78761DA0BB510064ACAF /* AppDelegate.h */,
+				369F78771DA0BB510064ACAF /* AppDelegate.m */,
+				369F78841DA0BB510064ACAF /* Info.plist */,
 				369F78741DA0BB510064ACAF /* main.m */,
 			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		369F788C1DA0BB510064ACAF /* DBTests */ = {
-			isa = PBXGroup;
-			children = (
-				369F788D1DA0BB510064ACAF /* DBTests.m */,
-				369F788F1DA0BB510064ACAF /* Info.plist */,
-			);
-			path = DBTests;
-			sourceTree = "<group>";
-		};
-		369F78971DA0BB510064ACAF /* DBUITests */ = {
-			isa = PBXGroup;
-			children = (
-				369F78981DA0BB510064ACAF /* DBUITests.m */,
-				369F789A1DA0BB510064ACAF /* Info.plist */,
-			);
-			path = DBUITests;
+			name = Internals;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		FAFB93EC1E4FAF1400A68015 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAFB94011E4FAF1400A68015 /* GADDirectory.h in Headers */,
+				FAFB94151E4FAF2E00A68015 /* GADSGA.h in Headers */,
+				FAFB94111E4FAF2E00A68015 /* GADFacStaff.h in Headers */,
+				FAFB940F1E4FAF2E00A68015 /* GADPerson.h in Headers */,
+				FAFB94131E4FAF2E00A68015 /* GADStudent.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		369F786F1DA0BB510064ACAF /* DB */ = {
@@ -193,10 +318,12 @@
 				369F786C1DA0BB510064ACAF /* Sources */,
 				369F786D1DA0BB510064ACAF /* Frameworks */,
 				369F786E1DA0BB510064ACAF /* Resources */,
+				FAFB94091E4FAF1400A68015 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				FAFB94031E4FAF1400A68015 /* PBXTargetDependency */,
 			);
 			name = DB;
 			productName = DB;
@@ -239,13 +366,50 @@
 			productReference = 369F78941DA0BB510064ACAF /* DBUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		FAFB93EE1E4FAF1400A68015 /* GADDirectory */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAFB94061E4FAF1400A68015 /* Build configuration list for PBXNativeTarget "GADDirectory" */;
+			buildPhases = (
+				FAFB93EA1E4FAF1400A68015 /* Sources */,
+				FAFB93EB1E4FAF1400A68015 /* Frameworks */,
+				FAFB93EC1E4FAF1400A68015 /* Headers */,
+				FAFB93ED1E4FAF1400A68015 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GADDirectory;
+			productName = GADDirectory;
+			productReference = FAFB93EF1E4FAF1400A68015 /* GADDirectory.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FAFB93F61E4FAF1400A68015 /* GADDirectoryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAFB940A1E4FAF1400A68015 /* Build configuration list for PBXNativeTarget "GADDirectoryTests" */;
+			buildPhases = (
+				FAFB93F31E4FAF1400A68015 /* Sources */,
+				FAFB93F41E4FAF1400A68015 /* Frameworks */,
+				FAFB93F51E4FAF1400A68015 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FAFB93FA1E4FAF1400A68015 /* PBXTargetDependency */,
+				FAFB93FC1E4FAF1400A68015 /* PBXTargetDependency */,
+			);
+			name = GADDirectoryTests;
+			productName = GADDirectoryTests;
+			productReference = FAFB93F71E4FAF1400A68015 /* GADDirectoryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		369F78681DA0BB510064ACAF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = AppDev;
 				TargetAttributes = {
 					369F786F1DA0BB510064ACAF = {
@@ -259,6 +423,16 @@
 					};
 					369F78931DA0BB510064ACAF = {
 						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 369F786F1DA0BB510064ACAF;
+					};
+					FAFB93EE1E4FAF1400A68015 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					FAFB93F61E4FAF1400A68015 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = H69TS4DPUJ;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 369F786F1DA0BB510064ACAF;
 					};
@@ -280,6 +454,8 @@
 				369F786F1DA0BB510064ACAF /* DB */,
 				369F78881DA0BB510064ACAF /* DBTests */,
 				369F78931DA0BB510064ACAF /* DBUITests */,
+				FAFB93EE1E4FAF1400A68015 /* GADDirectory */,
+				FAFB93F61E4FAF1400A68015 /* GADDirectoryTests */,
 			);
 		};
 /* End PBXProject section */
@@ -310,6 +486,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FAFB93ED1E4FAF1400A68015 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAFB93F51E4FAF1400A68015 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -317,12 +507,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36C20DC01DCF871400B6B5A5 /* GADDirectory.m in Sources */,
-				365F5F801DA849660091D804 /* GADStudent.m in Sources */,
 				369F787B1DA0BB510064ACAF /* ViewController.m in Sources */,
-				365F5F891DA84AED0091D804 /* GADFacStaff.m in Sources */,
-				369F78AB1DA18C880064ACAF /* GADPerson.m in Sources */,
-				365F5F831DA84A390091D804 /* GADSGA.m in Sources */,
 				369F78781DA0BB510064ACAF /* AppDelegate.m in Sources */,
 				36F7B1081DBCFFE800B14C50 /* GADListViewController.m in Sources */,
 				369F78A81DA0C5950064ACAF /* GADDetailViewController.m in Sources */,
@@ -347,6 +532,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FAFB93EA1E4FAF1400A68015 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAFB94121E4FAF2E00A68015 /* GADFacStaff.m in Sources */,
+				FAFB94161E4FAF2E00A68015 /* GADSGA.m in Sources */,
+				FAFB94141E4FAF2E00A68015 /* GADStudent.m in Sources */,
+				FAFB94101E4FAF2E00A68015 /* GADPerson.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAFB93F31E4FAF1400A68015 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAFB93FF1E4FAF1400A68015 /* GADDirectoryTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -359,6 +563,21 @@
 			isa = PBXTargetDependency;
 			target = 369F786F1DA0BB510064ACAF /* DB */;
 			targetProxy = 369F78951DA0BB510064ACAF /* PBXContainerItemProxy */;
+		};
+		FAFB93FA1E4FAF1400A68015 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FAFB93EE1E4FAF1400A68015 /* GADDirectory */;
+			targetProxy = FAFB93F91E4FAF1400A68015 /* PBXContainerItemProxy */;
+		};
+		FAFB93FC1E4FAF1400A68015 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 369F786F1DA0BB510064ACAF /* DB */;
+			targetProxy = FAFB93FB1E4FAF1400A68015 /* PBXContainerItemProxy */;
+		};
+		FAFB94031E4FAF1400A68015 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FAFB93EE1E4FAF1400A68015 /* GADDirectory */;
+			targetProxy = FAFB94021E4FAF1400A68015 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -400,6 +619,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -447,6 +667,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -538,6 +759,82 @@
 			};
 			name = Release;
 		};
+		FAFB94071E4FAF1400A68015 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = GADDirectory/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.grinnell.appdev.db.GADDirectory;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FAFB94081E4FAF1400A68015 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = GADDirectory/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.grinnell.appdev.db.GADDirectory;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FAFB940B1E4FAF1400A68015 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				DEVELOPMENT_TEAM = H69TS4DPUJ;
+				INFOPLIST_FILE = GADDirectoryTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.grinnell.appdev.db.GADDirectoryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DB.app/DB";
+			};
+			name = Debug;
+		};
+		FAFB940C1E4FAF1400A68015 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				DEVELOPMENT_TEAM = H69TS4DPUJ;
+				INFOPLIST_FILE = GADDirectoryTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.grinnell.appdev.db.GADDirectoryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DB.app/DB";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -576,6 +873,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		FAFB94061E4FAF1400A68015 /* Build configuration list for PBXNativeTarget "GADDirectory" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAFB94071E4FAF1400A68015 /* Debug */,
+				FAFB94081E4FAF1400A68015 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FAFB940A1E4FAF1400A68015 /* Build configuration list for PBXNativeTarget "GADDirectoryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAFB940B1E4FAF1400A68015 /* Debug */,
+				FAFB940C1E4FAF1400A68015 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

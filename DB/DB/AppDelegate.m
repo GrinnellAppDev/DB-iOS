@@ -1,12 +1,5 @@
-//
-//  AppDelegate.m
-//  DB
-//
-//  Created by AppDev on 10/1/16.
-//  Copyright © 2016 AppDev. All rights reserved.
-//
-
 #import "AppDelegate.h"
+#import <GADDirectory/GADDirectory.h>
 
 @interface AppDelegate ()
 

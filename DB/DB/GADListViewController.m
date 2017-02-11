@@ -1,11 +1,3 @@
-//
-//  GADListViewController.m
-//  DB
-//
-//  Created by AppDev on 10/23/16.
-//  Copyright © 2016 AppDev. All rights reserved.
-//
-
 #import "GADListViewController.h"
 #import "GADDetailViewController.h"
 #import "GADPerson.h"
@@ -35,7 +27,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    listOfPeople = self.directory.people;
+    listOfPeople = @[];
     
     // Do any additional setup after loading the view.
 }
