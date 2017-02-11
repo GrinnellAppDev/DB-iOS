@@ -1,5 +1,12 @@
-# NewDB-iOS
+# Grinnell Campus Directory: iOS
 
-Next: 
-1. dict to properties
-2. add enum
+## Requirements
+  * Mac
+  * Xcode
+  * [Cocoapods](https://cocoapods.org/)
+    * `sudo gem install cocoapods`
+
+## Setup
+  1. `git clone` this repository
+  2. `pod install`
+  3. `open Publications.xcworkspace`
