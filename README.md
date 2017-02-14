@@ -9,4 +9,4 @@
 ## Setup
   1. `git clone` this repository
   2. `pod install`
-  3. `open Publications.xcworkspace`
+  3. `open DB.xcworkspace`
