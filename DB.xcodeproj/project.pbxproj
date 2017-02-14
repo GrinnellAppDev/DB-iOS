@@ -22,6 +22,7 @@
 		36F7B1081DBCFFE800B14C50 /* GADListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36F7B1071DBCFFE800B14C50 /* GADListViewController.m */; };
 		3E5019EE1546E3B4CCDB7212 /* libPods-DBUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A1B2EAB55570A3371F080B5 /* libPods-DBUITests.a */; };
 		570397C8A53689D003BDC5C1 /* libPods-GADDirectoryTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ED96211BD6738D51ECD503F6 /* libPods-GADDirectoryTests.a */; };
+		A89BAD5C1E52C143005DB3FA /* numberTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A89BAD5B1E52C143005DB3FA /* numberTableViewCell.m */; };
 		B9E130179E0545630B82F220 /* libPods-GADDirectory.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 667859B1AA031C79927E836D /* libPods-GADDirectory.a */; };
 		C1DB7D361DADF79378CECCD4 /* libPods-DBTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 219653412E19E7355DC5B308 /* libPods-DBTests.a */; };
 		FAFB93F81E4FAF1400A68015 /* GADDirectory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFB93EF1E4FAF1400A68015 /* GADDirectory.framework */; };
@@ -133,6 +134,8 @@
 		8178A8EB161223C4A7295094 /* Pods-DB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DB/Pods-DB.debug.xcconfig"; sourceTree = "<group>"; };
 		83946FA003C12FC0DEF561D5 /* libPods-DB.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DB.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9446F08323FB3C63AE76C67E /* Pods-GADDirectoryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GADDirectoryTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GADDirectoryTests/Pods-GADDirectoryTests.release.xcconfig"; sourceTree = "<group>"; };
+		A89BAD5A1E52C143005DB3FA /* numberTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = numberTableViewCell.h; sourceTree = "<group>"; };
+		A89BAD5B1E52C143005DB3FA /* numberTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = numberTableViewCell.m; sourceTree = "<group>"; };
 		C75158EFF1AF6F0320731115 /* Pods-DBTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DBTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DBTests/Pods-DBTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D4A24CE042089F25E7F3AF33 /* Pods-DBTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DBTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DBTests/Pods-DBTests.release.xcconfig"; sourceTree = "<group>"; };
 		E1ADC26DECD46784ADA1F230 /* Pods-GADDirectory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GADDirectory.release.xcconfig"; path = "Pods/Target Support Files/Pods-GADDirectory/Pods-GADDirectory.release.xcconfig"; sourceTree = "<group>"; };
@@ -334,6 +337,8 @@
 				361EC0901DEAAC1600F011F6 /* textTableViewCell.h */,
 				361EC0911DEAAC1600F011F6 /* textTableViewCell.m */,
 				361EC0921DEAAC1600F011F6 /* textTableViewCell.xib */,
+				A89BAD5A1E52C143005DB3FA /* numberTableViewCell.h */,
+				A89BAD5B1E52C143005DB3FA /* numberTableViewCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -792,6 +797,7 @@
 			files = (
 				369F787B1DA0BB510064ACAF /* ViewController.m in Sources */,
 				369F78781DA0BB510064ACAF /* AppDelegate.m in Sources */,
+				A89BAD5C1E52C143005DB3FA /* numberTableViewCell.m in Sources */,
 				36F7B1081DBCFFE800B14C50 /* GADListViewController.m in Sources */,
 				369F78A81DA0C5950064ACAF /* GADDetailViewController.m in Sources */,
 				369F78751DA0BB510064ACAF /* main.m in Sources */,
@@ -1174,6 +1180,7 @@
 				FAFB94081E4FAF1400A68015 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FAFB940A1E4FAF1400A68015 /* Build configuration list for PBXNativeTarget "GADDirectoryTests" */ = {
 			isa = XCConfigurationList;
@@ -1182,6 +1189,7 @@
 				FAFB940C1E4FAF1400A68015 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
