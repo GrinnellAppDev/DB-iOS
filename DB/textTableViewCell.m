@@ -11,6 +11,11 @@
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    
+    UIView *backView = [[UIView alloc] initWithFrame:self.frame];
+    backView.backgroundColor = [UIColor whiteColor];
+    self.selectedBackgroundView = backView;
+    
     [super setSelected:selected animated:animated];
     textField.attributedPlaceholder =[[NSAttributedString alloc] initWithString: self.placeholderText attributes:nil];
     if (self.isSelected) {
