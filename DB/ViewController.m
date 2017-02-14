@@ -1,6 +1,7 @@
 #import "ViewController.h"
 #import "GADListViewController.h"
 #import "GADDirectory.h"
+#import "textTableViewCell.h"
 
 @interface ViewController ()
 
@@ -21,8 +22,8 @@
         [searchField[indexPath.row] isEqualToString:@"Computer Username"] ||
         [searchField[indexPath.row] isEqualToString:@"Home Address"]) {
 
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"textCell"];
-        cell.textLabel.text = searchField[indexPath.row];
+        textTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"textCell"];
+        cell.placeholderText = searchField[indexPath.row];
         return cell;
         
     } else if ([searchField[indexPath.row] isEqualToString:@"Fac/Staff Dept/Office"] ||

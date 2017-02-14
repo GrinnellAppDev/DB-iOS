@@ -12,10 +12,12 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-    if (self.isSelected) {
+    textField.attributedPlaceholder =[[NSAttributedString alloc] initWithString: self.placeholderText attributes:nil];
+    if (self.isSelected ) {
         self.textLabel.textColor = [UIColor whiteColor];
         textField.hidden = false;
         textField.selected = true;
+        textField.highlighted = true;
     }
 
     // Configure the view for the selected state
