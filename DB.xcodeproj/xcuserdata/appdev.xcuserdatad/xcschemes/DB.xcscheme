@@ -48,6 +48,16 @@
                ReferencedContainer = "container:DB.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "FAFB93F61E4FAF1400A68015"
+               BuildableName = "GADDirectoryTests.xctest"
+               BlueprintName = "GADDirectoryTests"
+               ReferencedContainer = "container:DB.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

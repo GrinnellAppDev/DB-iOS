@@ -1,6 +1,6 @@
 #import <UIKit/UIKit.h>
 
-@interface textTableViewCell : UITableViewCell
+@interface GADTextTableViewCell : UITableViewCell
 
 @property (nonatomic, strong) NSString *placeholderText;
 

@@ -6,9 +6,9 @@
 //  Copyright © 2017 AppDev. All rights reserved.
 //
 
-#import "numberTableViewCell.h"
+#import "GADNumberTableViewCell.h"
 
-@implementation numberTableViewCell {
+@implementation GADNumberTableViewCell {
     
     __weak IBOutlet UITextField *numberField;
 }
