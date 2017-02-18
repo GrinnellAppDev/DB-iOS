@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface numberTableViewCell : UITableViewCell
+@interface GADNumberTableViewCell : UITableViewCell
 
 @property (nonatomic, strong) NSString *placeholderText;
 

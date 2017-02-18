@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>GADDirectory.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -23,6 +28,16 @@
 			<true/>
 		</dict>
 		<key>369F78931DA0BB510064ACAF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FAFB93EE1E4FAF1400A68015</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FAFB93F61E4FAF1400A68015</key>
 		<dict>
 			<key>primary</key>
 			<true/>

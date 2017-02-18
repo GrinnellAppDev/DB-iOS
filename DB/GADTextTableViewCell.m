@@ -1,6 +1,6 @@
-#import "textTableViewCell.h"
+#import "GADTextTableViewCell.h"
 
-@implementation textTableViewCell {
+@implementation GADTextTableViewCell {
     
     __weak IBOutlet UITextField *textField;
 }

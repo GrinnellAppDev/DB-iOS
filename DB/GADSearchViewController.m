@@ -1,13 +1,14 @@
-#import "ViewController.h"
+#import "GADSearchViewController.h"
 #import "GADListViewController.h"
 #import "GADDirectory.h"
-#import "textTableViewCell.h"
+#import "GADTextTableViewCell.h"
+#import "GADNumberTableViewCell.h"
 
-@interface ViewController ()
+@interface GADSearchViewController ()
 
 @end
 
-@implementation ViewController {
+@implementation GADSearchViewController {
     NSArray *searchField;
 }
 
@@ -22,7 +23,7 @@
         [searchField[indexPath.row] isEqualToString:@"Computer Username"] ||
         [searchField[indexPath.row] isEqualToString:@"Home Address"]) {
 
-        textTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"textCell"];
+        GADTextTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"textCell"];
         cell.placeholderText = searchField[indexPath.row];
         return cell;
         
@@ -40,8 +41,8 @@
         
     } else {
         
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"numberCell"];
-        cell.textLabel.text = searchField[indexPath.row];
+        GADNumberTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"numberCell"];
+        cell.placeholderText = searchField[indexPath.row];
         return cell;
         
     }
