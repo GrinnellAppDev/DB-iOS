@@ -12,42 +12,48 @@
     NSArray *searchField;
 }
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return searchField.count;
 }
 
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
+}
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ([searchField[indexPath.row] isEqualToString:@"Last name"] ||
-        [searchField[indexPath.row] isEqualToString:@"First name"] ||
-        [searchField[indexPath.row] isEqualToString:@"Campus Address or P.O. Box"] ||
-        [searchField[indexPath.row] isEqualToString:@"Computer Username"] ||
-        [searchField[indexPath.row] isEqualToString:@"Home Address"]) {
+    if ((indexPath.row == 0) &&
+        ([searchField[indexPath.section] isEqualToString:@"Last name"] ||
+         [searchField[indexPath.section] isEqualToString:@"First name"] ||
+         [searchField[indexPath.section] isEqualToString:@"Campus Address or P.O. Box"] ||
+         [searchField[indexPath.section] isEqualToString:@"Computer Username"] ||
+         [searchField[indexPath.section] isEqualToString:@"Home Address"])) {
 
         GADTextTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"textCell"];
-        cell.placeholderText = searchField[indexPath.row];
+        cell.placeholderText = searchField[indexPath.section];
         return cell;
         
-    } else if ([searchField[indexPath.row] isEqualToString:@"Fac/Staff Dept/Office"] ||
-               [searchField[indexPath.row] isEqualToString:@"Fac/Staff Dept/Office"] ||
-               [searchField[indexPath.row] isEqualToString:@"Student Major"] ||
-               [searchField[indexPath.row] isEqualToString:@"Hiatus"] ||
-               [searchField[indexPath.row] isEqualToString:@"SGA"] ||
-               [searchField[indexPath.row] isEqualToString:@"Concentration"] ||
-               [searchField[indexPath.row] isEqualToString:@"Student Class"]) {
+    } else if ((indexPath.row == 0) &&
+               ([searchField[indexPath.section] isEqualToString:@"Fac/Staff Dept/Office"] ||
+                [searchField[indexPath.section] isEqualToString:@"Fac/Staff Dept/Office"] ||
+                [searchField[indexPath.section] isEqualToString:@"Student Major"] ||
+                [searchField[indexPath.section] isEqualToString:@"Hiatus"] ||
+                [searchField[indexPath.section] isEqualToString:@"SGA"] ||
+                [searchField[indexPath.section] isEqualToString:@"Concentration"] ||
+                [searchField[indexPath.section] isEqualToString:@"Student Class"])) {
         
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"pickerCell"];
-        cell.textLabel.text = searchField[indexPath.row];
+        cell.textLabel.text = searchField[indexPath.section];
         return cell;
-        
+                   
     } else {
         
         GADNumberTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"numberCell"];
-        cell.placeholderText = searchField[indexPath.row];
+        cell.placeholderText = searchField[indexPath.section];
         return cell;
         
     }
-    
 }
+
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     //NSString *segueName = @"showList";
