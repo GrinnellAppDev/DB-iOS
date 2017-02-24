@@ -4,6 +4,13 @@
 
 @implementation GADFacStaff
 
+-(GADFacStaff *)init{
+    if (self = [super init]){
+        self.type = FacStaff;
+    }
+    return self;
+}
+
 -(GADFacStaff *)initWithDictionary:(NSDictionary *)dict {
     GADFacStaff *facStaff = [GADFacStaff alloc];
     facStaff.type = FacStaff;

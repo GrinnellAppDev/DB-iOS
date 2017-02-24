@@ -2,6 +2,13 @@
 
 @implementation GADSGA
 
+-(GADSGA *)init{
+    if (self = [super init]){
+        self.type = SGA;
+    }
+    return self;
+}
+
 -(GADSGA *)initWithDictionary:(NSDictionary *)dict {
     GADSGA *sga = [GADSGA alloc];
     sga.type = SGA;
