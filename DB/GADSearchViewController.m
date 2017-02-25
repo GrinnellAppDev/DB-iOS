@@ -14,9 +14,10 @@
     NSArray *major;
     NSArray *selected;
     NSArray *department;
-    NSArray *sGA;
+    NSArray *SGA;
     NSArray *concentration;
     NSArray *studentClass;
+    NSArray *hiatus;
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -54,12 +55,36 @@
         cell.textLabel.text = searchField[indexPath.section];
         return cell;
                    
-               }else if ((indexPath.row == 1) && [searchField[indexPath.section] isEqualToString:@"Fac/Staff Dept/Office"]) {
-                   GADPickerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"pickerViewCell"];
-                   cell.options=department;
-               }
+    } else if (indexPath.row == 1) {
+        
+        // Create a picker view cell with options according to selected header
+        if ([searchField[indexPath.section] isEqualToString:@"Fac/Staff Dept/Office"]) {
+            GADPickerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"pickerViewCell"];
+            cell.options=department;
+            
+        } else if ([searchField[indexPath.section] isEqualToString:@"Student Major"]) {
+            GADPickerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"pickerViewCell"];
+            cell.options=major;
+            
+        } else if ([searchField[indexPath.section] isEqualToString:@"Hiatus"]) {
+            GADPickerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"pickerViewCell"];
+            cell.options=hiatus;
+            
+        } else if ([searchField[indexPath.section] isEqualToString:@"SGA"]) {
+            GADPickerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"pickerViewCell"];
+            cell.options=SGA;
+            
+        } else if ([searchField[indexPath.section] isEqualToString:@"Concentration"]) {
+            GADPickerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"pickerViewCell"];
+            cell.options=concentration;
+            
+        } else {
+            GADPickerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"pickerViewCell"];
+            cell.options=studentClass;
+            
+        }
     
-    else {
+    } else {
         
         GADNumberTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"numberCell"];
         cell.placeholderText = searchField[indexPath.section];
@@ -91,11 +116,11 @@
     [selected init];
     searchField = @[@"Last name", @"First name", @"Campus Address or P.O. Box", @"Fac/Staff Dept/Office", @"Student Major", @"Hiatus",@"Computer Username", @"Campus Phone", @"Home Address", @"SGA", @"Concentration", @"Student Class"];
     major = @[@"Math", @"Computer Science"];
-    department = @[@"accounting", @"Admission"];
-    sGA = @[@"President",@"Treasurer"];
+    department = @[@"Accounting", @"Admission"];
+    SGA = @[@"President",@"Treasurer"];
     concentration = @[@"American Studies", @"Environmental Studies"];
     studentClass = @[@"2017", @"2018", @"2019", @"2020"];
-    
+    hiatus = @[@"Grinnell in London", @"Grinnell in Washington"];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
