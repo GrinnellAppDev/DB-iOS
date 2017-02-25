@@ -90,8 +90,12 @@
     [super viewDidLoad];
     [selected init];
     searchField = @[@"Last name", @"First name", @"Campus Address or P.O. Box", @"Fac/Staff Dept/Office", @"Student Major", @"Hiatus",@"Computer Username", @"Campus Phone", @"Home Address", @"SGA", @"Concentration", @"Student Class"];
-    major = @[@"Math", @"Computer science"];
-    department = @[@"Physics"];
+    major = @[@"Math", @"Computer Science"];
+    department = @[@"accounting", @"Admission"];
+    sGA = @[@"President",@"Treasurer"];
+    concentration = @[@"American Studies", @"Environmental Studies"];
+    studentClass = @[@"2017", @"2018", @"2019", @"2020"];
+    
     // Do any additional setup after loading the view, typically from a nib.
 }
 
