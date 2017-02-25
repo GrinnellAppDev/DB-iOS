@@ -3,6 +3,13 @@
 
 @implementation GADStudent
 
+-(GADStudent *)init{
+    if (self = [super init]){
+        self.type = Student;
+    }
+    return self;
+}
+
 -(GADStudent *)initWithDictionary:(NSDictionary *)dict {
     GADStudent *student = [GADStudent alloc];
     student.type = Student;

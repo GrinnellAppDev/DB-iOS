@@ -1,8 +1,11 @@
 #import <Foundation/Foundation.h>
 
+typedef enum {Student, FacStaff, SGA} GADPersonType;
+
+
 @interface GADPerson : NSObject
 
-@property (nonatomic) enum {Student, FacStaff, SGA} type;
+@property (nonatomic) GADPersonType type;
 @property (nonatomic, strong) NSString *lastName;
 @property (nonatomic, strong) NSString *firstName;
 @property (nonatomic, strong) NSString *userName;
@@ -26,6 +29,10 @@
 @property (nonatomic, strong) NSString *deptMajorClass;
 
 -(GADPerson *)initWithDictionary: (NSDictionary *) dict;
+
++(NSArray <GADPerson*>*)dummyPeople; // returns a array of people, including student, faculty and SGA
+-(void)printInfo; // for back-end to use
+
 
 
 @end
