@@ -12,7 +12,7 @@
 @implementation GADSearchViewController {
     NSArray *searchField;
     NSArray *major;
-    NSArray *selected;
+    NSMutableArray *selected;
     NSArray *department;
     NSArray *SGA;
     NSArray *concentration;
@@ -25,7 +25,7 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (selected) return 2;
+    if (selected[section]) return 2;
     return 1;
 }
 
@@ -102,18 +102,26 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell =[tableView cellForRowAtIndexPath:indexPath];
-    if ([cell.reuseIdentifier isEqualToString:@"textCell"] ||
-        [cell.reuseIdentifier isEqualToString:@"numberCell"]) {
-        NSLog(@"##");
+    
+    if ([cell.reuseIdentifier isEqualToString:@"pickerCell"]) {
+        if ([selected[indexPath.section] isEqualToValue:@true]) { // This condition is never met...
+            selected[indexPath.section] = @false;
+        } else {
+            NSLog(@"%@", selected[indexPath.section]); // Always reports (null)
+            selected[indexPath.section] = @true;
+        }
     } else {
-        
+        NSLog(@"");
     }
     
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [selected init];
+    NSMutableArray *selected = [[NSMutableArray alloc] init];
+    for (int i=0; i<searchField.count; i++) {
+        selected[i] = @false; // We need to initialize to all false values at start, but it is not working.
+    }
     searchField = @[@"Last name", @"First name", @"Campus Address or P.O. Box", @"Fac/Staff Dept/Office", @"Student Major", @"Hiatus",@"Computer Username", @"Campus Phone", @"Home Address", @"SGA", @"Concentration", @"Student Class"];
     major = @[@"Math", @"Computer Science"];
     department = @[@"Accounting", @"Admission"];
