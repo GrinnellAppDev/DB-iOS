@@ -3,6 +3,7 @@
 #import "GADDirectory.h"
 #import "GADTextTableViewCell.h"
 #import "GADNumberTableViewCell.h"
+#import "GADPickerTableViewCell.h"
 
 @interface GADSearchViewController ()
 
@@ -15,7 +16,7 @@
     NSArray *department;
     NSArray *sGA;
     NSArray *concentration;
-    NSArray *studentClass
+    NSArray *studentClass;
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -23,7 +24,7 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (selected)
+    if (selected) return 2;
     return 1;
 }
 
@@ -54,8 +55,8 @@
         return cell;
                    
                }else if ((indexPath.row == 1) && [searchField[indexPath.section] isEqualToString:@"Fac/Staff Dept/Office"]) {
-                   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"pickerViewCell"];
-                   cell.options=
+                   GADPickerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"pickerViewCell"];
+                   cell.options=department;
                }
     
     else {
@@ -65,6 +66,7 @@
         return cell;
         
     }
+    return 0;
 }
 
 
@@ -89,7 +91,7 @@
     [selected init];
     searchField = @[@"Last name", @"First name", @"Campus Address or P.O. Box", @"Fac/Staff Dept/Office", @"Student Major", @"Hiatus",@"Computer Username", @"Campus Phone", @"Home Address", @"SGA", @"Concentration", @"Student Class"];
     major = @[@"Math", @"Computer science"];
-    department = @[@"]
+    department = @[@"Physics"];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
