@@ -10,6 +10,12 @@
 
 @implementation GADSearchViewController {
     NSArray *searchField;
+    NSArray *major;
+    NSArray *selected;
+    NSArray *department;
+    NSArray *sGA;
+    NSArray *concentration;
+    NSArray *studentClass
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -17,8 +23,11 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (selected)
     return 1;
 }
+
+
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if ((indexPath.row == 0) &&
@@ -34,7 +43,6 @@
         
     } else if ((indexPath.row == 0) &&
                ([searchField[indexPath.section] isEqualToString:@"Fac/Staff Dept/Office"] ||
-                [searchField[indexPath.section] isEqualToString:@"Fac/Staff Dept/Office"] ||
                 [searchField[indexPath.section] isEqualToString:@"Student Major"] ||
                 [searchField[indexPath.section] isEqualToString:@"Hiatus"] ||
                 [searchField[indexPath.section] isEqualToString:@"SGA"] ||
@@ -45,7 +53,12 @@
         cell.textLabel.text = searchField[indexPath.section];
         return cell;
                    
-    } else {
+               }else if ((indexPath.row == 1) && [searchField[indexPath.section] isEqualToString:@"Fac/Staff Dept/Office"]) {
+                   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"pickerViewCell"];
+                   cell.options=
+               }
+    
+    else {
         
         GADNumberTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"numberCell"];
         cell.placeholderText = searchField[indexPath.section];
@@ -66,14 +79,17 @@
         [cell.reuseIdentifier isEqualToString:@"numberCell"]) {
         NSLog(@"##");
     } else {
-        [cell.heightAnchor constraintEqualToAnchor:cell.heightAnchor multiplier:5];
+        
     }
     
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [selected init];
     searchField = @[@"Last name", @"First name", @"Campus Address or P.O. Box", @"Fac/Staff Dept/Office", @"Student Major", @"Hiatus",@"Computer Username", @"Campus Phone", @"Home Address", @"SGA", @"Concentration", @"Student Class"];
+    major = @[@"Math", @"Computer science"];
+    department = @[@"]
     // Do any additional setup after loading the view, typically from a nib.
 }
 
