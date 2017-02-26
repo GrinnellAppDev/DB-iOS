@@ -3,6 +3,12 @@
 #import "GADSGA.h"
 #import "GADFacStaff.h"
 
+@interface GADPerson()
+
+
+
+@end
+
 @implementation GADPerson
 
 -(GADPerson *)initWithDictionary: (NSDictionary *) dict {
@@ -93,6 +99,50 @@
     people=@[person1,person2,person3];
     
     return people;
+}
+
++ (void) fetchPersonInfoWithCriteria:(NSDictionary*)crit andUsername:(NSString*)usrname andPassword:(NSString*) pw completionHandler:(void(^_Nonnull)(NSArray<GADPerson *> *))completion {
+
+    NSMutableArray * queryItems = [NSMutableArray array];
+    for (NSString * key in crit){
+        [queryItems addObject:[NSURLQueryItem queryItemWithName:key value:crit[key]]];
+    }
+    NSURLComponents *components = [NSURLComponents componentsWithString:@"https://itwebappstest.grinnell.edu/DotNet/WebServices/api/db"];
+    components.queryItems=queryItems;
+    NSURL *url = components.URL;
+    
+    NSString *Post = [NSString stringWithFormat:@"{'un':'%@', 'pw':'%@'}",usrname,pw];
+    NSData *PostData = [Post dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *PostLength = [NSString stringWithFormat:@"%lu",(unsigned long)[PostData length]];
+    
+    NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
+    [req setHTTPMethod:@"POST"];
+    [req setValue:PostLength forHTTPHeaderField:@"Content-Length"];
+    [req setValue:@"application/json" forHTTPHeaderField: @"Content-Type"];
+    [req setHTTPBody:PostData];
+    
+    NSURLSessionDataTask *task = [[NSURLSession sharedSession]dataTaskWithRequest:req completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"EEERRRRORRRRR");
+            return;
+        }
+        
+        NSMutableArray <GADPerson*> * people=[NSMutableArray array];
+        NSArray *arr = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        
+        for (NSDictionary * entry in arr){
+            
+        GADPerson *person = [[GADPerson alloc]initWithDictionary:entry];
+         
+         [people addObject:person];
+         }
+        
+        completion(people);
+        
+    }];
+    
+    [task resume];
+    
 }
 
 
