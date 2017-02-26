@@ -56,8 +56,10 @@
 
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    //NSString *segueName = @"showList";
-    //NSData *data;
+    if ([segue.identifier isEqualToString:@"showSearchResult"]) {
+        GADListViewController *controller = (GADListViewController *)segue.destinationViewController;
+        controller.searchResult = [GADPerson dummyPeople];
+    }
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
