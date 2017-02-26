@@ -4,7 +4,6 @@
 #import "GADDirectory.h"
 
 @interface GADListViewController () {
-    NSArray *listOfPeople;
 }
 
 @end
@@ -12,23 +11,22 @@
 @implementation GADListViewController
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return listOfPeople.count;
+    return self.searchResult.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"listViewCell"];
     UIImage *profileImage = [UIImage imageNamed: @"ProfileImageEx.png"]; //need to change given data online
     [cell.imageView setImage:profileImage];
-    NSString *fullName = [[listOfPeople[indexPath.row] valueForKey:@"firstName"] stringByAppendingString: [listOfPeople[indexPath.row] valueForKey:@"lastName"]];
+    GADPerson *person=self.searchResult[indexPath.row];
+    NSString *fullName = [person.firstName stringByAppendingString: person.lastName];
     cell.textLabel.text = fullName;
-    cell.detailTextLabel.text = [listOfPeople[indexPath.row] valueForKey:@"major"];
+    //cell.detailTextLabel.text = [self.searchResult[indexPath.row] valueForKey:@"major"];
     return cell;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    listOfPeople = @[];
-    
     // Do any additional setup after loading the view.
 }
 
@@ -45,7 +43,7 @@
     NSString *segueName = @"showDetail";
     if ([segue.identifier isEqualToString:segueName]) {
         GADDetailViewController *dest = (GADDetailViewController *)segue.destinationViewController;
-        dest.person = listOfPeople[[sender indexPath].row];
+        dest.person = self.searchResult[[sender indexPath].row];
     }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
