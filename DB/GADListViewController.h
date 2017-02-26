@@ -3,6 +3,6 @@
 
 @interface GADListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
-//@property (nonatomic, strong) GADDirectory *directory;
+@property (nonatomic, strong) NSArray *searchResult;
 
 @end
