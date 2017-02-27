@@ -2,8 +2,6 @@
 
 typedef enum {Student, FacStaff, SGA} GADPersonType;
 
-
-
 @interface GADPerson : NSObject
 
 @property (nonatomic) GADPersonType type;
@@ -31,25 +29,37 @@ typedef enum {Student, FacStaff, SGA} GADPersonType;
 
 -(GADPerson *)initWithDictionary: (NSDictionary *) dict;
 
-+(NSArray <GADPerson*>*)dummyPeople; // returns an array of people, including student, faculty and SGA
-
-+ (void) fetchPersonInfoWithCriteria:(NSDictionary*)crit andUsername:(NSString*)usrname andPassword:(NSString*) pw completionHandler:(void(^_Nonnull)(NSArray<GADPerson *> *))completion; // This is important!!!!!!!!
-/*
-In order to use the method above, use the template
- 
- [GADPerson fetchPersonInfoWithCriteria:@{@"lastName":@"Chen",@"firstName":@"Ziwen"} andUsername:@"test1stu" andPassword:@"selfserv1" completionHandler:^void(NSArray<GADPerson *> * people){
- 
- //DO WHATEVER YOU WANT WITH people HERE!!!!!!!!!!
- 
- }];
- 
- This will return all people whose lastname is Chen and firstname is Ziwen.
- 
- Inside the completion handler, there's a GADPerson Array called people, containing the results the url returns for you to use.
- 
+/*!
+ @brief This method returns an array of people, including a student, a faculty and a SGA.
  */
++(NSArray <GADPerson*>*)dummyPeople;
 
--(void)printInfo; // for back-end to use
+/*!
+ @brief This method takes in a NSDictionary containing criteria and returns an array of GADPerson which fulfill the criteria. Username and Password required.
+ @discussion In order to use this method, use the template
+ 
+ @code
+    [GADPerson fetchPersonInfoWithCriteria:@{@"lastName":@"Chen",@"firstName":@"Ziwen"} 
+                                  Username:@"test1stu" 
+                                  Password:@"selfserv1"
+                         completionHandler:^void(NSArray<GADPerson *> * people){
+                         //DO WHATEVER YOU WANT WITH people HERE!!!!!!!!!!
+                         }];
+ @endcode
+ 
+ This code snippet will fetch all people whose lastname is Chen and firstname is Ziwen.
+ 
+ Inside the completion handler, there's a GADPerson Array called people (you can name it whatever you want actually), containing the results the url returns for you to use.
+ */
++(void) fetchPersonInfoWithCriteria:(NSDictionary*)criteria
+                           Username:(NSString*)username
+                           Password:(NSString*) password
+                  completionHandler:(void(^_Nonnull)(NSArray<GADPerson *> *))completion;
+
+/*!
+ @brief This method is for back-end to use.
+ */
+-(void)printInfo;
 
 
 
