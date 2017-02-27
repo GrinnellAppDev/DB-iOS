@@ -97,17 +97,20 @@ const NSTimeInterval timeoutInterval = 60.0;
     return people;
 }
 
-+ (void) fetchPersonInfoWithCriteria:(NSDictionary*)criteria Username:(NSString*)usrename Password:(NSString*) password completionHandler:(void(^_Nonnull)(NSArray<GADPerson *> *))completion {
++ (void)fetchPersonInfoWithCriteria:(NSDictionary*)criteria
+                           Username:(NSString*)username
+                           Password:(NSString*)password
+                  completionHandler:(void(^_Nonnull)(NSArray<GADPerson *> *))completion {
 
     NSMutableArray *queryItems = [NSMutableArray<NSURLQueryItem *> new];
     for (NSString *key in criteria){
         [queryItems addObject:[NSURLQueryItem queryItemWithName:key value:criteria[key]]];
     }
     NSURLComponents *components = [NSURLComponents componentsWithString:apiURL];
-    components.queryItems=queryItems;
+    components.queryItems = queryItems;
     NSURL *url = components.URL;
     
-    NSString *authenticationString = [NSString stringWithFormat:@"{'un':'%@', 'pw':'%@'}",usrename,password];
+    NSString *authenticationString = [NSString stringWithFormat:@"{'un':'%@', 'pw':'%@'}",username,password];
     NSData *bodyData = [authenticationString dataUsingEncoding:NSUTF8StringEncoding];
     NSString *bodyLength = [NSString stringWithFormat:@"%lu",(unsigned long)[bodyData length]];
     
@@ -123,7 +126,7 @@ const NSTimeInterval timeoutInterval = 60.0;
             return;
         }
         NSMutableArray <GADPerson*> *people=[NSMutableArray<GADPerson*> new];
-        NSError *JSONParsingError = [[NSError alloc]initWithDomain:NSCocoaErrorDomain code: NSPropertyListReadCorruptError userInfo:nil];
+        NSError *JSONParsingError;
         NSArray *arr = [NSJSONSerialization JSONObjectWithData:data options:0 error:&JSONParsingError];
         
         for (NSDictionary *entry in arr){
