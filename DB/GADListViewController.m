@@ -16,9 +16,10 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     GADResultTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"listViewCell"];
-    UIImage *profileImage = [UIImage imageNamed: @"ProfileImageEx.png"]; //need to change given data online
-    [cell.imageView setImage:profileImage];
     GADPerson *person = self.searchResult[indexPath.row];
+    NSData * imageData = [[NSData alloc] initWithContentsOfURL: person.imgPath];
+    UIImage *profileImage = [UIImage imageWithData: imageData];
+    [cell.imageView setImage:profileImage];
     NSString *fullName = [[person.firstName stringByAppendingString: @" "]stringByAppendingString: person.lastName];
     NSString *detail;
     if (person.type == Student || person.type == SGA) {
