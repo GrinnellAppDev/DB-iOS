@@ -5,7 +5,7 @@
 
 @interface GADListViewController () {
 }
-
+@property (weak, nonatomic) IBOutlet UITextView *resultTextView;
 @end
 
 @implementation GADListViewController
@@ -20,14 +20,16 @@
     [cell.imageView setImage:profileImage];
     GADPerson *person = self.searchResult[indexPath.row];
     NSString *fullName = [person.firstName stringByAppendingString: person.lastName];
-    cell.textLabel.text = fullName;
+    NSString *detail;
     if (person.type == Student || person.type == SGA) {
         GADStudent *student = (GADStudent *) person;
-        cell.detailTextLabel.text = student.major;
+        detail = student.classYear;
     } else if (person.type == FacStaff) {
         GADFacStaff *facStaff = (GADFacStaff *) person;
-        cell.detailTextLabel.text = facStaff.title[0];
+        detail = facStaff.deptMajorClass;
     }
+    
+    _resultTextView.text = [NSString stringWithFormat:@"%@\n%@\n%@", fullName, person.userName, detail];
     
     return cell;
 }
