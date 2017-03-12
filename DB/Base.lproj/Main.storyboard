@@ -190,6 +190,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="profileImage" destination="UWW-6t-8Js" id="b1j-Nh-fCL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2iq-EC-7Ng" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
