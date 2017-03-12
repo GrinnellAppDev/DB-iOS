@@ -10,4 +10,6 @@
 
 @interface GADResultTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UITextView *resultText;
+
 @end

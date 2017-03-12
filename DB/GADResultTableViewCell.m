@@ -8,7 +8,7 @@
 
 #import "GADResultTableViewCell.h"
 
-@implementation GADResultTableViewCell
+@implementation GADResultTableViewCell 
 
 - (void)awakeFromNib {
     [super awakeFromNib];

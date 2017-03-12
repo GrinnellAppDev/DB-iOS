@@ -1,11 +1,11 @@
 #import "GADListViewController.h"
 #import "GADDetailViewController.h"
+#import "GADResultTableViewCell.h"
 #import "GADPerson.h"
 #import "GADDirectory.h"
 
 @interface GADListViewController () {
 }
-@property (weak, nonatomic) IBOutlet UITextView *resultTextView;
 @end
 
 @implementation GADListViewController
@@ -15,7 +15,7 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"listViewCell"];
+    GADResultTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"listViewCell"];
     UIImage *profileImage = [UIImage imageNamed: @"ProfileImageEx.png"]; //need to change given data online
     [cell.imageView setImage:profileImage];
     GADPerson *person = self.searchResult[indexPath.row];
@@ -29,7 +29,7 @@
         detail = facStaff.deptMajorClass;
     }
     
-    _resultTextView.text = [NSString stringWithFormat:@"%@\n%@\n%@", fullName, person.userName, detail];
+    cell.resultText.text = [NSString stringWithFormat:@"%@\n%@\n%@", fullName, person.userName, detail];
     
     return cell;
 }
