@@ -19,14 +19,14 @@
     UIImage *profileImage = [UIImage imageNamed: @"ProfileImageEx.png"]; //need to change given data online
     [cell.imageView setImage:profileImage];
     GADPerson *person = self.searchResult[indexPath.row];
-    NSString *fullName = [person.firstName stringByAppendingString: person.lastName];
+    NSString *fullName = [[person.firstName stringByAppendingString: @" "]stringByAppendingString: person.lastName];
     NSString *detail;
     if (person.type == Student || person.type == SGA) {
         GADStudent *student = (GADStudent *) person;
         detail = student.classYear;
     } else if (person.type == FacStaff) {
         GADFacStaff *facStaff = (GADFacStaff *) person;
-        detail = facStaff.deptMajorClass;
+        detail = facStaff.title[0];
     }
     
     cell.resultText.text = [NSString stringWithFormat:@"%@\n%@\n%@", fullName, person.userName, detail];
