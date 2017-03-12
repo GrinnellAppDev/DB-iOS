@@ -31,6 +31,7 @@
     }
     
     cell.resultText.text = [NSString stringWithFormat:@"%@\n%@\n%@", fullName, person.userName, detail];
+    cell.resultText.userInteractionEnabled = NO;
     
     return cell;
 }
