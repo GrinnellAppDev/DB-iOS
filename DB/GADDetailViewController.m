@@ -5,12 +5,18 @@
 
 @end
 
-@implementation GADDetailViewController
+@implementation GADDetailViewController {
+    
+    __weak IBOutlet UIImageView *profileImage;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
         
-    // Do any additional setup after loading the view.
+    NSData * imageData = [[NSData alloc] initWithContentsOfURL: _person.imgPath];
+    UIImage *image = [UIImage imageWithData:imageData];
+    [profileImage setImage:image];
+    
 }
 
 - (void)didReceiveMemoryWarning {
