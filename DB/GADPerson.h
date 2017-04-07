@@ -51,7 +51,7 @@ typedef enum {Student, FacStaff, SGA} GADPersonType;
  
  Inside the completion handler, there's a GADPerson Array called people (you can name it whatever you want actually), containing the results the url returns for you to use.
  */
-+(void) fetchPersonInfoWithCriteria:(NSDictionary*)criteria
++(void) executeWithUsername:(NSDictionary*)criteria
                            Username:(NSString*)username
                            Password:(NSString*) password
                   completionHandler:(void(^_Nonnull)(NSArray<GADPerson *> *))completion;

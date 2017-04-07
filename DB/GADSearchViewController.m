@@ -74,7 +74,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     searchField = @[@"Last name", @"First name", @"Campus Address or P.O. Box", @"Fac/Staff Dept/Office", @"Student Major", @"Hiatus",@"Computer Username", @"Campus Phone", @"Home Address", @"SGA", @"Concentration", @"Student Class"];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    GADQuery *query = [GADQuery new];
+    [query setfirstName:@"Alex"];
+    [query setlastName:@"Mitchell"];
+    
+    //NSDictionary *dict = [query convertQueryObejectToDict];
+    //NSLog(@"%@",dict);
+    
+    [query fetchPersonInfoWithUsername:@"test1stu" Password:@"selfserv1" completionHandler:^void (NSArray<GADPerson *> *people) {
+        for (GADPerson *person in people){
+            [person printInfo];
+        }
+    
+    }];
 }
 
 

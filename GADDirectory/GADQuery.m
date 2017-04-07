@@ -10,45 +10,6 @@
 
 @implementation GADQuery
 
--(void)setlastName: (NSString*) lastName{
-    self.lastName=lastName;
-}
--(void)setfirstName: (NSString*) firstName {
-    self.firstName=firstName;
-}
-
--(void)setcampusAddressOrPOBox: (NSString*) campusAddressOrPOBox{
-    self.campusAddressOrPOBox=campusAddressOrPOBox;
-}
-
--(void)setFacStaffDeptOffice: (NSString*) FacStaffDeptOffice{
-    self.FacStaffDeptOffice=FacStaffDeptOffice;
-}
--(void)setstudentMajor: (NSString*) studentMajor{
-    self.studentMajor=studentMajor;
-}
--(void)sethiatus: (NSString*) hiatus{
-    self.hiatus=hiatus;
-}
--(void)setcomputerUsername: (NSString*)computerUsername{
-    self.computerUsername=computerUsername;
-}
--(void)setcampusPhone: (NSString*)campusPhone{
-    self.campusPhone=campusPhone;
-}
--(void)sethomeAddress: (NSString*)homeAddress{
-    self.homeAddress=homeAddress;
-}
--(void)setSGA: (NSString*) SGA{
-    self.SGA=SGA;
-}
--(void)setconcentration: (NSString*)concentration{
-    self.concentration=concentration;
-}
--(void)setstudentClass: (NSString*) studentClass{
-    self.studentClass=studentClass;
-}
-
 -(NSDictionary*) convertQueryObejectToDict{
     NSMutableDictionary *dict = [NSMutableDictionary new];
     if (self.lastName) [dict setValue:self.lastName forKey:@"lastName"];
@@ -66,10 +27,10 @@
     return dict;
 }
 
--(void) fetchPersonInfoWithUsername:(NSString*)username
+-(void) executeWithUsername:(NSString*)username
                            Password:(NSString*) password
                   completionHandler:(void(^_Nonnull)(NSArray<GADPerson *> *))completion{
     NSDictionary *dict = [self convertQueryObejectToDict];
-    [GADPerson fetchPersonInfoWithCriteria:dict Username:username Password:password completionHandler:completion];
+    [GADPerson executeWithUsername :dict Username:username Password:password completionHandler:completion];
 }
 @end

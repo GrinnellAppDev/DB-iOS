@@ -1,10 +1,3 @@
-//
-//  GADQuery.h
-//  DB
-//
-//  Created by Liam li on 3/5/17.
-//  Copyright © 2017 AppDev. All rights reserved.
-//
 
 #import <Foundation/Foundation.h>
 #import "GADPerson.h"
@@ -24,22 +17,11 @@
 @property (nullable,nonatomic, strong) NSString *concentration;
 @property (nullable,nonatomic, strong) NSString *studentClass;
 
--(void)setlastName: (nonnull NSString*) lastName;
--(void)setfirstName: (nonnull NSString*) firstName;
--(void)setcampusAddressOrPOBox: (nonnull NSString*) campusAddressOrPOBox;
--(void)setFacStaffDeptOffice: (nonnull NSString*) FacStaffDeptOffice;
--(void)setstudentMajor: (nonnull NSString*) studentMajor;
--(void)sethiatus: (nonnull NSString*) hiatus;
--(void)setcomputerUsername: (nonnull NSString*)computerUsername;
--(void)setcampusPhone: (nonnull NSString*)campusPhone;
--(void)sethomeAddress: (nonnull NSString*)homeAddress;
--(void)setSGA: (nonnull NSString*) SGA;
--(void)setconcentration: (nonnull NSString*)concentration;
--(void)setstudentClass: (nonnull NSString*) studentClass;
 
--(nonnull NSDictionary*) convertQueryObejectToDict;
 
--(void) fetchPersonInfoWithUsername:(nonnull NSString*)username
+-(nonnull NSDictionary*) dictionaryRepresentation;
+
+-(void) executeWithUsername:(nonnull NSString*)username
                            Password:(nonnull NSString*) password
                   completionHandler:(void(^_Nonnull)(NSArray<GADPerson *> *))completion;
 

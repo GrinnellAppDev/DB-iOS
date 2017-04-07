@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C3A7FB81E6CA482003C00AE /* GADQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C3A7FB61E6CA482003C00AE /* GADQuery.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0C3A7FB91E6CA482003C00AE /* GADQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3A7FB71E6CA482003C00AE /* GADQuery.m */; };
 		2E6E7BB33953DDE5DCCB560C /* libPods-DB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 83946FA003C12FC0DEF561D5 /* libPods-DB.a */; };
 		361EC0931DEAAC1600F011F6 /* GADTextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 361EC0911DEAAC1600F011F6 /* GADTextTableViewCell.m */; };
 		361EC0941DEAAC1600F011F6 /* GADTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 361EC0921DEAAC1600F011F6 /* GADTextTableViewCell.xib */; };
@@ -93,6 +95,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0C200C141E75CFDA0009EBA4 /* GADQuery.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GADQuery.h; path = GADDirectory/GADQuery.h; sourceTree = "<group>"; };
+		0C3A7FB61E6CA482003C00AE /* GADQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADQuery.h; sourceTree = "<group>"; };
+		0C3A7FB71E6CA482003C00AE /* GADQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GADQuery.m; sourceTree = "<group>"; };
 		105085552275A500BA8ABDA2 /* Pods-DBUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DBUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DBUITests/Pods-DBUITests.release.xcconfig"; sourceTree = "<group>"; };
 		1B3F889AD835470C67B748F1 /* Pods-GADDirectory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GADDirectory.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GADDirectory/Pods-GADDirectory.debug.xcconfig"; sourceTree = "<group>"; };
 		219653412E19E7355DC5B308 /* libPods-DBTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DBTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -198,6 +203,7 @@
 		369F78671DA0BB510064ACAF = {
 			isa = PBXGroup;
 			children = (
+				0C200C141E75CFDA0009EBA4 /* GADQuery.h */,
 				369F78721DA0BB510064ACAF /* DB */,
 				FAFB93F01E4FAF1400A68015 /* GADDirectory */,
 				369F78711DA0BB510064ACAF /* Products */,
@@ -288,6 +294,8 @@
 				FAFB93F11E4FAF1400A68015 /* GADDirectory.h */,
 				369F78A91DA18C880064ACAF /* GADPerson.h */,
 				369F78AA1DA18C880064ACAF /* GADPerson.m */,
+				0C3A7FB61E6CA482003C00AE /* GADQuery.h */,
+				0C3A7FB71E6CA482003C00AE /* GADQuery.m */,
 				365F5F871DA84AED0091D804 /* GADFacStaff.h */,
 				365F5F881DA84AED0091D804 /* GADFacStaff.m */,
 				365F5F7E1DA849660091D804 /* GADStudent.h */,
@@ -365,6 +373,7 @@
 				FAFB94151E4FAF2E00A68015 /* GADSGA.h in Headers */,
 				FAFB94111E4FAF2E00A68015 /* GADFacStaff.h in Headers */,
 				FAFB940F1E4FAF2E00A68015 /* GADPerson.h in Headers */,
+				0C3A7FB81E6CA482003C00AE /* GADQuery.h in Headers */,
 				FAFB94131E4FAF2E00A68015 /* GADStudent.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -827,6 +836,7 @@
 			files = (
 				FAFB94121E4FAF2E00A68015 /* GADFacStaff.m in Sources */,
 				FAFB94161E4FAF2E00A68015 /* GADSGA.m in Sources */,
+				0C3A7FB91E6CA482003C00AE /* GADQuery.m in Sources */,
 				FAFB94141E4FAF2E00A68015 /* GADStudent.m in Sources */,
 				FAFB94101E4FAF2E00A68015 /* GADPerson.m in Sources */,
 			);
