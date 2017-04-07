@@ -17,6 +17,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     GADResultTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"listViewCell"];
     GADPerson *person = self.searchResult[indexPath.row];
+    cell.person = person;
     NSData * imageData = [[NSData alloc] initWithContentsOfURL: person.imgPath];
     UIImage *profileImage = [UIImage imageWithData: imageData];
     [cell.imageView setImage:profileImage];
@@ -54,7 +55,8 @@
     NSString *segueName = @"showDetail";
     if ([segue.identifier isEqualToString:segueName]) {
         GADDetailViewController *dest = (GADDetailViewController *)segue.destinationViewController;
-        dest.person = self.searchResult[[sender indexPath].row];
+        GADResultTableViewCell *cell = (GADResultTableViewCell *) sender;
+        dest.person = cell.person;
     }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.

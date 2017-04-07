@@ -8,6 +8,7 @@
 @implementation GADDetailViewController {
     
     __weak IBOutlet UIImageView *profileImage;
+    __weak IBOutlet UITextView *nameTextView;
 }
 
 - (void)viewDidLoad {
@@ -16,6 +17,8 @@
     NSData * imageData = [[NSData alloc] initWithContentsOfURL: _person.imgPath];
     UIImage *image = [UIImage imageWithData:imageData];
     [profileImage setImage:image];
+    
+    nameTextView.text = [NSString stringWithFormat:@"%@ %@", _person.firstName, _person.lastName];
     
 }
 
