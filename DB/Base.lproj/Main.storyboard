@@ -133,7 +133,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="resultText" destination="mBX-jX-7r2" id="ksP-Gc-MlC"/>
-                                            <segue destination="fLt-in-zcI" kind="show" id="Wde-kb-Xs5"/>
+                                            <segue destination="fLt-in-zcI" kind="show" identifier="showDetail" id="Wde-kb-Xs5"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -191,6 +191,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="nameTextView" destination="s6T-PV-Dqx" id="XyZ-Wy-y1d"/>
                         <outlet property="profileImage" destination="UWW-6t-8Js" id="b1j-Nh-fCL"/>
                     </connections>
                 </viewController>
