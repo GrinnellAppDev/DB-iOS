@@ -181,7 +181,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Field: " translatesAutoresizingMaskIntoConstraints="NO" id="eke-d0-oH9">
-                                <rect key="frame" x="67" y="269" width="212" height="73"/>
+                                <rect key="frame" x="67" y="269" width="212" height="378"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -191,6 +191,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="attributesTextView" destination="eke-d0-oH9" id="9fh-Ma-LMO"/>
                         <outlet property="nameTextView" destination="s6T-PV-Dqx" id="XyZ-Wy-y1d"/>
                         <outlet property="profileImage" destination="UWW-6t-8Js" id="b1j-Nh-fCL"/>
                     </connections>
