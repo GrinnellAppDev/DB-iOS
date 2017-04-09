@@ -10,7 +10,6 @@
 
 @implementation GADNumberTableViewCell {
     
-    __weak IBOutlet UITextField *numberField;
 }
 
 - (void)awakeFromNib {
@@ -24,10 +23,10 @@
     self.selectedBackgroundView = backView;
     
     [super setSelected:selected animated:animated];
-    numberField.attributedPlaceholder =[[NSAttributedString alloc] initWithString: self.placeholderText attributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:0.73 green:0.29 blue:0.29 alpha:1.0]}];
+    self.numberField.attributedPlaceholder =[[NSAttributedString alloc] initWithString: self.placeholderText attributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:0.73 green:0.29 blue:0.29 alpha:1.0]}];
     // Configure the view for the selected state
     
-    [numberField setKeyboardType:UIKeyboardTypeNumberPad];
+    [self.numberField setKeyboardType:UIKeyboardTypeNumberPad];
 }
 
 @end
