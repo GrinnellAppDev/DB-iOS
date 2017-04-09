@@ -6,6 +6,7 @@
 
 @interface GADListViewController () {
 }
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @end
 
 @implementation GADListViewController
@@ -40,6 +41,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [GADPerson fetchPersonInfoWithCriteria:_criteria Username:@"test1stu" Password:@"selfserv1" completionHandler:^void(NSArray<GADPerson *> *people){
+        self.searchResult = people;
+        dispatch_async(dispatch_get_main_queue(),^(void){
+            [self.tableView reloadData];
+        });
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
