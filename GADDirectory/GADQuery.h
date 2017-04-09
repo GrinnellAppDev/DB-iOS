@@ -17,12 +17,10 @@
 @property (nullable,nonatomic, strong) NSString *concentration;
 @property (nullable,nonatomic, strong) NSString *studentClass;
 
-
-
--(nonnull NSDictionary*) dictionaryRepresentation;
+-(NSDictionary*) dictionaryRepresentation;
 
 -(void) executeWithUsername:(nonnull NSString*)username
-                           Password:(nonnull NSString*) password
-                  completionHandler:(void(^_Nonnull)(NSArray<GADPerson *> *))completion;
+                   Password:(nonnull NSString*) password
+          completionHandler:(void(^_Nonnull)(NSArray<GADPerson *> *))completion;
 
-           @end
+@end

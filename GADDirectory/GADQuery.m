@@ -10,7 +10,7 @@
 
 @implementation GADQuery
 
--(NSDictionary*) convertQueryObejectToDict{
+-(NSDictionary*) dictionaryRepresentation {
     NSMutableDictionary *dict = [NSMutableDictionary new];
     if (self.lastName) [dict setValue:self.lastName forKey:@"lastName"];
     if (self.firstName) [dict setValue:self.firstName forKey:@"firstName"];
@@ -27,10 +27,11 @@
     return dict;
 }
 
--(void) executeWithUsername:(NSString*)username
-                           Password:(NSString*) password
-                  completionHandler:(void(^_Nonnull)(NSArray<GADPerson *> *))completion{
-    NSDictionary *dict = [self convertQueryObejectToDict];
-    [GADPerson executeWithUsername :dict Username:username Password:password completionHandler:completion];
+-(void) executeWithUsername:(nonnull NSString*)username
+                   Password:(nonnull NSString*)password
+          completionHandler:(void(^_Nonnull)(NSArray<GADPerson *> *))completion {
+    NSDictionary *dict = [self dictionaryRepresentation];
+    [GADPerson executeWithDict:dict Username:username Password:password completionHandler:completion];
 }
+
 @end

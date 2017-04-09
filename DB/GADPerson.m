@@ -97,10 +97,10 @@ const NSTimeInterval timeoutInterval = 60.0;
     return people;
 }
 
-+ (void)fetchPersonInfoWithCriteria:(NSDictionary*)criteria
-                           Username:(NSString*)username
-                           Password:(NSString*)password
-                  completionHandler:(void(^_Nonnull)(NSArray<GADPerson *> *))completion {
++ (void) executeWithDict:(NSDictionary*)criteria
+                Username:(NSString*)username
+                Password:(NSString*)password
+       completionHandler:(void(^_Nonnull)(NSArray<GADPerson *> *))completion {
 
     NSMutableArray *queryItems = [NSMutableArray<NSURLQueryItem *> new];
     for (NSString *key in criteria){
