@@ -32,7 +32,7 @@
         detail = facStaff.title[0];
     }
     
-    cell.resultText.text = [NSString stringWithFormat:@"%@\n%@\n%@", fullName, person.userName, detail];
+    cell.resultText.text = [NSString stringWithFormat:@"%@\n%@", fullName, detail];
     cell.resultText.userInteractionEnabled = NO;
     
     return cell;
