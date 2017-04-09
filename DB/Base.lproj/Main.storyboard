@@ -167,14 +167,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iJB-7R-wsz">
-                                <frame key="frameInset" minX="67" minY="76" width="240" height="128"/>
+                                <frame key="frameInset" minX="67" minY="76" width="117" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UWW-6t-8Js">
-                                        <frame key="frameInset" width="240" height="128"/>
-                                        <rect key="contentStretch" x="0.0" y="0.0" width="0.94999999999999996" height="1"/>
-                                    </imageView>
-                                </subviews>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Name Year" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="s6T-PV-Dqx">
                                 <frame key="frameInset" minX="59" minY="212" width="240" height="142"/>
@@ -190,6 +184,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UWW-6t-8Js">
+                                <frame key="frameInset" minX="131" minY="76" width="112" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.94999999999999996" height="1"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
