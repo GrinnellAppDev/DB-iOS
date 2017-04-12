@@ -34,7 +34,12 @@
     person.room = [dict valueForKey:@"room"];
     person.spouse = [dict valueForKey:@"spouse"];
     person.alienstatus = [dict valueForKey:@"alienstatus"];
-    person.imgPath = [NSURL URLWithString:[dict valueForKey:@"imgPath"]];
+    if ([dict valueForKey:@"imgPath"] == (id)[NSNull null]) {
+        person.imgPath = [NSURL URLWithString:@"https://itwebapps.grinnell.edu/PcardImages/moved/link/gone.jpg"];
+    } else {
+        person.imgPath = [NSURL URLWithString:[dict valueForKey:@"imgPath"]];
+        
+    }
     person.address = [dict valueForKey:@"address"];
     person.personType = [dict valueForKey:@"personType"];
     person.address = [dict valueForKey:@"address"];
