@@ -1,4 +1,3 @@
-
 #import <Foundation/Foundation.h>
 #import "GADPerson.h"
 
@@ -17,8 +16,20 @@
 @property (nullable,nonatomic, strong) NSString *concentration;
 @property (nullable,nonatomic, strong) NSString *studentClass;
 
--(NSDictionary*) dictionaryRepresentation;
-
+/*!
+ @brief This method takes in a GADQuery containing criteria and returns an array of GADPerson which fulfill the criteria. Username and Password required.
+ @discussion To use the completion handler:
+ 
+ @code
+ completionHandler:^void(NSArray<GADPerson *> * people){
+ //DO WHATEVER YOU WANT WITH people HERE!!!!!!!!!!
+ }
+ @endcode
+ 
+ This code snippet will fetch all people whose lastname is Chen and firstname is Ziwen.
+ 
+ Inside the completion handler, there's a GADPerson Array called people (you can name it whatever you want actually), containing the results the url returns for you to use.
+ */
 -(void) executeWithUsername:(nonnull NSString*)username
                    Password:(nonnull NSString*) password
           completionHandler:(void(^_Nonnull)(NSArray<GADPerson *> *))completion;
