@@ -24,7 +24,7 @@ const NSTimeInterval timeoutInterval = 60.0;
 
 -(void) executeWithUsername:(nonnull NSString*)username
                    Password:(nonnull NSString*)password
-          completionHandler:(void(^_Nonnull)(NSArray<GADPerson *> *))completion {
+          completionHandler:(void(^_Nonnull)(NSArray<GADPerson *> *people,NSError *error))completion {
     NSDictionary *dict = [self dictionaryRepresentation];
     [GADQuery executeWithDict:dict Username:username Password:password completionHandler:completion];
 }
@@ -32,7 +32,7 @@ const NSTimeInterval timeoutInterval = 60.0;
 + (void) executeWithDict:(NSDictionary*)criteria
                 Username:(NSString*)username
                 Password:(NSString*)password
-       completionHandler:(void(^_Nonnull)(NSArray<GADPerson *> *))completion {
+       completionHandler:(void(^_Nonnull)(NSArray<GADPerson *> *people,NSError *error))completion {
     
     NSMutableArray *queryItems = [NSMutableArray<NSURLQueryItem *> new];
     for (NSString *key in criteria){
@@ -54,18 +54,18 @@ const NSTimeInterval timeoutInterval = 60.0;
     
     NSURLSessionDataTask *task = [[NSURLSession sharedSession]dataTaskWithRequest:req completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error) {
-            NSLog(@"EEERRRRORRRRR");
+            completion(nil,error);
             return;
         }
-        NSMutableArray <GADPerson*> *people=[NSMutableArray<GADPerson*> new];
+        NSMutableArray <GADPerson*> *result=[NSMutableArray<GADPerson*> new];
         NSError *JSONParsingError;
         NSArray *arr = [NSJSONSerialization JSONObjectWithData:data options:0 error:&JSONParsingError];
         
         for (NSDictionary *entry in arr){
             GADPerson *person = [[GADPerson alloc] initWithDictionary:entry];
-            [people addObject:person];
+            [result addObject:person];
         }
-        completion(people);
+        completion(result,nil);
     }];
     [task resume];
 }

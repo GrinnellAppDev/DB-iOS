@@ -26,12 +26,10 @@
  }
  @endcode
  
- This code snippet will fetch all people whose lastname is Chen and firstname is Ziwen.
- 
  Inside the completion handler, there's a GADPerson Array called people (you can name it whatever you want actually), containing the results the url returns for you to use.
  */
 -(void) executeWithUsername:(nonnull NSString*)username
                    Password:(nonnull NSString*) password
-          completionHandler:(void(^_Nonnull)(NSArray<GADPerson *> *))completion;
+          completionHandler:(void(^_Nonnull)(NSArray<GADPerson *> *people,NSError *error))completion;
 
 @end
