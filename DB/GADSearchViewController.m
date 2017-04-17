@@ -74,7 +74,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     searchField = @[@"Last name", @"First name", @"Campus Address or P.O. Box", @"Fac/Staff Dept/Office", @"Student Major", @"Hiatus",@"Computer Username", @"Campus Phone", @"Home Address", @"SGA", @"Concentration", @"Student Class"];
-    // Do any additional setup after loading the view, typically from a nib.
 }
 
 
