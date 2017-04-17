@@ -21,7 +21,7 @@
  @discussion To use the completion handler:
  
  @code
- completionHandler:^void(NSArray<GADPerson *> * people){
+ completionHandler:^void(NSArray<GADPerson *> * people,NSError *error){
  //DO WHATEVER YOU WANT WITH people HERE!!!!!!!!!!
  }
  @endcode
