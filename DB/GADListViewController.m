@@ -1,35 +1,55 @@
 #import "GADListViewController.h"
 #import "GADDetailViewController.h"
+#import "GADResultTableViewCell.h"
 #import "GADPerson.h"
 #import "GADDirectory.h"
 
 @interface GADListViewController () {
-    NSArray *listOfPeople;
 }
-
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @end
 
 @implementation GADListViewController
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return listOfPeople.count;
+    return self.searchResult.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"listViewCell"];
-    UIImage *profileImage = [UIImage imageNamed: @"ProfileImageEx.png"]; //need to change given data online
+    GADResultTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"listViewCell"];
+    GADPerson *person = self.searchResult[indexPath.row];
+    cell.person = person;
+    NSData * imageData = [[NSData alloc] initWithContentsOfURL: person.imgPath];
+    UIImage *profileImage = [UIImage imageWithData: imageData];
     [cell.imageView setImage:profileImage];
-    NSString *fullName = [[listOfPeople[indexPath.row] valueForKey:@"firstName"] stringByAppendingString: [listOfPeople[indexPath.row] valueForKey:@"lastName"]];
-    cell.textLabel.text = fullName;
-    cell.detailTextLabel.text = [listOfPeople[indexPath.row] valueForKey:@"major"];
+    NSString *fullName = [[person.firstName stringByAppendingString: @" "]stringByAppendingString: person.lastName];
+    NSString *detail;
+    if (person.type == Student || person.type == SGA) {
+        GADStudent *student = (GADStudent *) person;
+        detail = student.classYear;
+    } else if (person.type == FacStaff) {
+        GADFacStaff *facStaff = (GADFacStaff *) person;
+        detail = facStaff.title[0];
+    }
+    
+    cell.resultText.text = [NSString stringWithFormat:@"%@\n%@", fullName, detail];
+    cell.resultText.userInteractionEnabled = NO;
+    
     return cell;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    listOfPeople = @[];
-    
     // Do any additional setup after loading the view.
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [GADPerson fetchPersonInfoWithCriteria:_criteria Username:@"test1stu" Password:@"selfserv1" completionHandler:^void(NSArray<GADPerson *> *people){
+        self.searchResult = people;
+        dispatch_async(dispatch_get_main_queue(),^(void){
+            [self.tableView reloadData];
+        });
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,7 +65,8 @@
     NSString *segueName = @"showDetail";
     if ([segue.identifier isEqualToString:segueName]) {
         GADDetailViewController *dest = (GADDetailViewController *)segue.destinationViewController;
-        dest.person = listOfPeople[[sender indexPath].row];
+        GADResultTableViewCell *cell = (GADResultTableViewCell *) sender;
+        dest.person = cell.person;
     }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.

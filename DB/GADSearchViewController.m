@@ -6,13 +6,14 @@
 #import "GADPickerTableViewCell.h"
 
 @interface GADSearchViewController ()
+@property (weak, nonatomic) IBOutlet UITableView *searchTableView;
 
 @end
 
 @implementation GADSearchViewController {
     NSArray *searchField;
     NSArray *major;
-    NSMutableArray *selected;
+    NSMutableArray<NSNumber *> *selected;
     NSArray *department;
     NSArray *SGA;
     NSArray *concentration;
@@ -25,7 +26,9 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (selected[section]) return 2;
+    if ([selected[section] isEqualToValue:@true]) {
+        return 2;
+    }
     return 1;
 }
 
@@ -51,11 +54,12 @@
                 [searchField[indexPath.section] isEqualToString:@"Concentration"] ||
                 [searchField[indexPath.section] isEqualToString:@"Student Class"])) {
         
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"pickerCell"];
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"pickerCell"]; //To-do: switch to customized cell class
         cell.textLabel.text = searchField[indexPath.section];
         return cell;
                    
     } else if (indexPath.row == 1) {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"pickerViewCell"]; //To-do: switch to customized cell class
         
         // Create a picker view cell with options according to selected header
         if ([searchField[indexPath.section] isEqualToString:@"Fac/Staff Dept/Office"]) {
@@ -83,6 +87,7 @@
             cell.options=studentClass;
             
         }
+        return cell;
     
     } else {
         
@@ -96,32 +101,59 @@
 
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    //NSString *segueName = @"showList";
-    //NSData *data;
+    if ([segue.identifier isEqualToString:@"showSearchResult"]) {
+        GADListViewController *destinationController = (GADListViewController *)segue.destinationViewController;
+        NSArray<NSString *> *queryField = @[@"lastName", @"firstName", @"campusAddress", @"facStaffOffice", @"major", @"hiatus", @"userName", @"campusPhone", @"homeAddress", @"sga", @"concentration", @"classYr"];
+        NSMutableDictionary *criteria = [[NSMutableDictionary alloc] init];
+        for (int i = 0; i < searchField.count; i++) {
+            if (![searchField[i] isEqualToString:@"Fac/Staff Dept/Office"] &&
+                ![searchField[i] isEqualToString:@"Fac/Staff Dept/Office"] &&
+                ![searchField[i] isEqualToString:@"Student Major"] &&
+                ![searchField[i] isEqualToString:@"Hiatus"] &&
+                ![searchField[i] isEqualToString:@"SGA"] &&
+                ![searchField[i] isEqualToString:@"Concentration"] &&
+                ![searchField[i] isEqualToString:@"Student Class"]) { //To-do: read input from pickerCell
+                if ([searchField[i] isEqualToString:@"Last name"] ||
+                    [searchField[i] isEqualToString:@"First name"] ||
+                    [searchField[i] isEqualToString:@"Campus Address or P.O. Box"] ||
+                    [searchField[i] isEqualToString:@"Computer Username"] ||
+                    [searchField[i] isEqualToString:@"Home Address"]) {
+                    GADTextTableViewCell *textCell = (GADTextTableViewCell *)[self.searchTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection: i]];
+                    if (![textCell.textField.text isEqualToString: @""]) {
+                        [criteria setValue: textCell.textField.text forKey:queryField[i]];
+                    }
+                } else {
+                    GADNumberTableViewCell *numberCell = (GADNumberTableViewCell *)[self.searchTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection: i]];
+                    if (![numberCell.numberField.text isEqualToString: @""]) {
+                        [criteria setValue: numberCell.numberField.text forKey:queryField[i]];
+                    }
+                }
+            }
+        }
+        
+        for (int i = 0; i < searchField.count; i++) {
+            NSLog(@"##\n%@ is %@\n##\n", queryField[i],[criteria valueForKey:queryField[i]]);
+        } //print criterias
+        
+        destinationController.criteria = criteria;
+    }
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell =[tableView cellForRowAtIndexPath:indexPath];
-    
     if ([cell.reuseIdentifier isEqualToString:@"pickerCell"]) {
-        if ([selected[indexPath.section] isEqualToValue:@true]) { // This condition is never met...
+        if ([selected[indexPath.section] isEqualToValue:@true]) {
             selected[indexPath.section] = @false;
         } else {
-            NSLog(@"%@", selected[indexPath.section]); // Always reports (null)
             selected[indexPath.section] = @true;
         }
-    } else {
-        NSLog(@"");
     }
+    [tableView reloadData];
     
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSMutableArray *selected = [[NSMutableArray alloc] init];
-    for (int i=0; i<searchField.count; i++) {
-        selected[i] = @false; // We need to initialize to all false values at start, but it is not working.
-    }
     searchField = @[@"Last name", @"First name", @"Campus Address or P.O. Box", @"Fac/Staff Dept/Office", @"Student Major", @"Hiatus",@"Computer Username", @"Campus Phone", @"Home Address", @"SGA", @"Concentration", @"Student Class"];
     major = @[@"Math", @"Computer Science"];
     department = @[@"Accounting", @"Admission"];
@@ -129,6 +161,10 @@
     concentration = @[@"American Studies", @"Environmental Studies"];
     studentClass = @[@"2017", @"2018", @"2019", @"2020"];
     hiatus = @[@"Grinnell in London", @"Grinnell in Washington"];
+    selected = [[NSMutableArray alloc] initWithCapacity:searchField.count];
+    for (int i=0; i<searchField.count; i++) {
+        selected[i] = @false; // We need to initialize to all false values at start, but it is not working.
+    }
     // Do any additional setup after loading the view, typically from a nib.
 }
 
