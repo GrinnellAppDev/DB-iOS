@@ -6,6 +6,8 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    self.pickerView.dataSource = self;
+    self.pickerView.delegate = self;
 }
 
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {

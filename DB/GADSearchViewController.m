@@ -33,8 +33,6 @@
     return 1;
 }
 
-
-
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if ((indexPath.row == 0) &&
         ([searchField[indexPath.section] isEqualToString:@"Last name"] ||
@@ -55,8 +53,7 @@
                 [searchField[indexPath.section] isEqualToString:@"Concentration"] ||
                 [searchField[indexPath.section] isEqualToString:@"Student Class"])) {
         
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"pickerCell"]; //To-do: switch to customized cell class
-        cell.textLabel.text = searchField[indexPath.section];
+        GADPickerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"pickerCell"];         cell.textLabel.text = searchField[indexPath.section];
         return cell;
                    
     } else if (indexPath.row == 1) {
@@ -65,7 +62,7 @@
         // Create a picker view cell with options according to selected header
         if ([searchField[indexPath.section] isEqualToString:@"Fac/Staff Dept/Office"]) {
             cell.options=department;
-            
+
         } else if ([searchField[indexPath.section] isEqualToString:@"Student Major"]) {
             cell.options=major;
             
@@ -82,6 +79,7 @@
             cell.options=studentClass;
             
         }
+        [cell.pickerView reloadAllComponents];
         return cell;
     
     } else {
@@ -94,6 +92,12 @@
     return 0;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 1) {
+        return 97;
+    }
+    return 60;
+}
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"showSearchResult"]) {
@@ -126,9 +130,9 @@
             }
         }
         
-        for (int i = 0; i < searchField.count; i++) {
+        /*for (int i = 0; i < searchField.count; i++) {
             NSLog(@"##\n%@ is %@\n##\n", queryField[i],[criteria valueForKey:queryField[i]]);
-        } //print criterias
+        } //print criterias*/
         
         destinationController.criteria = criteria;
     }
@@ -140,6 +144,9 @@
         if ([selected[indexPath.section] isEqualToValue:@true]) {
             selected[indexPath.section] = @false;
         } else {
+            for (int i=0; i<searchField.count; i++) {
+                selected[i] = @false;
+            } //Close any drop-down cell
             selected[indexPath.section] = @true;
         }
     }
@@ -158,7 +165,7 @@
     hiatus = @[@"Grinnell in London", @"Grinnell in Washington"];
     selected = [[NSMutableArray alloc] initWithCapacity:searchField.count];
     for (int i=0; i<searchField.count; i++) {
-        selected[i] = @false; // We need to initialize to all false values at start, but it is not working.
+        selected[i] = @false;
     }
     // Do any additional setup after loading the view, typically from a nib.
 }
