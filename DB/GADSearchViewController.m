@@ -4,6 +4,7 @@
 #import "GADTextTableViewCell.h"
 #import "GADNumberTableViewCell.h"
 #import "GADPickerTableViewCell.h"
+#import "GADPickerViewTableViewCell.h"
 
 @interface GADSearchViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *searchTableView;
@@ -59,31 +60,25 @@
         return cell;
                    
     } else if (indexPath.row == 1) {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"pickerViewCell"]; //To-do: switch to customized cell class
+        GADPickerViewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"pickerViewCell"];
         
         // Create a picker view cell with options according to selected header
         if ([searchField[indexPath.section] isEqualToString:@"Fac/Staff Dept/Office"]) {
-            GADPickerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"pickerViewCell"];
             cell.options=department;
             
         } else if ([searchField[indexPath.section] isEqualToString:@"Student Major"]) {
-            GADPickerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"pickerViewCell"];
             cell.options=major;
             
         } else if ([searchField[indexPath.section] isEqualToString:@"Hiatus"]) {
-            GADPickerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"pickerViewCell"];
             cell.options=hiatus;
             
         } else if ([searchField[indexPath.section] isEqualToString:@"SGA"]) {
-            GADPickerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"pickerViewCell"];
             cell.options=SGA;
             
         } else if ([searchField[indexPath.section] isEqualToString:@"Concentration"]) {
-            GADPickerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"pickerViewCell"];
             cell.options=concentration;
             
         } else {
-            GADPickerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"pickerViewCell"];
             cell.options=studentClass;
             
         }

@@ -1,7 +1,6 @@
 #import <UIKit/UIKit.h>
 
-@interface GADPickerTableViewCell : UITableViewCell<UIPickerViewDataSource, UIPickerViewDelegate>;
+@interface GADPickerTableViewCell : UITableViewCell
 
-@property (nonatomic, strong) NSArray *options;
 
 @end
