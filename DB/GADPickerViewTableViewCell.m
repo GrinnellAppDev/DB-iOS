@@ -1,6 +1,6 @@
-#import "GADResultTableViewCell.h"
+#import "GADPickerViewTableViewCell.h"
 
-@implementation GADResultTableViewCell 
+@implementation GADPickerViewTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];

@@ -1,11 +1,3 @@
-//
-//  numberTableViewCell.m
-//  DB
-//
-//  Created by Jianting Chen on 2/13/17.
-//  Copyright © 2017 AppDev. All rights reserved.
-//
-
 #import "GADNumberTableViewCell.h"
 
 @implementation GADNumberTableViewCell {

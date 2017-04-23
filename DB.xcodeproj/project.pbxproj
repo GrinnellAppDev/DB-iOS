@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2E6E7BB33953DDE5DCCB560C /* libPods-DB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 83946FA003C12FC0DEF561D5 /* libPods-DB.a */; };
+		361495E51EAC5D88008E3875 /* GADPickerViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 361495E41EAC5D88008E3875 /* GADPickerViewTableViewCell.m */; };
 		361EC0931DEAAC1600F011F6 /* GADTextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 361EC0911DEAAC1600F011F6 /* GADTextTableViewCell.m */; };
 		361EC0941DEAAC1600F011F6 /* GADTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 361EC0921DEAAC1600F011F6 /* GADTextTableViewCell.xib */; };
 		369F78751DA0BB510064ACAF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 369F78741DA0BB510064ACAF /* main.m */; };
@@ -99,6 +100,8 @@
 		1B3F889AD835470C67B748F1 /* Pods-GADDirectory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GADDirectory.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GADDirectory/Pods-GADDirectory.debug.xcconfig"; sourceTree = "<group>"; };
 		219653412E19E7355DC5B308 /* libPods-DBTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DBTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A1B2EAB55570A3371F080B5 /* libPods-DBUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DBUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		361495E31EAC5D88008E3875 /* GADPickerViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADPickerViewTableViewCell.h; sourceTree = "<group>"; };
+		361495E41EAC5D88008E3875 /* GADPickerViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GADPickerViewTableViewCell.m; sourceTree = "<group>"; };
 		361EC0901DEAAC1600F011F6 /* GADTextTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADTextTableViewCell.h; sourceTree = "<group>"; };
 		361EC0911DEAAC1600F011F6 /* GADTextTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GADTextTableViewCell.m; sourceTree = "<group>"; };
 		361EC0921DEAAC1600F011F6 /* GADTextTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GADTextTableViewCell.xib; sourceTree = "<group>"; };
@@ -349,6 +352,8 @@
 				A89BAD5B1E52C143005DB3FA /* GADNumberTableViewCell.m */,
 				A8CFA7831E5BEBAF00C3B4C4 /* GADPickerTableViewCell.h */,
 				A8CFA7841E5BEBAF00C3B4C4 /* GADPickerTableViewCell.m */,
+				361495E31EAC5D88008E3875 /* GADPickerViewTableViewCell.h */,
+				361495E41EAC5D88008E3875 /* GADPickerViewTableViewCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -812,6 +817,7 @@
 				A89BAD5C1E52C143005DB3FA /* GADNumberTableViewCell.m in Sources */,
 				36F7B1081DBCFFE800B14C50 /* GADListViewController.m in Sources */,
 				369F78A81DA0C5950064ACAF /* GADDetailViewController.m in Sources */,
+				361495E51EAC5D88008E3875 /* GADPickerViewTableViewCell.m in Sources */,
 				369F78751DA0BB510064ACAF /* main.m in Sources */,
 				361EC0931DEAAC1600F011F6 /* GADTextTableViewCell.m in Sources */,
 			);

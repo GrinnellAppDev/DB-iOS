@@ -1,11 +1,3 @@
-//
-//  GADPickerTableViewCell.m
-//  DB
-//
-//  Created by Jianting Chen on 2/20/17.
-//  Copyright © 2017 AppDev. All rights reserved.
-//
-
 #import "GADPickerTableViewCell.h"
 
 @implementation GADPickerTableViewCell
