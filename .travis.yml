@@ -1,0 +1,5 @@
+language: objective-c
+script:
+    - xcodebuild clean build -sdk iphonesimulator -workspace DB.xcworkspace -scheme App CODE_SIGNING_REQUIRED=NO
+    - xcodebuild clean build -sdk iphonesimulator -workspace DB.xcworkspace -scheme GADDirectory CODE_SIGNING_REQUIRED=NO
+osx_image: xcode8.3
