@@ -1,5 +1,6 @@
 #
 .DS_Store
+DB.xcodeproj/xcuserdata/
 
 ## Built by Cocoapods
 DB.xcworkspace
