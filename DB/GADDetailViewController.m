@@ -1,4 +1,5 @@
 #import "GADDetailViewController.h"
+#import "GADDetailTableViewCell.h"
 #import "GADPerson.h"
 #import "GADDirectory.h"
 
@@ -10,7 +11,33 @@
     
     __weak IBOutlet UIImageView *profileImage;
     __weak IBOutlet UITextView *nameTextView;
-    __weak IBOutlet UITextView *attributesTextView;
+    
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (_person.type == Student)
+        return 6;
+    else if (_person.type == SGA)
+        return 9;
+    else
+        return 9;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    GADDetailTableViewCell *cell;
+    
+    if (_person.type == Student) {
+        GADStudent *student = (GADStudent *) _person;
+        
+    } else if (_person.type == SGA) {
+        GADSGA *sga = (GADSGA *) _person;
+        
+    } else if (_person.type == FacStaff) {
+        GADFacStaff *facStaff = (GADFacStaff *) _person;
+        
+    }
+    
+    return cell;
 }
 
 - (void)viewDidLoad {
@@ -21,20 +48,6 @@
     [profileImage setImage:image];
     
     nameTextView.text = [NSString stringWithFormat:@"%@ %@", _person.firstName, _person.lastName];
-    
-    if (_person.type == Student) {
-        GADStudent *student = (GADStudent *) _person;
-        attributesTextView.text = [NSString stringWithFormat:@"Major: %@\nClass: %@\nEmail: %@\nBox: %@", student.major, student.classYear, student.email, student.box];
-    } else if (_person.type == SGA) {
-        GADSGA *sga = (GADSGA *) _person;
-        attributesTextView.text = [NSString stringWithFormat:@"Title: %@\nOffice Phone: %@\nOffice Email: %@\nOffice Hours: %@\nMajor: %@\nClass: %@\nEmail: %@\nBox: %@", @"NEED FIELD", sga.office_phone, sga.office_email, sga.office_hours[0], sga.major, sga.classYear, sga.email, sga.box];
-    } else if (_person.type == FacStaff) {
-        GADFacStaff *facStaff = (GADFacStaff *) _person;
-        attributesTextView.text = [NSString stringWithFormat:@"Title: %@\nDepartment: %@\nCampus Phone: %@\nEmail: %@\nCampus Address: %@\nCampus Box: %@", facStaff.title[0], facStaff.deptMajorClass, facStaff.phone, facStaff.email, facStaff.address, facStaff.box];
-    }
-    
-    //TODO: Figure out how to display multiple titles/office hours, and whether they are important;
-    //      Figure out how to get the SGA Title from a GADSGA person;
     
 }
 
