@@ -12,6 +12,7 @@
 		2E6E7BB33953DDE5DCCB560C /* libPods-DB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 83946FA003C12FC0DEF561D5 /* libPods-DB.a */; };
 		361EC0931DEAAC1600F011F6 /* GADTextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 361EC0911DEAAC1600F011F6 /* GADTextTableViewCell.m */; };
 		361EC0941DEAAC1600F011F6 /* GADTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 361EC0921DEAAC1600F011F6 /* GADTextTableViewCell.xib */; };
+		363E07571EB0199400A5690B /* GADDetailNameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 363E07561EB0199400A5690B /* GADDetailNameTableViewCell.m */; };
 		366E7F371EA3F999002B31C3 /* GADDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 366E7F361EA3F999002B31C3 /* GADDetailTableViewCell.m */; };
 		369F78751DA0BB510064ACAF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 369F78741DA0BB510064ACAF /* main.m */; };
 		369F78781DA0BB510064ACAF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 369F78771DA0BB510064ACAF /* AppDelegate.m */; };
@@ -108,6 +109,8 @@
 		361EC0901DEAAC1600F011F6 /* GADTextTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADTextTableViewCell.h; sourceTree = "<group>"; };
 		361EC0911DEAAC1600F011F6 /* GADTextTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GADTextTableViewCell.m; sourceTree = "<group>"; };
 		361EC0921DEAAC1600F011F6 /* GADTextTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GADTextTableViewCell.xib; sourceTree = "<group>"; };
+		363E07551EB0199400A5690B /* GADDetailNameTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADDetailNameTableViewCell.h; sourceTree = "<group>"; };
+		363E07561EB0199400A5690B /* GADDetailNameTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GADDetailNameTableViewCell.m; sourceTree = "<group>"; };
 		365F5F7E1DA849660091D804 /* GADStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GADStudent.h; path = ../DB/GADStudent.h; sourceTree = "<group>"; };
 		365F5F7F1DA849660091D804 /* GADStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GADStudent.m; path = ../DB/GADStudent.m; sourceTree = "<group>"; };
 		365F5F811DA84A390091D804 /* GADSGA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GADSGA.h; path = ../DB/GADSGA.h; sourceTree = "<group>"; };
@@ -361,6 +364,8 @@
 				A89BAD5B1E52C143005DB3FA /* GADNumberTableViewCell.m */,
 				366E7F351EA3F999002B31C3 /* GADDetailTableViewCell.h */,
 				366E7F361EA3F999002B31C3 /* GADDetailTableViewCell.m */,
+				363E07551EB0199400A5690B /* GADDetailNameTableViewCell.h */,
+				363E07561EB0199400A5690B /* GADDetailNameTableViewCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -836,6 +841,7 @@
 				366E7F371EA3F999002B31C3 /* GADDetailTableViewCell.m in Sources */,
 				36A3A7D31E75CF7900D949E5 /* GADResultTableViewCell.m in Sources */,
 				369F78781DA0BB510064ACAF /* AppDelegate.m in Sources */,
+				363E07571EB0199400A5690B /* GADDetailNameTableViewCell.m in Sources */,
 				A89BAD5C1E52C143005DB3FA /* GADNumberTableViewCell.m in Sources */,
 				36F7B1081DBCFFE800B14C50 /* GADListViewController.m in Sources */,
 				369F78A81DA0C5950064ACAF /* GADDetailViewController.m in Sources */,

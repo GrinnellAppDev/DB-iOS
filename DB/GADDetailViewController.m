@@ -1,54 +1,68 @@
 #import "GADDetailViewController.h"
 #import "GADDetailTableViewCell.h"
+#import "GADDetailNameTableViewCell.h"
 #import "GADPerson.h"
 #import "GADDirectory.h"
 
 @interface GADDetailViewController ()
-
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @end
 
 @implementation GADDetailViewController {
     
-    __weak IBOutlet UIImageView *profileImage;
-    __weak IBOutlet UITextView *nameTextView;
-    
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (_person.type == Student)
-        return 6;
-    else if (_person.type == SGA)
+    if (_person.type == Student) {
+        GADStudent *student = (GADStudent *) _person;
+        _labels = @[@"Major", @"Class", @"Email", @"Campus Box", @"Campus Address"];
+        _attributes = @[student.major, student.classYear, student.email, student.box, student.address];
+        return 8;
+    } else if (_person.type == SGA) {
+        GADSGA *sga = (GADSGA *) _person;
+        NSString *officeHours = [NSString stringWithFormat: @"%@, %@, %@, %@", sga.office_hours[0], sga.office_hours[1], sga.office_hours[2], sga.office_hours[3]];
+        _labels = @[@"SGA Position", @"Office Email", @"Office Hours", @"Major", @"Class", @"Email", @"Campus Box", @"Campus Address"];
+        _attributes = @[@"Need backend to make attribute", sga.office_email, officeHours, sga.major, sga.classYear, sga.email, sga.box, sga.address];
+        return 12;
+    } else {
+        GADFacStaff *facstaff = (GADFacStaff *) _person;
+        _labels = @[@"Title", @"Department", @"Campus Phone", @"Email", @"Campus Address", @"Campus Box"];
+        _attributes = @[facstaff.title[0], facstaff.title[5], facstaff.phone, facstaff.email, facstaff.address, facstaff.box];
         return 9;
-    else
-        return 9;
+    }
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    GADDetailTableViewCell *cell;
-    
-    if (_person.type == Student) {
-        GADStudent *student = (GADStudent *) _person;
-        
-    } else if (_person.type == SGA) {
-        GADSGA *sga = (GADSGA *) _person;
-        
-    } else if (_person.type == FacStaff) {
-        GADFacStaff *facStaff = (GADFacStaff *) _person;
-        
-    }
+    /**NSInteger numberOfRows = [tableView numberOfRowsInSection:[indexPath section]];**/
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+
+    /**if (indexPath.row == 0) {
+        cell = [_tableView dequeueReusableCellWithIdentifier:@"profileImageCell"];
+        NSData * imageData = [[NSData alloc] initWithContentsOfURL: _person.imgPath];
+        UIImage *image = [UIImage imageWithData:imageData];
+        [cell.imageView setImage:image];
+    } else if (indexPath.row == 1) {
+        cell = (GADDetailNameTableViewCell *) [_tableView dequeueReusableCellWithIdentifier:@"nameTextCell"];
+        cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", _person.firstName, _person.lastName];
+    } else if (indexPath.row >= 2 && indexPath.row < numberOfRows - 1) {
+        cell = (GADDetailTableViewCell *) [_tableView dequeueReusableCellWithIdentifier:@"attributeCell"];
+    } else {
+        cell = [_tableView dequeueReusableCellWithIdentifier:@"buttonCell"];
+    } **/
     
     return cell;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-        
     NSData * imageData = [[NSData alloc] initWithContentsOfURL: _person.imgPath];
     UIImage *image = [UIImage imageWithData:imageData];
-    [profileImage setImage:image];
+    [_profileImage setImage:image];
     
-    nameTextView.text = [NSString stringWithFormat:@"%@ %@", _person.firstName, _person.lastName];
+    _nameText.text = [NSString stringWithFormat:@"%@ %@", _person.firstName, _person.lastName];
     
+    dispatch_async(dispatch_get_main_queue(),^(void){
+        [self.tableView reloadData];});
 }
 
 - (void)didReceiveMemoryWarning {
