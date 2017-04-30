@@ -3,7 +3,6 @@
 #import <MessageUI/MessageUI.h>
 #import "GADPerson.h"
 
-
 @interface GADDetailViewController : UIViewController <MFMailComposeViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
 @property (weak, nonatomic) IBOutlet UITextField *nameText;

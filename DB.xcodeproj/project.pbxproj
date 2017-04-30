@@ -838,7 +838,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				369F787B1DA0BB510064ACAF /* GADSearchViewController.m in Sources */,
-				366E7F371EA3F999002B31C3 /* GADDetailTableViewCell.m in Sources */,
 				36A3A7D31E75CF7900D949E5 /* GADResultTableViewCell.m in Sources */,
 				369F78781DA0BB510064ACAF /* AppDelegate.m in Sources */,
 				363E07571EB0199400A5690B /* GADDetailNameTableViewCell.m in Sources */,

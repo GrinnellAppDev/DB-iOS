@@ -36,7 +36,7 @@
     /**NSInteger numberOfRows = [tableView numberOfRowsInSection:[indexPath section]];**/
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
 
-    /**if (indexPath.row == 0) {
+    if (indexPath.row == 0) {
         cell = [_tableView dequeueReusableCellWithIdentifier:@"profileImageCell"];
         NSData * imageData = [[NSData alloc] initWithContentsOfURL: _person.imgPath];
         UIImage *image = [UIImage imageWithData:imageData];
@@ -48,7 +48,7 @@
         cell = (GADDetailTableViewCell *) [_tableView dequeueReusableCellWithIdentifier:@"attributeCell"];
     } else {
         cell = [_tableView dequeueReusableCellWithIdentifier:@"buttonCell"];
-    } **/
+    }
     
     return cell;
 }
