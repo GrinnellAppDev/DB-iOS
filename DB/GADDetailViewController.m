@@ -55,11 +55,11 @@
 
 - (IBAction)sendEmail:(id)sender {
     //subject, body, address.
-    NSString *subject = @"Test";
+    NSString *subject = @"";
     // Email Content
-    NSString *body = @"test test test";
+    NSString *body = @"";
     // To address
-    NSArray *recipent = [NSArray arrayWithObject:@"chenjian@grinnell.edu"];
+    NSArray *recipent = [NSArray arrayWithObject:_person.email];
     NSLog(@"Creating email");
     MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
     mc.mailComposeDelegate = self;
