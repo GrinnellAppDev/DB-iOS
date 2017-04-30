@@ -53,4 +53,47 @@
 }
 */
 
+- (IBAction)sendEmail:(id)sender {
+    //subject, body, address.
+    NSString *subject = @"";
+    // Email Content
+    NSString *body = @"";
+    // To address
+    NSArray *recipent = [NSArray arrayWithObject:_person.email];
+    NSLog(@"Creating email");
+    MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
+    mc.mailComposeDelegate = self;
+    [mc setSubject:subject];
+    [mc setMessageBody:body isHTML:NO];
+    [mc setToRecipients:recipent];
+    NSLog(@"Before showing email");
+    
+    // show mail interface
+    [self presentViewController:mc animated:YES completion:nil];
+    
+}
+
+- (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            NSLog(@"Mail cancelled");
+            break;
+        case MFMailComposeResultSaved:
+            NSLog(@"Mail saved");
+            break;
+        case MFMailComposeResultSent:
+            NSLog(@"Mail sent");
+            break;
+        case MFMailComposeResultFailed:
+            NSLog(@"Mail sent failure: %@", [error localizedDescription]);
+            break;
+        default:
+            break;
+    }
+    
+    // close mail interface
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
 @end

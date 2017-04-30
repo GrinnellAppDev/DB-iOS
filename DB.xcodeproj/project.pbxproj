@@ -26,6 +26,7 @@
 		570397C8A53689D003BDC5C1 /* libPods-GADDirectoryTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ED96211BD6738D51ECD503F6 /* libPods-GADDirectoryTests.a */; };
 		A89BAD5C1E52C143005DB3FA /* GADNumberTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A89BAD5B1E52C143005DB3FA /* GADNumberTableViewCell.m */; };
 		A8CFA7851E5BEBAF00C3B4C4 /* GADPickerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A8CFA7841E5BEBAF00C3B4C4 /* GADPickerTableViewCell.m */; };
+		A8A3BF071EA8744100165EA0 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8A3BF061EA8744100165EA0 /* MessageUI.framework */; };
 		B9E130179E0545630B82F220 /* libPods-GADDirectory.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 667859B1AA031C79927E836D /* libPods-GADDirectory.a */; };
 		C1DB7D361DADF79378CECCD4 /* libPods-DBTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 219653412E19E7355DC5B308 /* libPods-DBTests.a */; };
 		FAFB93F81E4FAF1400A68015 /* GADDirectory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFB93EF1E4FAF1400A68015 /* GADDirectory.framework */; };
@@ -145,6 +146,7 @@
 		A89BAD5B1E52C143005DB3FA /* GADNumberTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GADNumberTableViewCell.m; sourceTree = "<group>"; };
 		A8CFA7831E5BEBAF00C3B4C4 /* GADPickerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADPickerTableViewCell.h; sourceTree = "<group>"; };
 		A8CFA7841E5BEBAF00C3B4C4 /* GADPickerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GADPickerTableViewCell.m; sourceTree = "<group>"; };
+		A8A3BF061EA8744100165EA0 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		C75158EFF1AF6F0320731115 /* Pods-DBTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DBTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DBTests/Pods-DBTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D4A24CE042089F25E7F3AF33 /* Pods-DBTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DBTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DBTests/Pods-DBTests.release.xcconfig"; sourceTree = "<group>"; };
 		E1ADC26DECD46784ADA1F230 /* Pods-GADDirectory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GADDirectory.release.xcconfig"; path = "Pods/Target Support Files/Pods-GADDirectory/Pods-GADDirectory.release.xcconfig"; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8A3BF071EA8744100165EA0 /* MessageUI.framework in Frameworks */,
 				FAFB94041E4FAF1400A68015 /* GADDirectory.framework in Frameworks */,
 				2E6E7BB33953DDE5DCCB560C /* libPods-DB.a in Frameworks */,
 			);
@@ -264,6 +267,7 @@
 		595582090F7D3012AE5CE643 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A8A3BF061EA8744100165EA0 /* MessageUI.framework */,
 				83946FA003C12FC0DEF561D5 /* libPods-DB.a */,
 				219653412E19E7355DC5B308 /* libPods-DBTests.a */,
 				2A1B2EAB55570A3371F080B5 /* libPods-DBUITests.a */,
