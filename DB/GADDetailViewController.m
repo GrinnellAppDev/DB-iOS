@@ -12,51 +12,67 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    // Return number of cells per person type, and fill corresponding arrays for labels and attributes
     if (_person.type == Student) {
         GADStudent *student = (GADStudent *) _person;
         _labels = @[@"Major", @"Class", @"Email", @"Campus Box", @"Campus Address"];
         _attributes = @[student.major, student.classYear, student.email, student.box, student.address];
-        return 8;
+        return 7;
+        
     } else if (_person.type == SGA) {
         GADSGA *sga = (GADSGA *) _person;
         NSString *officeHours = [NSString stringWithFormat: @"%@, %@, %@, %@", sga.office_hours[0], sga.office_hours[1], sga.office_hours[2], sga.office_hours[3]];
         _labels = @[@"SGA Position", @"Office Email", @"Office Hours", @"Major", @"Class", @"Email", @"Campus Box", @"Campus Address"];
         _attributes = @[@"Need backend to make attribute", sga.office_email, officeHours, sga.major, sga.classYear, sga.email, sga.box, sga.address];
-        return 12;
+        return 10;
+        
     } else {
         GADFacStaff *facstaff = (GADFacStaff *) _person;
         _labels = @[@"Title", @"Department", @"Campus Phone", @"Email", @"Campus Address", @"Campus Box"];
         _attributes = @[facstaff.title[0], facstaff.title[5], facstaff.phone, facstaff.email, facstaff.address, facstaff.box];
-        return 9;
+        return 8;
     }
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
     if (indexPath.row == 0) {
-        UITableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"profileImageCell"];
+        
+        // Add the profile image to its cell
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"profileImageCell"];
         NSData * imageData = [[NSData alloc] initWithContentsOfURL: _person.imgPath];
         UIImage *image = [UIImage imageWithData:imageData];
         [cell.imageView setImage:image];
+        
+        // Workaround to hide separator lines
+        cell.separatorInset = UIEdgeInsetsMake(0, 10000, 0, 0);
         return cell;
+        
     } else if (indexPath.row == 1) {
-        UITableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"nameTextCell"];
+        
+        // Set the text for the name cell
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"nameTextCell"];
         cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", _person.firstName, _person.lastName];
+        
         return cell;
+        
     } else {
-        GADDetailTableViewCell *cell = (GADDetailTableViewCell *) [_tableView dequeueReusableCellWithIdentifier:@"attributeCell"];
+        // Set the appropriate attribute
+        GADDetailTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"attributeCell"];
         return cell;
     }
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    /**
     NSData * imageData = [[NSData alloc] initWithContentsOfURL: _person.imgPath];
     UIImage *image = [UIImage imageWithData:imageData];
     [_profileImage setImage:image];
     
     _nameText.text = [NSString stringWithFormat:@"%@ %@", _person.firstName, _person.lastName];
-    
+    **/
     dispatch_async(dispatch_get_main_queue(),^(void){
         [self.tableView reloadData];});
 }
