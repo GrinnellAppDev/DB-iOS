@@ -40,26 +40,34 @@
     if (indexPath.row == 0) {
         
         // Add the profile image to its cell
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"profileImageCell"];
+        UITableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"profileImageCell"];
         NSData * imageData = [[NSData alloc] initWithContentsOfURL: _person.imgPath];
         UIImage *image = [UIImage imageWithData:imageData];
         [cell.imageView setImage:image];
         
-        // Workaround to hide separator lines
+        // Workaround to hide separator line
         cell.separatorInset = UIEdgeInsetsMake(0, 10000, 0, 0);
         return cell;
         
     } else if (indexPath.row == 1) {
         
         // Set the text for the name cell
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"nameTextCell"];
+        UITableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"nameTextCell"];
         cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", _person.firstName, _person.lastName];
+        
+        // Align text to center
+        cell.textLabel.textAlignment = NSTextAlignmentCenter;
         
         return cell;
         
     } else {
         // Set the appropriate attribute
-        GADDetailTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"attributeCell"];
+        GADDetailTableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"attributeCell"];
+        
+        // Set the text of the textlabels
+        cell.textLabel.text = _labels[indexPath.row - 2];
+        cell.detailTextLabel.text = _attributes[indexPath.row - 2];
+        
         return cell;
     }
 }
@@ -73,8 +81,9 @@
     
     _nameText.text = [NSString stringWithFormat:@"%@ %@", _person.firstName, _person.lastName];
     **/
+
     dispatch_async(dispatch_get_main_queue(),^(void){
-        [self.tableView reloadData];});
+        [_tableView reloadData];});
 }
 
 - (void)didReceiveMemoryWarning {
