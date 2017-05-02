@@ -44,7 +44,8 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    [GADPerson fetchPersonInfoWithCriteria:_criteria Username:@"test1stu" Password:@"selfserv1" completionHandler:^void(NSArray<GADPerson *> *people){
+    
+    [GADQuery executeWithDict:_criteria Username:@"test1stu" Password:@"selfserv1" completionHandler:^void(NSArray<GADPerson *> * people,NSError *error){
         self.searchResult = people;
         dispatch_async(dispatch_get_main_queue(),^(void){
             [self.tableView reloadData];

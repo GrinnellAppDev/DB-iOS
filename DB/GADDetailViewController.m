@@ -1,6 +1,5 @@
 #import "GADDetailViewController.h"
 #import "GADDetailTableViewCell.h"
-#import "GADDetailNameTableViewCell.h"
 #import "GADPerson.h"
 #import "GADDirectory.h"
 
@@ -33,24 +32,21 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    /**NSInteger numberOfRows = [tableView numberOfRowsInSection:[indexPath section]];**/
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
 
     if (indexPath.row == 0) {
-        cell = [_tableView dequeueReusableCellWithIdentifier:@"profileImageCell"];
+        UITableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"profileImageCell"];
         NSData * imageData = [[NSData alloc] initWithContentsOfURL: _person.imgPath];
         UIImage *image = [UIImage imageWithData:imageData];
         [cell.imageView setImage:image];
+        return cell;
     } else if (indexPath.row == 1) {
-        cell = (GADDetailNameTableViewCell *) [_tableView dequeueReusableCellWithIdentifier:@"nameTextCell"];
+        UITableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"nameTextCell"];
         cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", _person.firstName, _person.lastName];
-    } else if (indexPath.row >= 2 && indexPath.row < numberOfRows - 1) {
-        cell = (GADDetailTableViewCell *) [_tableView dequeueReusableCellWithIdentifier:@"attributeCell"];
+        return cell;
     } else {
-        cell = [_tableView dequeueReusableCellWithIdentifier:@"buttonCell"];
+        GADDetailTableViewCell *cell = (GADDetailTableViewCell *) [_tableView dequeueReusableCellWithIdentifier:@"attributeCell"];
+        return cell;
     }
-    
-    return cell;
 }
 
 - (void)viewDidLoad {
