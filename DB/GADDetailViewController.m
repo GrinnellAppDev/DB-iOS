@@ -64,11 +64,15 @@
         // Set the appropriate attribute
         GADDetailTableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"attributeCell"];
         
-        // Set the text of the textlabels
-        cell.textLabel.text = _labels[indexPath.row - 2];
-        cell.detailTextLabel.text = _attributes[indexPath.row - 2];
+        // Values that don't exist are entered as a space
+        if (!([_attributes[indexPath.row - 2]  isEqual: @" "])) {
+            // Set the text of the textlabels
+            cell.textLabel.text = _labels[indexPath.row - 2];
+            cell.detailTextLabel.text = _attributes[indexPath.row - 2];
+        }
         
         return cell;
+            
     }
 }
 
