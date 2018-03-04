@@ -3,9 +3,6 @@
 #import "GADSGA.h"
 #import "GADFacStaff.h"
 
-static const NSString *apiURL = @"https://itwebappstest.grinnell.edu/DotNet/WebServices/api/db";
-const NSTimeInterval timeoutInterval = 60.0;
-
 @implementation GADPerson
 
 -(GADPerson *)initWithDictionary: (NSDictionary *) dict {
@@ -74,12 +71,13 @@ const NSTimeInterval timeoutInterval = 60.0;
     person2.lastName=@"Osera";
     person2.email=@"oserapet@grinnell.edu";
     person2.address=@"3811 Science";
+    person2.box=@"SCIE";
     person2.phone=@"4010";
     person2.city=@"Grinnell";
     person2.state=@"IA";
     person2.zip=@"50112";
     person2.offCampusAddress=@[@"1804 3rd Ave"];
-    person2.title=@[@"Assistant Professor of Computer Science"];
+    person2.title=@[@"Assistant Professor of Computer Science", @"", @"", @"", @"", @"Computer Science"];
     person2.imgPath=[NSURL URLWithString:@"https://itwebapps.grinnell.edu/PcardImages/moved/84326.jpg"];
     
     person3.firstName=@"Anita";
@@ -88,6 +86,7 @@ const NSTimeInterval timeoutInterval = 60.0;
     person3.major=@"Computer Science/Music";
     person3.email=@"dewittan17@grinnell.edu";
     person3.offCampusAddress=@[@"347 Drake Ave"];
+    person3.address=@"Hannibal Kershaw Hall 2349";
     person3.city=@"Bolingbrook";
     person3.state=@"IL";
     person3.zip=@"60490-3103";
@@ -100,47 +99,6 @@ const NSTimeInterval timeoutInterval = 60.0;
     people=@[person1,person2,person3];
     
     return people;
-}
-
-+ (void)fetchPersonInfoWithCriteria:(NSDictionary*)criteria
-                           Username:(NSString*)username
-                           Password:(NSString*)password
-                  completionHandler:(void(^_Nonnull)(NSArray<GADPerson *> *))completion {
-
-    NSMutableArray *queryItems = [NSMutableArray<NSURLQueryItem *> new];
-    for (NSString *key in criteria){
-        [queryItems addObject:[NSURLQueryItem queryItemWithName:key value:criteria[key]]];
-    }
-    NSURLComponents *components = [NSURLComponents componentsWithString:apiURL];
-    components.queryItems = queryItems;
-    NSURL *url = components.URL;
-    
-    NSString *authenticationString = [NSString stringWithFormat:@"{'un':'%@', 'pw':'%@'}",username,password];
-    NSData *bodyData = [authenticationString dataUsingEncoding:NSUTF8StringEncoding];
-    NSString *bodyLength = [NSString stringWithFormat:@"%lu",(unsigned long)[bodyData length]];
-    
-    NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:timeoutInterval];
-    [req setHTTPMethod:@"POST"];
-    [req setValue:bodyLength forHTTPHeaderField:@"Content-Length"];
-    [req setValue:@"application/json" forHTTPHeaderField: @"Content-Type"];
-    [req setHTTPBody:bodyData];
-    
-    NSURLSessionDataTask *task = [[NSURLSession sharedSession]dataTaskWithRequest:req completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        if (error) {
-            NSLog(@"EEERRRRORRRRR");
-            return;
-        }
-        NSMutableArray <GADPerson*> *people=[NSMutableArray<GADPerson*> new];
-        NSError *JSONParsingError;
-        NSArray *arr = [NSJSONSerialization JSONObjectWithData:data options:0 error:&JSONParsingError];
-        
-        for (NSDictionary *entry in arr){
-            GADPerson *person = [[GADPerson alloc] initWithDictionary:entry];
-            [people addObject:person];
-        }
-        completion(people);
-    }];
-    [task resume];
 }
 
 -(void)printInfo{

@@ -13,3 +13,4 @@ FOUNDATION_EXPORT const unsigned char GADDirectoryVersionString[];
 #import <GADDirectory/GADFacStaff.h>
 #import <GADDirectory/GADStudent.h>
 #import <GADDirectory/GADSGA.h>
+#import <GADDirectory/GADQuery.h>

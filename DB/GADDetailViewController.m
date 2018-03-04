@@ -1,41 +1,93 @@
 #import "GADDetailViewController.h"
+#import "GADDetailTableViewCell.h"
 #import "GADPerson.h"
 #import "GADDirectory.h"
 
 @interface GADDetailViewController ()
-
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @end
 
 @implementation GADDetailViewController {
     
-    __weak IBOutlet UIImageView *profileImage;
-    __weak IBOutlet UITextView *nameTextView;
-    __weak IBOutlet UITextView *attributesTextView;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    // Return number of cells per person type, and fill corresponding arrays for labels and attributes
+    if (_person.type == Student) {
+        GADStudent *student = (GADStudent *) _person;
+        _labels = @[@"Major", @"Class", @"Email", @"Campus Box", @"Campus Address"];
+        _attributes = @[student.major, student.classYear, student.email, student.box, student.address];
+        return 7;
+        
+    } else if (_person.type == SGA) {
+        GADSGA *sga = (GADSGA *) _person;
+        NSString *officeHours = [NSString stringWithFormat: @"%@, %@, %@, %@", sga.office_hours[0], sga.office_hours[1], sga.office_hours[2], sga.office_hours[3]];
+        _labels = @[@"SGA Position", @"Office Email", @"Office Hours", @"Major", @"Class", @"Email", @"Campus Box", @"Campus Address"];
+        _attributes = @[@"Need backend to make attribute", sga.office_email, officeHours, sga.major, sga.classYear, sga.email, sga.box, sga.address];
+        return 10;
+        
+    } else {
+        GADFacStaff *facstaff = (GADFacStaff *) _person;
+        _labels = @[@"Title", @"Department", @"Campus Phone", @"Email", @"Campus Address", @"Campus Box"];
+        _attributes = @[facstaff.title[0], facstaff.title[5], facstaff.phone, facstaff.email, facstaff.address, facstaff.box];
+        return 8;
+    }
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    if (indexPath.row == 0) {
+        
+        // Add the profile image to its cell
+        UITableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"profileImageCell"];
+        NSData * imageData = [[NSData alloc] initWithContentsOfURL: _person.imgPath];
+        UIImage *image = [UIImage imageWithData:imageData];
+        [cell.imageView setImage:image];
+        
+        // Workaround to hide separator line
+        cell.separatorInset = UIEdgeInsetsMake(0, 10000, 0, 0);
+        return cell;
+        
+    } else if (indexPath.row == 1) {
+        
+        // Set the text for the name cell
+        UITableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"nameTextCell"];
+        cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", _person.firstName, _person.lastName];
+        
+        // Align text to center
+        cell.textLabel.textAlignment = NSTextAlignmentCenter;
+        
+        return cell;
+        
+    } else {
+        // Set the appropriate attribute
+        GADDetailTableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"attributeCell"];
+        
+        // Values that don't exist are entered as a space
+        if (!([_attributes[indexPath.row - 2]  isEqual: @" "])) {
+            // Set the text of the textlabels
+            cell.textLabel.text = _labels[indexPath.row - 2];
+            cell.detailTextLabel.text = _attributes[indexPath.row - 2];
+        }
+        
+        return cell;
+            
+    }
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-        
+    /**
     NSData * imageData = [[NSData alloc] initWithContentsOfURL: _person.imgPath];
     UIImage *image = [UIImage imageWithData:imageData];
-    [profileImage setImage:image];
+    [_profileImage setImage:image];
     
-    nameTextView.text = [NSString stringWithFormat:@"%@ %@", _person.firstName, _person.lastName];
-    
-    if (_person.type == Student) {
-        GADStudent *student = (GADStudent *) _person;
-        attributesTextView.text = [NSString stringWithFormat:@"Major: %@\nClass: %@\nEmail: %@\nBox: %@", student.major, student.classYear, student.email, student.box];
-    } else if (_person.type == SGA) {
-        GADSGA *sga = (GADSGA *) _person;
-        attributesTextView.text = [NSString stringWithFormat:@"Title: %@\nOffice Phone: %@\nOffice Email: %@\nOffice Hours: %@\nMajor: %@\nClass: %@\nEmail: %@\nBox: %@", @"NEED FIELD", sga.office_phone, sga.office_email, sga.office_hours[0], sga.major, sga.classYear, sga.email, sga.box];
-    } else if (_person.type == FacStaff) {
-        GADFacStaff *facStaff = (GADFacStaff *) _person;
-        attributesTextView.text = [NSString stringWithFormat:@"Title: %@\nDepartment: %@\nCampus Phone: %@\nEmail: %@\nCampus Address: %@\nCampus Box: %@", facStaff.title[0], facStaff.deptMajorClass, facStaff.phone, facStaff.email, facStaff.address, facStaff.box];
-    }
-    
-    //TODO: Figure out how to display multiple titles/office hours, and whether they are important;
-    //      Figure out how to get the SGA Title from a GADSGA person;
-    
+    _nameText.text = [NSString stringWithFormat:@"%@ %@", _person.firstName, _person.lastName];
+    **/
+
+    dispatch_async(dispatch_get_main_queue(),^(void){
+        [_tableView reloadData];});
 }
 
 - (void)didReceiveMemoryWarning {

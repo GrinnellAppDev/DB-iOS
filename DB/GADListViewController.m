@@ -44,12 +44,20 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    [GADPerson fetchPersonInfoWithCriteria:_criteria Username:@"test1stu" Password:@"selfserv1" completionHandler:^void(NSArray<GADPerson *> *people){
+    
+    /* This method retrieved data from the test server, it will be left here
+     since the new API will hopefully be similar
+    [GADQuery executeWithDict:_criteria Username:@"test1stu" Password:@"selfserv1" completionHandler:^void(NSArray<GADPerson *> * people,NSError *error){
         self.searchResult = people;
         dispatch_async(dispatch_get_main_queue(),^(void){
             [self.tableView reloadData];
         });
-    }];
+    }]; */
+    
+    self.searchResult = GADPerson.dummyPeople;
+    dispatch_async(dispatch_get_main_queue(),^(void){
+        [self.tableView reloadData];
+    });
 }
 
 - (void)didReceiveMemoryWarning {

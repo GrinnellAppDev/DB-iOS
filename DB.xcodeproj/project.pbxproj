@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C3A7FB81E6CA482003C00AE /* GADQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C3A7FB61E6CA482003C00AE /* GADQuery.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0C3A7FB91E6CA482003C00AE /* GADQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3A7FB71E6CA482003C00AE /* GADQuery.m */; };
 		2E6E7BB33953DDE5DCCB560C /* libPods-DB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 83946FA003C12FC0DEF561D5 /* libPods-DB.a */; };
 		361495E51EAC5D88008E3875 /* GADPickerViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 361495E41EAC5D88008E3875 /* GADPickerViewTableViewCell.m */; };
 		361EC0931DEAAC1600F011F6 /* GADTextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 361EC0911DEAAC1600F011F6 /* GADTextTableViewCell.m */; };
@@ -97,6 +99,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0C3A7FB61E6CA482003C00AE /* GADQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADQuery.h; sourceTree = "<group>"; };
+		0C3A7FB71E6CA482003C00AE /* GADQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GADQuery.m; sourceTree = "<group>"; };
 		105085552275A500BA8ABDA2 /* Pods-DBUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DBUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DBUITests/Pods-DBUITests.release.xcconfig"; sourceTree = "<group>"; };
 		1B3F889AD835470C67B748F1 /* Pods-GADDirectory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GADDirectory.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GADDirectory/Pods-GADDirectory.debug.xcconfig"; sourceTree = "<group>"; };
 		219653412E19E7355DC5B308 /* libPods-DBTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DBTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +116,8 @@
 		365F5F821DA84A390091D804 /* GADSGA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GADSGA.m; path = ../DB/GADSGA.m; sourceTree = "<group>"; };
 		365F5F871DA84AED0091D804 /* GADFacStaff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GADFacStaff.h; path = ../DB/GADFacStaff.h; sourceTree = "<group>"; };
 		365F5F881DA84AED0091D804 /* GADFacStaff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GADFacStaff.m; path = ../DB/GADFacStaff.m; sourceTree = "<group>"; };
+		366E7F351EA3F999002B31C3 /* GADDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADDetailTableViewCell.h; sourceTree = "<group>"; };
+		366E7F361EA3F999002B31C3 /* GADDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GADDetailTableViewCell.m; sourceTree = "<group>"; };
 		369F78701DA0BB510064ACAF /* DB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		369F78741DA0BB510064ACAF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		369F78761DA0BB510064ACAF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -301,6 +307,8 @@
 				FAFB93F11E4FAF1400A68015 /* GADDirectory.h */,
 				369F78A91DA18C880064ACAF /* GADPerson.h */,
 				369F78AA1DA18C880064ACAF /* GADPerson.m */,
+				0C3A7FB61E6CA482003C00AE /* GADQuery.h */,
+				0C3A7FB71E6CA482003C00AE /* GADQuery.m */,
 				365F5F871DA84AED0091D804 /* GADFacStaff.h */,
 				365F5F881DA84AED0091D804 /* GADFacStaff.m */,
 				365F5F7E1DA849660091D804 /* GADStudent.h */,
@@ -358,6 +366,8 @@
 				A8CFA7841E5BEBAF00C3B4C4 /* GADPickerTableViewCell.m */,
 				361495E31EAC5D88008E3875 /* GADPickerViewTableViewCell.h */,
 				361495E41EAC5D88008E3875 /* GADPickerViewTableViewCell.m */,
+				366E7F351EA3F999002B31C3 /* GADDetailTableViewCell.h */,
+				366E7F361EA3F999002B31C3 /* GADDetailTableViewCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -384,6 +394,7 @@
 				FAFB94151E4FAF2E00A68015 /* GADSGA.h in Headers */,
 				FAFB94111E4FAF2E00A68015 /* GADFacStaff.h in Headers */,
 				FAFB940F1E4FAF2E00A68015 /* GADPerson.h in Headers */,
+				0C3A7FB81E6CA482003C00AE /* GADQuery.h in Headers */,
 				FAFB94131E4FAF2E00A68015 /* GADStudent.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -402,6 +413,7 @@
 				FAFB94091E4FAF1400A68015 /* Embed Frameworks */,
 				0DF1D79D6397781E6D66FFF9 /* [CP] Embed Pods Frameworks */,
 				F20ADCB177C133AEAB0966E2 /* [CP] Copy Pods Resources */,
+				FA156BD51EAEB33000B3D049 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -807,6 +819,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DB/Pods-DB-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FA156BD51EAEB33000B3D049 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 45894d9e8a6bc3b8513651d6de36159e2c836e51 e63db966a2704d736a61d448865ca84d08aaaa601dce5b22725702038b26a699";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -849,6 +874,7 @@
 			files = (
 				FAFB94121E4FAF2E00A68015 /* GADFacStaff.m in Sources */,
 				FAFB94161E4FAF2E00A68015 /* GADSGA.m in Sources */,
+				0C3A7FB91E6CA482003C00AE /* GADQuery.m in Sources */,
 				FAFB94141E4FAF2E00A68015 /* GADStudent.m in Sources */,
 				FAFB94101E4FAF2E00A68015 /* GADPerson.m in Sources */,
 			);
@@ -953,7 +979,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -995,7 +1021,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
