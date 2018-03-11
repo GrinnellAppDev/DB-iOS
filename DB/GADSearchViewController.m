@@ -93,10 +93,10 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 1) {
+    if (indexPath.row == 2) {
         return 97;
     }
-    return 60;
+    return 61;
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -156,12 +156,141 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    searchField = @[@"Last name", @"First name", @"Campus Address or P.O. Box", @"Fac/Staff Dept/Office", @"Student Major", @"Hiatus",@"Computer Username", @"Campus Phone", @"Home Address", @"SGA", @"Concentration", @"Student Class"];
-    major = @[@"Math", @"Computer Science"];
-    department = @[@"Accounting", @"Admission"];
-    SGA = @[@"President",@"Treasurer"];
-    concentration = @[@"American Studies", @"Environmental Studies"];
-    studentClass = @[@"2017", @"2018", @"2019", @"2020"];
+    
+    searchField = @[@"Last name",
+                    @"First name",
+                    @"Campus Address or P.O. Box",
+                    @"Fac/Staff Dept/Office",
+                    @"Student Major",
+                    @"Hiatus",
+                    @"Computer Username",
+                    @"Campus Phone",
+                    @"Home Address",
+                    @"SGA",
+                    @"Concentration",
+                    @"Student Class"];
+    
+    major = @[@"Anthropology",
+              @"Art History",
+              @"Biological Chemistry",
+              @"Biology",
+              @"Chemistry",
+              @"Chinese",
+              @"Classics",
+              @"Computer Science",
+              @"Economics",
+              @"English",
+              @"French",
+              @"Gender, Women's and Sexuality Studies",
+              @"General Science",
+              @"German",
+              @"History",
+              @"Mathematics",
+              @"Music",
+              @"Philosophy",
+              @"Physics",
+              @"Political Science",
+              @"Psychology",
+              @"Religious Studies",
+              @"Russian",
+              @"Sociology",
+              @"Spanish",
+              @"Studio Art",
+              @"Theatre and Dance"];
+    
+    department = @[@"Academic Advising",
+                   @"Academic Affairs and Dean of the College",
+                   @"Accessibility and Disability Services",
+                   @"Accounting",
+                   @"Admission",
+                   @"Analytic Support and Institutional Research",
+                   @"Auxiliary Services and Economic Development",
+                   @"Benefits and Insurance",
+                   @"Black Cultural Center",
+                   @"Bookstore (Pioneer Bookshop)",
+                   @"Campus Safety",
+                   @"Cashier",
+                   @"Catering",
+                   @"Center for Careers, Life, and Service",
+                   @"Center for Religion, Spirituality, and Social Justice",
+                   @"Communications",
+                   @"Community Enhancement and Engagement",
+                   @"Conference Operations and Events",
+                   @"Corporate, Foundation, and Government Relations",
+                   @"Development and Alumni Relations",
+                   @"Dining",
+                   @"Disability Resources",
+                   @"Diversity and Inclusion",
+                   @"Environmental Stewardship",
+                   @"Facilities Management",
+                   @"Faulconer Gallery",
+                   @"Financial Aid",
+                   @"Grinnell Prize",
+                   @"Human Resources",
+                   @"Information Technology Services",
+                   @"Institutional Planning and Budget Planning",
+                   @"Intercultural Affairs",
+                   @"International Student Affairs",
+                   @"Investment Office",
+                   @"Libraries",
+                   @"Mail Services",
+                   @"New Student Orientation",
+                   @"Off-Campus Study",
+                   @"Ombuds",
+                   @"Pioneer Bookshop",
+                   @"President",
+                   @"Registrar",
+                   @"Research Ethics",
+                   @"Residence Life",
+                   @"Service and Social Innovation",
+                   @"Stonewall Resource Center",
+                   @"Strategic Planning",
+                   @"Student Affairs",
+                   @"Student Assistance",
+                   @"Student Health and Counseling Services",
+                   @"Treasurer",
+                   @"Wellness"];
+    
+    SGA = @[@"President",
+            @"Vice President of Academic Affairs",
+            @"Vice President of Student Affairs",
+            @"Administrative Coordinator",
+            @"Treasurer",
+            @"Assistant Treasurer",
+            @"All Campus Events Co-Chair",
+            @"Services Coordinator",
+            @"Diversity and Outreach Coordinator",
+            @"Concerts Chair",
+            @"Senator",
+            @"Class Ambassador",
+            @"Presiding Officer",
+            @"Technical Advisor"];
+    
+    concentration = @[@"American Studies",
+                      @"East Asian Studies",
+                      @"Environmental Studies",
+                      @"European Studies",
+                      @"Global Development Studies",
+                      @"Latin American Studies",
+                      @"Linguistics",
+                      @"Neuroscience",
+                      @"Peace and Conflict Studies",
+                      @"Physical Education",
+                      @"Policy Studies",
+                      @"Russian, Central, and Eastern European Studies",
+                      @"Statistics",
+                      @"Technology Studies"];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy"];
+    NSString *yearString = [formatter stringFromDate:[NSDate date]];
+    
+    studentClass = @[yearString,
+                     @2019,
+                     @2020,
+                     @2021,
+                     @2022];
+    
     hiatus = @[@"Grinnell in London", @"Grinnell in Washington"];
     selected = [[NSMutableArray alloc] initWithCapacity:searchField.count];
     for (int i=0; i<searchField.count; i++) {

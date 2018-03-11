@@ -1,5 +1,6 @@
 #import "GADDetailViewController.h"
 #import "GADDetailTableViewCell.h"
+#import "GADProfileImageTableViewCell.h"
 #import "GADPerson.h"
 #import "GADDirectory.h"
 
@@ -40,10 +41,10 @@
     if (indexPath.row == 0) {
         
         // Add the profile image to its cell
-        UITableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"profileImageCell"];
+        GADProfileImageTableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"profileImageCell"];
         NSData * imageData = [[NSData alloc] initWithContentsOfURL: _person.imgPath];
-        UIImage *image = [UIImage imageWithData:imageData];
-        [cell.imageView setImage:image];
+        cell.profileImage.image = [UIImage imageWithData:imageData];
+        
         
         // Workaround to hide separator line
         cell.separatorInset = UIEdgeInsetsMake(0, 10000, 0, 0);
@@ -76,6 +77,15 @@
     }
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 0) {
+        return 120;
+    }
+    
+    return 60;
+
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     /**
@@ -85,6 +95,8 @@
     
     _nameText.text = [NSString stringWithFormat:@"%@ %@", _person.firstName, _person.lastName];
     **/
+    
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.82 green:0.22 blue:0.22 alpha:1.0];
 
     dispatch_async(dispatch_get_main_queue(),^(void){
         [_tableView reloadData];});
