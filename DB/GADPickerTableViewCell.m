@@ -4,7 +4,6 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -12,8 +11,8 @@
     backView.backgroundColor = [UIColor whiteColor];
     self.selectedBackgroundView = backView;
     [super setSelected:selected animated:animated];
-    
-    // Configure the view for the selected state
+    self.textLabel.font = [UIFont systemFontOfSize: 18];
+    self.textLabel.frame = CGRectMake(58, 0, 375, 61);
 }
 
 @end

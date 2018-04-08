@@ -21,18 +21,23 @@
     cell.person = person;
     NSData * imageData = [[NSData alloc] initWithContentsOfURL: person.imgPath];
     UIImage *profileImage = [UIImage imageWithData: imageData];
-    [cell.imageView setImage:profileImage];
+    [cell.profileImage setImage:profileImage];
     NSString *fullName = [[person.firstName stringByAppendingString: @" "]stringByAppendingString: person.lastName];
+    NSString *email = person.email;
+    NSString *dept;
     NSString *detail;
     if (person.type == Student || person.type == SGA) {
         GADStudent *student = (GADStudent *) person;
         detail = student.classYear;
+        dept = student.major;
     } else if (person.type == FacStaff) {
         GADFacStaff *facStaff = (GADFacStaff *) person;
         detail = facStaff.title[0];
+        dept = facStaff.title[5];
     }
     
-    cell.resultText.text = [NSString stringWithFormat:@"%@\n%@", fullName, detail];
+    cell.nameText.text = fullName;
+    cell.resultText.text = [NSString stringWithFormat:@"%@\n%@\n%@", email, dept, detail];
     cell.resultText.userInteractionEnabled = NO;
     
     return cell;
