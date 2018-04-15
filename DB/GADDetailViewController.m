@@ -44,7 +44,8 @@
         GADProfileImageTableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"profileImageCell"];
         NSData * imageData = [[NSData alloc] initWithContentsOfURL: _person.imgPath];
         cell.profileImage.image = [UIImage imageWithData:imageData];
-        
+        cell.profileImage.frame = CGRectMake(0, 0, 104, 146);
+        cell.profileImage.center = CGPointMake(cell.center.x, cell.profileImage.center.y);
         
         // Workaround to hide separator line
         cell.separatorInset = UIEdgeInsetsMake(0, 10000, 0, 0);
@@ -79,7 +80,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
-        return 120;
+        return 162;
     }
     
     return 60;
@@ -88,13 +89,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    /**
-    NSData * imageData = [[NSData alloc] initWithContentsOfURL: _person.imgPath];
-    UIImage *image = [UIImage imageWithData:imageData];
-    [_profileImage setImage:image];
-    
-    _nameText.text = [NSString stringWithFormat:@"%@ %@", _person.firstName, _person.lastName];
-    **/
     
     self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.82 green:0.22 blue:0.22 alpha:1.0];
 
@@ -107,16 +101,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 - (IBAction)sendEmail:(id)sender {
     //subject, body, address.
     NSString *subject = @"";
@@ -124,13 +108,11 @@
     NSString *body = @"";
     // To address
     NSArray *recipent = [NSArray arrayWithObject:_person.email];
-    NSLog(@"Creating email");
     MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
     mc.mailComposeDelegate = self;
     [mc setSubject:subject];
     [mc setMessageBody:body isHTML:NO];
     [mc setToRecipients:recipent];
-    NSLog(@"Before showing email");
     
     // show mail interface
     [self presentViewController:mc animated:YES completion:nil];
