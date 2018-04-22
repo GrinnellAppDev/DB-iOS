@@ -284,12 +284,14 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy"];
     NSString *yearString = [formatter stringFromDate:[NSDate date]];
+    int yearInt = [yearString intValue];
     
-    studentClass = @[yearString,
-                     @2019,
-                     @2020,
-                     @2021,
-                     @2022];
+    studentClass = @[[NSString stringWithFormat:@"%d",yearInt-1],
+                     [NSString stringWithFormat:@"%d",yearInt],
+                     [NSString stringWithFormat:@"%d",yearInt+1],
+                     [NSString stringWithFormat:@"%d",yearInt+2],
+                     [NSString stringWithFormat:@"%d",yearInt+3],
+                     [NSString stringWithFormat:@"%d",yearInt+4]];
     
     hiatus = @[@"Grinnell in London", @"Grinnell in Washington"];
     selected = [[NSMutableArray alloc] initWithCapacity:searchField.count];
