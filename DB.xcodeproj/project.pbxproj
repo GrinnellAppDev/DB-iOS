@@ -10,6 +10,7 @@
 		0C3A7FB81E6CA482003C00AE /* GADQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C3A7FB61E6CA482003C00AE /* GADQuery.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0C3A7FB91E6CA482003C00AE /* GADQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3A7FB71E6CA482003C00AE /* GADQuery.m */; };
 		2E6E7BB33953DDE5DCCB560C /* libPods-DB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 83946FA003C12FC0DEF561D5 /* libPods-DB.a */; };
+		361495E51EAC5D88008E3875 /* GADPickerViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 361495E41EAC5D88008E3875 /* GADPickerViewTableViewCell.m */; };
 		361EC0931DEAAC1600F011F6 /* GADTextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 361EC0911DEAAC1600F011F6 /* GADTextTableViewCell.m */; };
 		361EC0941DEAAC1600F011F6 /* GADTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 361EC0921DEAAC1600F011F6 /* GADTextTableViewCell.xib */; };
 		369F78751DA0BB510064ACAF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 369F78741DA0BB510064ACAF /* main.m */; };
@@ -21,12 +22,16 @@
 		369F788E1DA0BB510064ACAF /* DBTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 369F788D1DA0BB510064ACAF /* DBTests.m */; };
 		369F78991DA0BB510064ACAF /* DBUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 369F78981DA0BB510064ACAF /* DBUITests.m */; };
 		369F78A81DA0C5950064ACAF /* GADDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 369F78A71DA0C5950064ACAF /* GADDetailViewController.m */; };
+		36A3A7D31E75CF7900D949E5 /* GADResultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A3A7D21E75CF7900D949E5 /* GADResultTableViewCell.m */; };
 		36F7B1081DBCFFE800B14C50 /* GADListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36F7B1071DBCFFE800B14C50 /* GADListViewController.m */; };
 		3E5019EE1546E3B4CCDB7212 /* libPods-DBUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A1B2EAB55570A3371F080B5 /* libPods-DBUITests.a */; };
 		570397C8A53689D003BDC5C1 /* libPods-GADDirectoryTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ED96211BD6738D51ECD503F6 /* libPods-GADDirectoryTests.a */; };
 		A89BAD5C1E52C143005DB3FA /* GADNumberTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A89BAD5B1E52C143005DB3FA /* GADNumberTableViewCell.m */; };
+		A8A3BF071EA8744100165EA0 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8A3BF061EA8744100165EA0 /* MessageUI.framework */; };
+		A8CFA7851E5BEBAF00C3B4C4 /* GADPickerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A8CFA7841E5BEBAF00C3B4C4 /* GADPickerTableViewCell.m */; };
 		B9E130179E0545630B82F220 /* libPods-GADDirectory.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 667859B1AA031C79927E836D /* libPods-GADDirectory.a */; };
 		C1DB7D361DADF79378CECCD4 /* libPods-DBTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 219653412E19E7355DC5B308 /* libPods-DBTests.a */; };
+		EF991F862055A82A00F53905 /* GADProfileImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF991F852055A82A00F53905 /* GADProfileImageTableViewCell.m */; };
 		FAFB93F81E4FAF1400A68015 /* GADDirectory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFB93EF1E4FAF1400A68015 /* GADDirectory.framework */; };
 		FAFB93FF1E4FAF1400A68015 /* GADDirectoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FAFB93FE1E4FAF1400A68015 /* GADDirectoryTests.m */; };
 		FAFB94011E4FAF1400A68015 /* GADDirectory.h in Headers */ = {isa = PBXBuildFile; fileRef = FAFB93F11E4FAF1400A68015 /* GADDirectory.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -95,13 +100,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0C200C141E75CFDA0009EBA4 /* GADQuery.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GADQuery.h; path = GADDirectory/GADQuery.h; sourceTree = "<group>"; };
 		0C3A7FB61E6CA482003C00AE /* GADQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADQuery.h; sourceTree = "<group>"; };
 		0C3A7FB71E6CA482003C00AE /* GADQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GADQuery.m; sourceTree = "<group>"; };
 		105085552275A500BA8ABDA2 /* Pods-DBUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DBUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DBUITests/Pods-DBUITests.release.xcconfig"; sourceTree = "<group>"; };
 		1B3F889AD835470C67B748F1 /* Pods-GADDirectory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GADDirectory.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GADDirectory/Pods-GADDirectory.debug.xcconfig"; sourceTree = "<group>"; };
 		219653412E19E7355DC5B308 /* libPods-DBTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DBTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A1B2EAB55570A3371F080B5 /* libPods-DBUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DBUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		361495E31EAC5D88008E3875 /* GADPickerViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADPickerViewTableViewCell.h; sourceTree = "<group>"; };
+		361495E41EAC5D88008E3875 /* GADPickerViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GADPickerViewTableViewCell.m; sourceTree = "<group>"; };
 		361EC0901DEAAC1600F011F6 /* GADTextTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADTextTableViewCell.h; sourceTree = "<group>"; };
 		361EC0911DEAAC1600F011F6 /* GADTextTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GADTextTableViewCell.m; sourceTree = "<group>"; };
 		361EC0921DEAAC1600F011F6 /* GADTextTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GADTextTableViewCell.xib; sourceTree = "<group>"; };
@@ -111,6 +117,8 @@
 		365F5F821DA84A390091D804 /* GADSGA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GADSGA.m; path = ../DB/GADSGA.m; sourceTree = "<group>"; };
 		365F5F871DA84AED0091D804 /* GADFacStaff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GADFacStaff.h; path = ../DB/GADFacStaff.h; sourceTree = "<group>"; };
 		365F5F881DA84AED0091D804 /* GADFacStaff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GADFacStaff.m; path = ../DB/GADFacStaff.m; sourceTree = "<group>"; };
+		366E7F351EA3F999002B31C3 /* GADDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADDetailTableViewCell.h; sourceTree = "<group>"; };
+		366E7F361EA3F999002B31C3 /* GADDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GADDetailTableViewCell.m; sourceTree = "<group>"; };
 		369F78701DA0BB510064ACAF /* DB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		369F78741DA0BB510064ACAF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		369F78761DA0BB510064ACAF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -131,6 +139,8 @@
 		369F78A71DA0C5950064ACAF /* GADDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GADDetailViewController.m; sourceTree = "<group>"; };
 		369F78A91DA18C880064ACAF /* GADPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GADPerson.h; path = ../DB/GADPerson.h; sourceTree = "<group>"; };
 		369F78AA1DA18C880064ACAF /* GADPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GADPerson.m; path = ../DB/GADPerson.m; sourceTree = "<group>"; };
+		36A3A7D11E75CF7900D949E5 /* GADResultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADResultTableViewCell.h; sourceTree = "<group>"; };
+		36A3A7D21E75CF7900D949E5 /* GADResultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GADResultTableViewCell.m; sourceTree = "<group>"; };
 		36F7B1061DBCFFE800B14C50 /* GADListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADListViewController.h; sourceTree = "<group>"; };
 		36F7B1071DBCFFE800B14C50 /* GADListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GADListViewController.m; sourceTree = "<group>"; };
 		3F629860CB5209DA6965C11A /* Pods-DBUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DBUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DBUITests/Pods-DBUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -141,10 +151,15 @@
 		9446F08323FB3C63AE76C67E /* Pods-GADDirectoryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GADDirectoryTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GADDirectoryTests/Pods-GADDirectoryTests.release.xcconfig"; sourceTree = "<group>"; };
 		A89BAD5A1E52C143005DB3FA /* GADNumberTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADNumberTableViewCell.h; sourceTree = "<group>"; };
 		A89BAD5B1E52C143005DB3FA /* GADNumberTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GADNumberTableViewCell.m; sourceTree = "<group>"; };
+		A8A3BF061EA8744100165EA0 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		A8CFA7831E5BEBAF00C3B4C4 /* GADPickerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADPickerTableViewCell.h; sourceTree = "<group>"; };
+		A8CFA7841E5BEBAF00C3B4C4 /* GADPickerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GADPickerTableViewCell.m; sourceTree = "<group>"; };
 		C75158EFF1AF6F0320731115 /* Pods-DBTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DBTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DBTests/Pods-DBTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D4A24CE042089F25E7F3AF33 /* Pods-DBTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DBTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DBTests/Pods-DBTests.release.xcconfig"; sourceTree = "<group>"; };
 		E1ADC26DECD46784ADA1F230 /* Pods-GADDirectory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GADDirectory.release.xcconfig"; path = "Pods/Target Support Files/Pods-GADDirectory/Pods-GADDirectory.release.xcconfig"; sourceTree = "<group>"; };
 		ED96211BD6738D51ECD503F6 /* libPods-GADDirectoryTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GADDirectoryTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF991F852055A82A00F53905 /* GADProfileImageTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GADProfileImageTableViewCell.m; sourceTree = "<group>"; };
+		EF991F872055A83800F53905 /* GADProfileImageTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GADProfileImageTableViewCell.h; sourceTree = "<group>"; };
 		FAFB93EF1E4FAF1400A68015 /* GADDirectory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GADDirectory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAFB93F11E4FAF1400A68015 /* GADDirectory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GADDirectory.h; sourceTree = "<group>"; };
 		FAFB93F21E4FAF1400A68015 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -159,6 +174,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8A3BF071EA8744100165EA0 /* MessageUI.framework in Frameworks */,
 				FAFB94041E4FAF1400A68015 /* GADDirectory.framework in Frameworks */,
 				2E6E7BB33953DDE5DCCB560C /* libPods-DB.a in Frameworks */,
 			);
@@ -203,7 +219,6 @@
 		369F78671DA0BB510064ACAF = {
 			isa = PBXGroup;
 			children = (
-				0C200C141E75CFDA0009EBA4 /* GADQuery.h */,
 				369F78721DA0BB510064ACAF /* DB */,
 				FAFB93F01E4FAF1400A68015 /* GADDirectory */,
 				369F78711DA0BB510064ACAF /* Products */,
@@ -261,6 +276,7 @@
 		595582090F7D3012AE5CE643 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A8A3BF061EA8744100165EA0 /* MessageUI.framework */,
 				83946FA003C12FC0DEF561D5 /* libPods-DB.a */,
 				219653412E19E7355DC5B308 /* libPods-DBTests.a */,
 				2A1B2EAB55570A3371F080B5 /* libPods-DBUITests.a */,
@@ -342,11 +358,21 @@
 		FAFB94191E4FAF6900A68015 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				36A3A7D11E75CF7900D949E5 /* GADResultTableViewCell.h */,
+				36A3A7D21E75CF7900D949E5 /* GADResultTableViewCell.m */,
 				361EC0901DEAAC1600F011F6 /* GADTextTableViewCell.h */,
 				361EC0911DEAAC1600F011F6 /* GADTextTableViewCell.m */,
 				361EC0921DEAAC1600F011F6 /* GADTextTableViewCell.xib */,
 				A89BAD5A1E52C143005DB3FA /* GADNumberTableViewCell.h */,
 				A89BAD5B1E52C143005DB3FA /* GADNumberTableViewCell.m */,
+				A8CFA7831E5BEBAF00C3B4C4 /* GADPickerTableViewCell.h */,
+				A8CFA7841E5BEBAF00C3B4C4 /* GADPickerTableViewCell.m */,
+				361495E31EAC5D88008E3875 /* GADPickerViewTableViewCell.h */,
+				361495E41EAC5D88008E3875 /* GADPickerViewTableViewCell.m */,
+				366E7F351EA3F999002B31C3 /* GADDetailTableViewCell.h */,
+				366E7F361EA3F999002B31C3 /* GADDetailTableViewCell.m */,
+				EF991F872055A83800F53905 /* GADProfileImageTableViewCell.h */,
+				EF991F852055A82A00F53905 /* GADProfileImageTableViewCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -594,13 +620,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DB-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		0DF1D79D6397781E6D66FFF9 /* [CP] Embed Pods Frameworks */ = {
@@ -654,13 +683,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DBTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4E282FC769815790A1726C0C /* [CP] Check Pods Manifest.lock */ = {
@@ -669,13 +701,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GADDirectoryTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		753007F5E102D4894001EB18 /* [CP] Copy Pods Resources */ = {
@@ -699,13 +734,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GADDirectory-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AA1AA6048D2CC7FE6C223392 /* [CP] Copy Pods Resources */ = {
@@ -774,13 +812,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DBUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F20ADCB177C133AEAB0966E2 /* [CP] Copy Pods Resources */ = {
@@ -818,11 +859,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8CFA7851E5BEBAF00C3B4C4 /* GADPickerTableViewCell.m in Sources */,
 				369F787B1DA0BB510064ACAF /* GADSearchViewController.m in Sources */,
+				36A3A7D31E75CF7900D949E5 /* GADResultTableViewCell.m in Sources */,
 				369F78781DA0BB510064ACAF /* AppDelegate.m in Sources */,
 				A89BAD5C1E52C143005DB3FA /* GADNumberTableViewCell.m in Sources */,
 				36F7B1081DBCFFE800B14C50 /* GADListViewController.m in Sources */,
 				369F78A81DA0C5950064ACAF /* GADDetailViewController.m in Sources */,
+				361495E51EAC5D88008E3875 /* GADPickerViewTableViewCell.m in Sources */,
+				EF991F862055A82A00F53905 /* GADProfileImageTableViewCell.m in Sources */,
 				369F78751DA0BB510064ACAF /* main.m in Sources */,
 				361EC0931DEAAC1600F011F6 /* GADTextTableViewCell.m in Sources */,
 			);

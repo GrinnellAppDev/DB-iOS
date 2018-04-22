@@ -1,16 +1,7 @@
-//
-//  numberTableViewCell.m
-//  DB
-//
-//  Created by Jianting Chen on 2/13/17.
-//  Copyright © 2017 AppDev. All rights reserved.
-//
-
 #import "GADNumberTableViewCell.h"
 
 @implementation GADNumberTableViewCell {
     
-    __weak IBOutlet UITextField *numberField;
 }
 
 - (void)awakeFromNib {
@@ -24,10 +15,10 @@
     self.selectedBackgroundView = backView;
     
     [super setSelected:selected animated:animated];
-    numberField.attributedPlaceholder =[[NSAttributedString alloc] initWithString: self.placeholderText attributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:0.73 green:0.29 blue:0.29 alpha:1.0]}];
+    self.numberField.attributedPlaceholder =[[NSAttributedString alloc] initWithString: self.placeholderText attributes:@{NSForegroundColorAttributeName: [UIColor blackColor]}];
     // Configure the view for the selected state
     
-    [numberField setKeyboardType:UIKeyboardTypeNumberPad];
+    [self.numberField setKeyboardType:UIKeyboardTypeNumberPad];
 }
 
 @end

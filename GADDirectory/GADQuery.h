@@ -32,4 +32,10 @@
                    Password:(nonnull NSString*) password
           completionHandler:(void(^_Nonnull)(NSArray<GADPerson *> *people,NSError *error))completion;
 
+
++ (void) executeWithDict:(nonnull NSDictionary*)criteria
+                Username:(nonnull NSString*)username
+                Password:(nonnull NSString*)password
+       completionHandler:(void(^_Nonnull)(NSArray<GADPerson *> *people,NSError *error))completion;
+
 @end

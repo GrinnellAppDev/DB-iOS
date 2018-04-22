@@ -34,7 +34,12 @@
     person.room = [dict valueForKey:@"room"];
     person.spouse = [dict valueForKey:@"spouse"];
     person.alienstatus = [dict valueForKey:@"alienstatus"];
-    person.imgPath = [NSURL URLWithString:[dict valueForKey:@"imgPath"]];
+    if ([dict valueForKey:@"imgPath"] == (id)[NSNull null]) {
+        person.imgPath = [NSURL URLWithString:@"https://itwebapps.grinnell.edu/PcardImages/moved/link/gone.jpg"];
+    } else {
+        person.imgPath = [NSURL URLWithString:[dict valueForKey:@"imgPath"]];
+        
+    }
     person.address = [dict valueForKey:@"address"];
     person.personType = [dict valueForKey:@"personType"];
     person.address = [dict valueForKey:@"address"];
@@ -66,12 +71,13 @@
     person2.lastName=@"Osera";
     person2.email=@"oserapet@grinnell.edu";
     person2.address=@"3811 Science";
+    person2.box=@"SCIE";
     person2.phone=@"4010";
     person2.city=@"Grinnell";
     person2.state=@"IA";
     person2.zip=@"50112";
     person2.offCampusAddress=@[@"1804 3rd Ave"];
-    person2.title=@[@"Assistant Professor of Computer Science"];
+    person2.title=@[@"Assistant Professor of Computer Science", @"", @"", @"", @"", @"Computer Science"];
     person2.imgPath=[NSURL URLWithString:@"https://itwebapps.grinnell.edu/PcardImages/moved/84326.jpg"];
     
     person3.firstName=@"Anita";
@@ -80,6 +86,7 @@
     person3.major=@"Computer Science/Music";
     person3.email=@"dewittan17@grinnell.edu";
     person3.offCampusAddress=@[@"347 Drake Ave"];
+    person3.address=@"Hannibal Kershaw Hall 2349";
     person3.city=@"Bolingbrook";
     person3.state=@"IL";
     person3.zip=@"60490-3103";
