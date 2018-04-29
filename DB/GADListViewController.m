@@ -32,8 +32,8 @@
         dept = student.major;
     } else if (person.type == FacStaff) {
         GADFacStaff *facStaff = (GADFacStaff *) person;
-        detail = facStaff.title[0];
-        dept = facStaff.title[5];
+        detail = facStaff.titles[0];
+        dept = facStaff.titles[5];
     }
     
     cell.nameText.text = fullName;

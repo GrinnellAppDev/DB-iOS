@@ -25,13 +25,13 @@
         GADSGA *sga = (GADSGA *) _person;
         NSString *officeHours = [NSString stringWithFormat: @"%@, %@, %@, %@", sga.office_hours[0], sga.office_hours[1], sga.office_hours[2], sga.office_hours[3]];
         _labels = @[@"SGA Position", @"Office Email", @"Office Hours", @"Major", @"Class", @"Email", @"Campus Box", @"Campus Address"];
-        _attributes = @[@"Need backend to make attribute", sga.office_email, officeHours, sga.major, sga.classYear, sga.email, sga.box, sga.address];
+        _attributes = @[sga.position_name, sga.office_email, officeHours, sga.major, sga.classYear, sga.email, sga.box, sga.address];
         return 10;
         
     } else {
         GADFacStaff *facstaff = (GADFacStaff *) _person;
         _labels = @[@"Title", @"Department", @"Campus Phone", @"Email", @"Campus Address", @"Campus Box"];
-        _attributes = @[facstaff.title[0], facstaff.title[5], facstaff.phone, facstaff.email, facstaff.address, facstaff.box];
+        _attributes = @[facstaff.titles[0], facstaff.titles[5], facstaff.phone, facstaff.email, facstaff.address, facstaff.box];
         return 8;
     }
 }

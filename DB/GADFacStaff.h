@@ -1,7 +1,9 @@
 #import <GADDirectory/GADPerson.h>
 
 @interface GADFacStaff : GADPerson
-@property (nonatomic, strong) NSArray *title; //title, title2, ... title8. title5 correspond to Department(s).
+@property (nonatomic, strong) NSArray *titles;
+@property (nonatomic, strong) NSArray *departments;
+@property (nonatomic, strong) NSString *spouse;
 
 -(GADFacStaff *)init;
 -(GADFacStaff *)initWithDictionary: (NSDictionary *) dict;

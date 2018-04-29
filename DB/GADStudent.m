@@ -17,7 +17,6 @@
     student.classYear = [dict valueForKey:@"classYear"];
     student.major = [dict valueForKey:@"major"];
     student.minor = [dict valueForKey:@"minor"];
-    student.hiatus = [dict valueForKey:@"hiatus"];
     return student;
 }
 

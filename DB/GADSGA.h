@@ -5,7 +5,8 @@
 @property (nonatomic, strong) NSString *office_email;
 @property (nonatomic, strong) NSString *office_addr;
 @property (nonatomic, strong) NSString *office_box;
-@property (nonatomic, strong) NSArray *office_hours; //office_hours_1...4;
+@property (nonatomic, strong) NSString *position_name;
+@property (nonatomic, strong) NSArray *office_hours;
 
 -(GADSGA *)init;
 -(GADSGA *)initWithDictionary: (NSDictionary *) dict;

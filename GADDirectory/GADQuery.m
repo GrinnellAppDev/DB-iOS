@@ -65,6 +65,7 @@ const NSTimeInterval timeoutInterval = 60.0;
             return;
         }
         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+        NSError *JSONParsingError;
         if ([httpResponse statusCode] != 200) {
             NSDictionary *errorDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&JSONParsingError];
             NSDictionary *userInfo =
@@ -80,7 +81,6 @@ const NSTimeInterval timeoutInterval = 60.0;
             return;
         }
         NSMutableArray <GADPerson*> *result=[NSMutableArray<GADPerson*> new];
-        NSError *JSONParsingError;
         NSArray *arr = [NSJSONSerialization JSONObjectWithData:data options:0 error:&JSONParsingError];
         
         for (NSDictionary *entry in arr){
