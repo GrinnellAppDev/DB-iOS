@@ -23,21 +23,24 @@
         
     } else if (_person.type == SGA) {
         GADSGA *sga = (GADSGA *) _person;
-        NSString *officeHours = [NSString stringWithFormat: @"%@, %@, %@, %@", sga.office_hours[0], sga.office_hours[1], sga.office_hours[2], sga.office_hours[3]];
+        NSString *officeHours = [sga.office_hours componentsJoinedByString: @"\n"];
         _labels = @[@"SGA Position", @"Office Email", @"Office Hours", @"Major", @"Class", @"Email", @"Campus Box", @"Campus Address"];
         _attributes = @[sga.position_name, sga.office_email, officeHours, sga.major, sga.classYear, sga.email, sga.box, sga.address];
         return 10;
         
     } else {
         GADFacStaff *facstaff = (GADFacStaff *) _person;
-        _labels = @[@"Title", @"Department", @"Campus Phone", @"Email", @"Campus Address", @"Campus Box"];
-        _attributes = @[facstaff.titles[0], facstaff.titles[5], facstaff.phone, facstaff.email, facstaff.address, facstaff.box];
+        NSString *titles = [facstaff.titles componentsJoinedByString: @"\n"];
+        NSString *departments = [facstaff.departments componentsJoinedByString: @"\n"];
+        _labels = @[@"Titles", @"Departments", @"Campus Phone", @"Email", @"Campus Address", @"Campus Box"];
+        _attributes = @[titles, departments, facstaff.phone, facstaff.email, facstaff.address, facstaff.box];
         return 8;
     }
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
+    // Profile image cell
     if (indexPath.row == 0) {
         
         // Add the profile image to its cell
@@ -51,6 +54,7 @@
         cell.separatorInset = UIEdgeInsetsMake(0, 10000, 0, 0);
         return cell;
         
+    // Name cell
     } else if (indexPath.row == 1) {
         
         // Set the text for the name cell
@@ -60,6 +64,44 @@
         // Align text to center
         cell.textLabel.textAlignment = NSTextAlignmentCenter;
         
+        return cell;
+        
+    // Titles cell for FacStaff
+    } else if (_person.type == FacStaff && indexPath.row  == 2) {
+        GADDetailTableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"attributeCell"];
+        
+        if (!([_attributes[indexPath.row - 2]  isEqual: @" "])) {
+            cell.textLabel.text = _labels[indexPath.row - 2];
+            cell.detailTextLabel.text = _attributes[indexPath.row - 2];
+            GADFacStaff *facstaff = (GADFacStaff *) _person;
+            cell.detailTextLabel.numberOfLines = [facstaff.titles count];
+            cell.detailTextLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        }
+        return cell;
+        
+    // Departments cell for FacStaff
+    } else if (_person.type == FacStaff && indexPath.row  == 3) {
+        GADDetailTableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"attributeCell"];
+        
+        if (!([_attributes[indexPath.row - 2]  isEqual: @" "])) {
+            cell.textLabel.text = _labels[indexPath.row - 2];
+            cell.detailTextLabel.text = _attributes[indexPath.row - 2];
+            GADFacStaff *facstaff = (GADFacStaff *) _person;
+            cell.detailTextLabel.numberOfLines = [facstaff.departments count];
+            cell.detailTextLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        }
+        return cell;
+        
+    // Office-hours cell for SGA
+    } else if (_person.type == SGA && indexPath.row  == 4) {
+        GADDetailTableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"attributeCell"];
+        if (!([_attributes[indexPath.row - 2]  isEqual: @" "])) {
+            cell.textLabel.text = _labels[indexPath.row - 2];
+            cell.detailTextLabel.text = _attributes[indexPath.row - 2];
+            GADSGA *sga = (GADSGA *) _person;
+            cell.detailTextLabel.numberOfLines = [sga.office_hours count];
+            cell.detailTextLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        }
         return cell;
         
     } else {
@@ -74,17 +116,24 @@
         }
         
         return cell;
-            
     }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
         return 162;
+    } else if (_person.type == SGA && indexPath.row  == 4) {
+            GADSGA *sga = (GADSGA *) _person;
+            return (30 * [sga.office_hours count]) + 30;
+    } else if (_person.type == FacStaff && indexPath.row == 2) {
+            GADFacStaff *facstaff = (GADFacStaff *) _person;
+            return (30 * [facstaff.titles count]) + 30;
+    } else if (_person.type == FacStaff && indexPath.row == 3) {
+            GADFacStaff *facstaff = (GADFacStaff *) _person;
+            return (30 * [facstaff.departments count]) + 30;
     }
     
     return 60;
-
 }
 
 - (void)viewDidLoad {

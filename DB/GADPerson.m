@@ -59,7 +59,8 @@
     person2.box=@"SCIE";
     person2.phone=@"4010";
     person2.homeAddress=@"1804 3rd Ave";
-    person2.titles=@[@"Assistant Professor of Computer Science", @"", @"", @"", @"", @"Computer Science"];
+    person2.titles=@[@"Assistant Professor of Computer Science", @"Department Chair of Computer Science"];
+    person2.departments=@[@"Computer Science", @"Music"];
     person2.imgPath=[NSURL URLWithString:@"https://itwebapps.grinnell.edu/PcardImages/moved/84326.jpg"];
     
     person3.firstName=@"Anita";
@@ -74,7 +75,7 @@
     person3.office_phone=@"4310";
     person3.office_email=@"sgaprez";
     person3.position_name=@"President";
-    person3.office_hours=@[@"Sunday: 7-8pm Grille, 8-9pm JRC 222",@"  Monday: 9 - 3 Commons",@"  Tuesday: 7 -7 JRC Main",@"  Wednesday: 12 - 12 Raynard's Office"];
+    person3.office_hours=@[@"Sunday: 7-8pm Grille, 8-9pm JRC 222",@"Monday: 9 - 3 Commons",@"Tuesday: 7 -7 JRC Main",@"Wednesday: 12 - 12 Raynard's Office"];
 
     people=@[person1,person2,person3];
     

@@ -30,6 +30,6 @@
  */
 -(void) executeWithUsername:(nonnull NSString*)username
                    Password:(nonnull NSString*) password
-          completionHandler:(void(^_Nonnull)(NSArray<GADPerson *> *people,NSError *error))completion;
+          completionHandler:(void(^_Nonnull)(NSArray<GADPerson *> * _Nullable people,NSError * _Nullable error))completion;
 
 @end
