@@ -25,9 +25,21 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <segmentedControl key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="eH4-1S-egV">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <segments>
+                                        <segment title="Simple"/>
+                                        <segment title="Advanced"/>
+                                    </segments>
+                                    <color key="tintColor" red="0.64017188549041748" green="0.27520579099655151" blue="0.24306204915046692" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="indexChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="cq6-fD-fEO"/>
+                                    </connections>
+                                </segmentedControl>
                                 <prototypes>
                                     <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="textCell" rowHeight="61" id="fPY-gZ-U4G" customClass="GADTextTableViewCell">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="61"/>
+                                        <rect key="frame" x="0.0" y="58" width="375" height="61"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fPY-gZ-U4G" id="rSh-TY-Ddi">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="60.5"/>
@@ -48,7 +60,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell autoresizesSubviews="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="pickerCell" rowHeight="61" id="nym-C2-yMc" customClass="GADPickerTableViewCell">
-                                        <rect key="frame" x="0.0" y="89" width="375" height="61"/>
+                                        <rect key="frame" x="0.0" y="119" width="375" height="61"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nym-C2-yMc" id="fvF-7c-MeV">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="60.5"/>
@@ -56,7 +68,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="numberCell" rowHeight="61" id="ymH-Li-Hut" customClass="GADNumberTableViewCell">
-                                        <rect key="frame" x="0.0" y="150" width="375" height="61"/>
+                                        <rect key="frame" x="0.0" y="180" width="375" height="61"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ymH-Li-Hut" id="heE-8I-F5S">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="60.5"/>
@@ -76,7 +88,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pickerViewCell" rowHeight="112" id="evr-dQ-KGQ" customClass="GADPickerViewTableViewCell">
-                                        <rect key="frame" x="0.0" y="211" width="375" height="112"/>
+                                        <rect key="frame" x="0.0" y="241" width="375" height="112"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="evr-dQ-KGQ" id="u9i-yz-ETU">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="111.5"/>
@@ -112,6 +124,7 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="searchTableView" destination="4dg-cK-ELH" id="i6S-de-WC8"/>
+                        <outlet property="segmentedControl" destination="eH4-1S-egV" id="Lxs-6D-brg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

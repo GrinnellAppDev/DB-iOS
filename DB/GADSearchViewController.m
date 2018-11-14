@@ -13,6 +13,8 @@
 
 @implementation GADSearchViewController {
     NSArray *searchField;
+    NSArray *searchFieldSimple;
+    NSArray *searchFieldAdvanced;
     NSArray *major;
     NSMutableArray<NSNumber *> *selected;
     NSArray *department;
@@ -23,6 +25,7 @@
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    NSLog(@"number of section %lu", (unsigned long)searchField.count);
     return searchField.count;
 }
 
@@ -33,6 +36,23 @@
     return 1;
 }
 
+- (IBAction)indexChanged:(UISegmentedControl *)sender {
+    switch (_segmentedControl.selectedSegmentIndex) {
+        case 0:
+            searchField = [searchFieldSimple mutableCopy];
+            [_searchTableView reloadData];
+            NSLog(@"reloaded!");
+            break;
+        case 1:
+            searchField = [searchFieldAdvanced mutableCopy];
+            [_searchTableView reloadData];
+            break;
+        default:
+            break;
+    }
+}
+
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if ((indexPath.row == 0) &&
         ([searchField[indexPath.section] isEqualToString:@"Last name"] ||
@@ -40,55 +60,48 @@
          [searchField[indexPath.section] isEqualToString:@"Campus Address or P.O. Box"] ||
          [searchField[indexPath.section] isEqualToString:@"Computer Username"] ||
          [searchField[indexPath.section] isEqualToString:@"Home Address"])) {
-
-        GADTextTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"textCell"];
-        cell.placeholderText = searchField[indexPath.section];
-        return cell;
-        
-    } else if ((indexPath.row == 0) &&
-               ([searchField[indexPath.section] isEqualToString:@"Fac/Staff Dept/Office"] ||
-                [searchField[indexPath.section] isEqualToString:@"Student Major"] ||
-                [searchField[indexPath.section] isEqualToString:@"Hiatus"] ||
-                [searchField[indexPath.section] isEqualToString:@"SGA"] ||
-                [searchField[indexPath.section] isEqualToString:@"Concentration"] ||
-                [searchField[indexPath.section] isEqualToString:@"Student Class"])) {
-        
-        GADPickerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"pickerCell"];         cell.textLabel.text = searchField[indexPath.section];
-        return cell;
-                   
-    } else if (indexPath.row == 1) {
-        GADPickerViewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"pickerViewCell"];
-        
-        // Create a picker view cell with options according to selected header
-        if ([searchField[indexPath.section] isEqualToString:@"Fac/Staff Dept/Office"]) {
-            cell.options=department;
-
-        } else if ([searchField[indexPath.section] isEqualToString:@"Student Major"]) {
-            cell.options=major;
             
-        } else if ([searchField[indexPath.section] isEqualToString:@"Hiatus"]) {
-            cell.options=hiatus;
+            GADTextTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"textCell"];
+            cell.placeholderText = searchField[indexPath.section];
+            return cell;
             
-        } else if ([searchField[indexPath.section] isEqualToString:@"SGA"]) {
-            cell.options=SGA;
-            
-        } else if ([searchField[indexPath.section] isEqualToString:@"Concentration"]) {
-            cell.options=concentration;
-            
-        } else {
-            cell.options=studentClass;
-            
-        }
-        [cell.pickerView reloadAllComponents];
-        return cell;
-    
-    } else {
-        
-        GADNumberTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"numberCell"];
-        cell.placeholderText = searchField[indexPath.section];
-        return cell;
-        
-    }
+        } else if ((indexPath.row == 0) &&
+                   ([searchField[indexPath.section] isEqualToString:@"Fac/Staff Dept/Office"] ||
+                    [searchField[indexPath.section] isEqualToString:@"Student Major"] ||
+                    [searchField[indexPath.section] isEqualToString:@"Hiatus"] ||
+                    [searchField[indexPath.section] isEqualToString:@"SGA"] ||
+                    [searchField[indexPath.section] isEqualToString:@"Concentration"] ||
+                    [searchField[indexPath.section] isEqualToString:@"Student Class"])) {
+                       
+                       GADPickerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"pickerCell"];
+                       cell.textLabel.text = searchField[indexPath.section];
+                       return cell;
+                   } else if (indexPath.row == 1) {
+                       GADPickerViewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"pickerViewCell"];
+                       // Create a picker view cell with options according to selected header
+                       if ([searchField[indexPath.section] isEqualToString:@"Fac/Staff Dept/Office"]) {
+                           cell.options=department;
+                       } else if ([searchField[indexPath.section] isEqualToString:@"Student Major"]) {
+                           cell.options=major;
+                       } else if ([searchField[indexPath.section] isEqualToString:@"Hiatus"]) {
+                           cell.options=hiatus;
+                       } else if ([searchField[indexPath.section] isEqualToString:@"SGA"]) {
+                           cell.options=SGA;
+                       } else if ([searchField[indexPath.section] isEqualToString:@"Concentration"]) {
+                           cell.options=concentration;
+                       } else {
+                           cell.options=studentClass;
+                       }
+                       cell.parent = (GADPickerTableViewCell *)[_searchTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection: indexPath.section]];
+                       NSLog(@"picker parent!");
+                       [cell.pickerView reloadAllComponents];
+                       return cell;
+                       
+                   } else {
+                       GADNumberTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"numberCell"];
+                       cell.placeholderText = searchField[indexPath.section];
+                       return cell;
+                   }
     return 0;
 }
 
@@ -102,16 +115,33 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"showSearchResult"]) {
         GADListViewController *destinationController = (GADListViewController *)segue.destinationViewController;
-        NSArray<NSString *> *queryField = @[@"lastName", @"firstName", @"campusAddress", @"facStaffOffice", @"major", @"hiatus", @"userName", @"campusPhone", @"homeAddress", @"sga", @"concentration", @"classYr"];
+        NSArray<NSString *> *queryField;
+        switch (_segmentedControl.selectedSegmentIndex) {
+            case 0:
+                queryField = @[@"lastName", @"firstName"];
+                break;
+            default:
+                queryField = @[@"lastName", @"firstName", @"campusAddress", @"facStaffOffice", @"major", @"hiatus", @"userName", @"campusPhone", @"homeAddress", @"sga", @"concentration", @"classYr"];
+                break;
+        }
+        
         NSMutableDictionary *criteria = [[NSMutableDictionary alloc] init];
         for (int i = 0; i < searchField.count; i++) {
-            if (![searchField[i] isEqualToString:@"Fac/Staff Dept/Office"] &&
-                ![searchField[i] isEqualToString:@"Fac/Staff Dept/Office"] &&
-                ![searchField[i] isEqualToString:@"Student Major"] &&
-                ![searchField[i] isEqualToString:@"Hiatus"] &&
-                ![searchField[i] isEqualToString:@"SGA"] &&
-                ![searchField[i] isEqualToString:@"Concentration"] &&
-                ![searchField[i] isEqualToString:@"Student Class"]) { //To-do: read input from pickerCell
+            if ([searchField[i] isEqualToString:@"Fac/Staff Dept/Office"] ||
+                [searchField[i] isEqualToString:@"Fac/Staff Dept/Office"] ||
+                [searchField[i] isEqualToString:@"Student Major"] ||
+                [searchField[i] isEqualToString:@"Hiatus"] ||
+                [searchField[i] isEqualToString:@"SGA"] ||
+                [searchField[i] isEqualToString:@"Concentration"] ||
+                [searchField[i] isEqualToString:@"Student Class"]) {//read input from pickerCell
+                
+                GADPickerTableViewCell *pickerViewCell = (GADPickerTableViewCell *)[self.searchTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection: i]];
+                if (![pickerViewCell.selectedText isEqualToString: @""]) {
+                    NSLog(@"picker selected is %@\n##\n", pickerViewCell.selectedText);
+                    [criteria setValue: pickerViewCell.selectedText forKey:queryField[i]];
+                }
+            }
+            else {
                 if ([searchField[i] isEqualToString:@"Last name"] ||
                     [searchField[i] isEqualToString:@"First name"] ||
                     [searchField[i] isEqualToString:@"Campus Address or P.O. Box"] ||
@@ -130,9 +160,9 @@
             }
         }
         
-        /*for (int i = 0; i < searchField.count; i++) {
-            NSLog(@"##\n%@ is %@\n##\n", queryField[i],[criteria valueForKey:queryField[i]]);
-        } //print criterias*/
+        for (int i = 0; i < searchField.count; i++) {
+         NSLog(@"##\n%@ is %@\n##\n", queryField[i],[criteria valueForKey:queryField[i]]);
+         } //print criterias
         
         destinationController.criteria = criteria;
     }
@@ -157,18 +187,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    searchField = @[@"Last name",
-                    @"First name",
-                    @"Campus Address or P.O. Box",
-                    @"Fac/Staff Dept/Office",
-                    @"Student Major",
-                    @"Hiatus",
-                    @"Computer Username",
-                    @"Campus Phone",
-                    @"Home Address",
-                    @"SGA",
-                    @"Concentration",
-                    @"Student Class"];
+    searchFieldAdvanced = @[@"Last name",
+                            @"First name",
+                            @"Campus Address or P.O. Box",
+                            @"Fac/Staff Dept/Office",
+                            @"Student Major",
+                            @"Hiatus",
+                            @"Computer Username",
+                            @"Campus Phone",
+                            @"Home Address",
+                            @"SGA",
+                            @"Concentration",
+                            @"Student Class"];
+    searchFieldSimple =@[@"Last name",
+                         @"First name"];
+    searchField =@[@"Last name",
+                   @"First name"];
     
     major = @[@"Anthropology",
               @"Art History",
@@ -295,7 +329,7 @@
     
     hiatus = @[@"Grinnell in London", @"Grinnell in Washington"];
     selected = [[NSMutableArray alloc] initWithCapacity:searchField.count];
-    for (int i=0; i<searchField.count; i++) {
+    for (int i=0; i<searchFieldAdvanced.count; i++) {
         selected[i] = @false;
     }
     // Do any additional setup after loading the view, typically from a nib.

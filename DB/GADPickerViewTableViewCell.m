@@ -23,7 +23,7 @@
 }
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    // Likely need to configure this when the server is back up. 
+    self.parent.selectedText = self.options[row];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
