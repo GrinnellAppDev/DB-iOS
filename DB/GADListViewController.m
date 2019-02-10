@@ -3,6 +3,7 @@
 #import "GADResultTableViewCell.h"
 #import "GADPerson.h"
 #import "GADDirectory.h"
+#import "GADQuery.h"
 
 @interface GADListViewController () {
 }
@@ -30,6 +31,14 @@
         GADStudent *student = (GADStudent *) person;
         detail = student.classYear;
         dept = student.major;
+        NSLog(@"%@",detail);
+        NSLog(@"%@",dept);
+        NSLog(@"%@",student.lastName);
+        NSLog(@"%@",student.firstName);
+        NSLog(@"%@",student.homeAddress);
+        NSLog(@"%@",student.minor);
+        NSLog(@"%@",student.nickName);
+        NSLog(@"%@",student.userName);
     } else if (person.type == FacStaff) {
         GADFacStaff *facStaff = (GADFacStaff *) person;
         dept = facStaff.departments[0];
@@ -53,17 +62,21 @@
     
     /* This method retrieved data from the test server, it will be left here
      since the new API will hopefully be similar
-    [GADQuery executeWithDict:_criteria Username:@"test1stu" Password:@"selfserv1" completionHandler:^void(NSArray<GADPerson *> * people,NSError *error){
+    */
+    GADQuery *queue = [GADQuery new];
+    queue.lastName = @"Lad";
+    [queue executeWithUsername:@"test1stu" Password:@"selfserv1" completionHandler:^(NSArray<GADPerson *> * _Nullable people, NSError * _Nullable error) {
         self.searchResult = people;
         dispatch_async(dispatch_get_main_queue(),^(void){
             [self.tableView reloadData];
         });
-    }]; */
+    }];
     
-    self.searchResult = GADPerson.dummyPeople;
+    
+    /*self.searchResult = GADPerson.dummyPeople;
     dispatch_async(dispatch_get_main_queue(),^(void){
         [self.tableView reloadData];
-    });
+    });*/
 }
 
 - (void)didReceiveMemoryWarning {

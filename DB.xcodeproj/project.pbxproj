@@ -27,11 +27,11 @@
 		3E5019EE1546E3B4CCDB7212 /* libPods-DBUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A1B2EAB55570A3371F080B5 /* libPods-DBUITests.a */; };
 		570397C8A53689D003BDC5C1 /* libPods-GADDirectoryTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ED96211BD6738D51ECD503F6 /* libPods-GADDirectoryTests.a */; };
 		A89BAD5C1E52C143005DB3FA /* GADNumberTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A89BAD5B1E52C143005DB3FA /* GADNumberTableViewCell.m */; };
-		A8A3BF071EA8744100165EA0 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8A3BF061EA8744100165EA0 /* MessageUI.framework */; };
 		A8CFA7851E5BEBAF00C3B4C4 /* GADPickerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A8CFA7841E5BEBAF00C3B4C4 /* GADPickerTableViewCell.m */; };
 		B9E130179E0545630B82F220 /* libPods-GADDirectory.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 667859B1AA031C79927E836D /* libPods-GADDirectory.a */; };
 		C1DB7D361DADF79378CECCD4 /* libPods-DBTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 219653412E19E7355DC5B308 /* libPods-DBTests.a */; };
 		EF991F862055A82A00F53905 /* GADProfileImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF991F852055A82A00F53905 /* GADProfileImageTableViewCell.m */; };
+		F71914E721FE3FC900EE2203 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F71914E621FE3FC900EE2203 /* Messages.framework */; };
 		FAFB93F81E4FAF1400A68015 /* GADDirectory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFB93EF1E4FAF1400A68015 /* GADDirectory.framework */; };
 		FAFB93FF1E4FAF1400A68015 /* GADDirectoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FAFB93FE1E4FAF1400A68015 /* GADDirectoryTests.m */; };
 		FAFB94011E4FAF1400A68015 /* GADDirectory.h in Headers */ = {isa = PBXBuildFile; fileRef = FAFB93F11E4FAF1400A68015 /* GADDirectory.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -160,6 +160,7 @@
 		ED96211BD6738D51ECD503F6 /* libPods-GADDirectoryTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GADDirectoryTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF991F852055A82A00F53905 /* GADProfileImageTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GADProfileImageTableViewCell.m; sourceTree = "<group>"; };
 		EF991F872055A83800F53905 /* GADProfileImageTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GADProfileImageTableViewCell.h; sourceTree = "<group>"; };
+		F71914E621FE3FC900EE2203 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 		FAFB93EF1E4FAF1400A68015 /* GADDirectory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GADDirectory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAFB93F11E4FAF1400A68015 /* GADDirectory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GADDirectory.h; sourceTree = "<group>"; };
 		FAFB93F21E4FAF1400A68015 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -174,7 +175,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A8A3BF071EA8744100165EA0 /* MessageUI.framework in Frameworks */,
+				F71914E721FE3FC900EE2203 /* Messages.framework in Frameworks */,
 				FAFB94041E4FAF1400A68015 /* GADDirectory.framework in Frameworks */,
 				2E6E7BB33953DDE5DCCB560C /* libPods-DB.a in Frameworks */,
 			);
@@ -276,6 +277,7 @@
 		595582090F7D3012AE5CE643 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F71914E621FE3FC900EE2203 /* Messages.framework */,
 				A8A3BF061EA8744100165EA0 /* MessageUI.framework */,
 				83946FA003C12FC0DEF561D5 /* libPods-DB.a */,
 				219653412E19E7355DC5B308 /* libPods-DBTests.a */,

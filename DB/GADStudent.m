@@ -11,6 +11,7 @@
 }
 
 -(GADStudent *)initWithDictionary:(NSDictionary *)dict {
+    
     GADStudent *student = [GADStudent alloc];
     student.type = Student;
     student.nickName = [dict valueForKey:@"nickName"];

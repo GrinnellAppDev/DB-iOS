@@ -1,6 +1,8 @@
 #import "GADQuery.h"
 
-static const NSString *apiURL = @"https://appdev.grinnell.edu/api/db/v1/list";
+//static const NSString *apiURL = @"https://appdev.grinnell.edu/api/db/v1/list";
+static const NSString *apiURL = @"http://127.0.0.1:5000/";
+
 const NSTimeInterval timeoutInterval = 60.0;
 
 @implementation GADQuery
@@ -46,7 +48,6 @@ const NSTimeInterval timeoutInterval = 60.0;
     NSURLComponents *components = [NSURLComponents componentsWithString:apiURL];
     components.queryItems = queryItems;
     NSURL *url = components.URL;
-    
     /* old authentication scheme
     NSString *authenticationString = [NSString stringWithFormat:@"{'un':'%@', 'pw':'%@'}",username,password];
     NSData *bodyData = [authenticationString dataUsingEncoding:NSUTF8StringEncoding];
