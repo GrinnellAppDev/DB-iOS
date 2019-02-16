@@ -1,5 +1,6 @@
 #import "GADStudent.h"
 #import <GADDirectory/GADPerson.h>
+#import "GADSGA.h"
 
 @implementation GADStudent
 
@@ -11,14 +12,18 @@
 }
 
 -(GADStudent *)initWithDictionary:(NSDictionary *)dict {
+    GADStudent *student;
+    if ([dict valueForKey:@"office_email"] == (id)[NSNull null]) { // need to check
+        student = [GADStudent alloc];
+        student.type = Student;
+    } else {
+        student = [[GADSGA alloc] initWithDictionary:dict];
+    }
     
-    GADStudent *student = [GADStudent alloc];
-    student.type = Student;
     student.nickName = [dict valueForKey:@"nickName"];
     student.classYear = [dict valueForKey:@"classYear"];
     student.major = [dict valueForKey:@"major"];
     student.minor = [dict valueForKey:@"minor"];
     return student;
 }
-
 @end

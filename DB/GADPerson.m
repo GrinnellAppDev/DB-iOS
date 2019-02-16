@@ -8,11 +8,7 @@
 -(GADPerson *)initWithDictionary: (NSDictionary *) dict {
     GADPerson *person;
     if ([[dict valueForKey:@"personType"] isEqual: @"Student"]) {
-        if ([dict valueForKey:@"office_email"] == (id)[NSNull null]) { // need to check
-            
-            person = [[GADStudent alloc] initWithDictionary:dict];
-        } else {            person = [[GADSGA alloc] initWithDictionary:dict];
-        }
+        person = [[GADStudent alloc] initWithDictionary:dict];
     } else {
         person = [[GADFacStaff alloc] initWithDictionary:dict];
     }

@@ -31,14 +31,6 @@
         GADStudent *student = (GADStudent *) person;
         detail = student.classYear;
         dept = student.major;
-        NSLog(@"%@",detail);
-        NSLog(@"%@",dept);
-        NSLog(@"%@",student.lastName);
-        NSLog(@"%@",student.firstName);
-        NSLog(@"%@",student.homeAddress);
-        NSLog(@"%@",student.minor);
-        NSLog(@"%@",student.nickName);
-        NSLog(@"%@",student.userName);
     } else if (person.type == FacStaff) {
         GADFacStaff *facStaff = (GADFacStaff *) person;
         dept = facStaff.departments[0];
