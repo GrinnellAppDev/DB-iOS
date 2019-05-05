@@ -8,6 +8,10 @@ import numpy as np
 import test_psql as creds #database access information
 #import pandas.io.sql as psql
 
+import smtplib, ssl
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+
 from flask import Flask
 
 from flask import request
@@ -35,7 +39,6 @@ def hello():
     # Create a cursor object
     cursor = conn.cursor()
     #determine if data is being added or requested or removed
-    print(type == "request")
     if(type == "request"):
         request_data(cursor, name=request.args.get('fac'))
     elif(type == "add"):
@@ -46,7 +49,9 @@ def hello():
         data["times"]=request.args.get('times')
         add(data, cursor, "public", "users")
         #print data to see if addition was successful
-        request_data(cursor, name=request.args.get('fac'))
+        rows = request_pending_data(cursor)
+        send_verification_request(rows)
+
     elif(type == "remove"):
         #access required given data
         data=dict()
@@ -54,6 +59,26 @@ def hello():
         remove(id, cursor, "public", "users")
         #print data to see if removal was successful
         cursor.execute(("""SELECT * from {0}.{1};""").format("public", "users"), ())
+        for row in cursor.fetchall():
+            print(row)
+        print('')
+    elif(type=="accept"):
+        #access required given data
+        data=dict()
+        id=request.args.get('id')
+        accept(id, cursor, "public", "users")
+        #print data to see if removal was successful
+        cursor.execute(("""SELECT * FROM {0}.{1} WHERE pending = TRUE;""").format("public", "users"), ())
+        for row in cursor.fetchall():
+            print(row)
+        print('')
+    elif(type=="decline"):
+        #access required given data
+        data=dict()
+        id=request.args.get('id')
+        remove(id, cursor, "public", "users")
+        #print data to see if removal was successful
+        cursor.execute(("""SELECT * from {0}.{1} where pending = TRUE;""").format("public", "users"), ())
         for row in cursor.fetchall():
             print(row)
         print('')
@@ -65,14 +90,14 @@ def hello():
 
     #static data for testing
     b = list()
-    b.append(populate())
-    b.append(populate(id=1))
-    b.append(populate(id=2))
+#b.append(populate())
+#b.append(populate(id=1))
+#b.append(populate(id=2))
     return Response(json.dumps(b), mimetype='json/application')
 
 
 """
-Allows to add new data to the given table in the given schema using the provided cursor
+Allows to add new data to the given table in the given schema using the provided cursor, the entry is automatically pending
 """
 def add(data, cursor, schema, table):
     sql_command = ("""INSERT INTO {0}.{1} (user_name, weekday,office_hour)
@@ -87,21 +112,47 @@ Deletes the row in the given table in the given schema with the cursor where the
 def remove(id, cursor, schema, table):
     sql_command = ("""DELETE FROM {0}.{1} WHERE entry_id = %s;""").format(str(schema), str(table))
     print (sql_command)
-    cursor.execute(sql_command, id)
+    cursor.execute(sql_command, (id,))
+"""
+    Updates the row in the given table in the given schema with the cursor where the entry_id equals the given id to not be pending
+    """
+def accept(id, cursor, schema, table):
+    sql_command = ("""UPDATE {0}.{1} SET pending = FALSE WHERE entry_id = %s;""").format(str(schema), str(table))
+    print (sql_command)
+    cursor.execute(sql_command,(id,))
 
 """
 Queries all the office hour data in the users table in the public schema with the professor with the given name
 """
 def request_data(cursor, name=""):
-    sql_command = ("""SELECT entry_id, user_name, weekday, office_hour from {0}.{1} WHERE user_name = %s;""").format("public", "users")
+    sql_command = ("""SELECT entry_id, user_name, weekday, office_hour from {0}.{1} WHERE user_name = %s AND pending = FALSE;""").format("public", "users")
     print (sql_command)
     
     cursor.execute(sql_command, (str(name), ))
     
+    out = []
     for row in cursor.fetchall():
+        out.append(row)
         print(row)
     print('')
 
+    return out
+
+"""
+    Queries all the office hour data in the users table in the public schema with pending true
+"""
+def request_pending_data(cursor):
+    sql_command = ("""SELECT entry_id, user_name, weekday, office_hour from {0}.{1} WHERE pending = true;""").format("public", "users")
+    print (sql_command)
+    
+    cursor.execute(sql_command, ())
+    
+    out = []
+    for row in cursor.fetchall():
+        out.append(row)
+        print(row)
+    print('')
+    return out
 
 """
 Prints out the query response
@@ -142,15 +193,16 @@ def create_table(schema, table):
                    entry_id SERIAL,
                    user_name varchar(255) NOT NULL,
                    weekday varchar(2) NOT NULL,
-                   office_hour varchar(255) NOT NULL);""").format(str(schema), str(table))
+                   office_hour varchar(255) NOT NULL,
+                   pending boolean not null default true);""").format(str(schema), str(table))
     print (sql_command)
     cursor.execute(sql_command, ())
     
     #insert basic entries for testing
-    sql_command = ("""INSERT INTO {0}.{1} (user_name, weekday,office_hour)
-        VALUES ('schildor', 'Th','4PM - 5PM, 7PM - 7:30PM'),
-               ('schildor', 'M','1PM - 2PM, 3PM - 3:30PM'),
-               ('turtok', 'F','1AM - 2AM, 5PM - 5:30PM');""").format(str(schema), str(table))
+    sql_command = ("""INSERT INTO {0}.{1} (user_name, weekday,office_hour, pending)
+        VALUES ('schildor', 'Th','4PM - 5PM, 7PM - 7:30PM', false),
+               ('schildor', 'M','1PM - 2PM, 3PM - 3:30PM', true),
+               ('turtok', 'F','1AM - 2AM, 5PM - 5:30PM', false);""").format(str(schema), str(table))
     print (sql_command)
     cursor.execute(sql_command, ())
     conn.commit()
@@ -159,7 +211,94 @@ def create_table(schema, table):
 
 
 
+def sendemail(from_addr, to_addr_list, cc_addr_list,
+              subject, message,
+              login, password,
+              smtpserver='smtp.gmail.com:587'):
+    header  = 'From: %s\n' % from_addr
+    header += 'To: %s\n' % ','.join(to_addr_list)
+    header += 'Cc: %s\n' % ','.join(cc_addr_list)
+    header += 'Subject: %s\n\n' % subject
+    message = header + message
+    
+    server = smtplib.SMTP(smtpserver)
+    server.starttls()
+    server.login(login,password)
+    problems = server.sendmail(from_addr, to_addr_list, message)
+    server.quit()
 
+
+"""
+    Sends an email with html parts from from_addr to all elements of to_addr_list and cc_addr_list, with the given subject message and html using the login name, password and the given smtp server.
+    The email is encrypted using tls and works with gmail.
+    """
+def sendhtmlemail(from_addr, to_addr_list, cc_addr_list,
+                  subject, message, html,
+                  login, password,
+                  smtpserver='smtp.gmail.com:587'):
+    msg = MIMEMultipart('alternative')
+    msg['Subject'] = subject
+    msg['From'] = from_addr
+    msg['To'] = str(to_addr_list)
+
+    
+    header  = 'From: %s\n' % from_addr
+    header += 'To: %s\n' % ','.join(to_addr_list)
+    header += 'Cc: %s\n' % ','.join(cc_addr_list)
+    header += 'Subject: %s\n\n' % subject
+    message = header + message
+    
+
+    # Record the MIME types of both parts - text/plain and text/html.
+    part1 = MIMEText(message, 'plain')
+    part2 = MIMEText(html, 'html')
+
+    # Attach parts into message container.
+    # According to RFC 2046, the last part of a multipart message, in this case
+    # the HTML message, is best and preferred.
+    msg.attach(part1)
+    msg.attach(part2)
+
+    # Send the message via local SMTP server.
+    # sendmail function takes 3 arguments: sender's address, recipient's address
+    # and message to send - here it is sent as one string.
+    server = smtplib.SMTP(smtpserver)
+    server.starttls()
+    server.login(login,password)
+    problems = server.sendmail(from_addr, to_addr_list, msg.as_string())
+    server.quit()
+
+""""
+    Sends a verification request for the still pending entries to Appdev gmail to the Appdev school email
+    """
+def send_verification_request(rows):
+    message ="There are pending requests for new office hours:\n"
+    # Create the body of the message (a plain-text and an HTML version).
+    html = """\
+        <html>
+        <head></head>
+        <body>
+        """
+    #generate the html code for the buttons
+    for row in rows:
+        message+= str(row) +"\n"
+        html+=str(row) +"\n"
+        html+= ("""
+            <a href="http://127.0.0.1:5000/?type=accept&id={0}">
+            <button>Accept</button>
+            </a><a href="http://127.0.0.1:5000/?type=decline&id={0}">
+            <button>Decline</button>
+            </a><br>
+            """).format(row[0])
+    html+="""
+        </body>
+        </html>
+        """
+    sendhtmlemail("moriz.schildorfer@gmail.com",["schildor@grinnell.edu"],[""],"New Office Hour Request",message,html,'moriz.schildorfer',raw_input("email psswrd"))
+
+"""
+    Fluff data to test the connection
+    """
 def populate(id=0):
     a = dict()
     #Person elements
