@@ -90,9 +90,9 @@ def hello():
 
     #static data for testing
     b = list()
-#b.append(populate())
-#b.append(populate(id=1))
-#b.append(populate(id=2))
+    b.append(populate())
+    b.append(populate(id=1))
+    b.append(populate(id=2))
     return Response(json.dumps(b), mimetype='json/application')
 
 
@@ -294,7 +294,7 @@ def send_verification_request(rows):
         </body>
         </html>
         """
-    sendhtmlemail("moriz.schildorfer@gmail.com",["schildor@grinnell.edu"],[""],"New Office Hour Request",message,html,'moriz.schildorfer',raw_input("email psswrd"))
+    sendhtmlemail("dbappdevoffice@gmail.com",["schildor@grinnell.edu"],[""],"New Office Hour Request",message,html,"dbappdevoffice","hours456")
 
 """
     Fluff data to test the connection
